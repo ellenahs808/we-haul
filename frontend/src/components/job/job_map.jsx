@@ -16,7 +16,11 @@ const mapOptions = {
 class JobMap extends React.Component {
   constructor(props) {
     super(props);
-  }
+}
+
+
+
+     
 
   componentDidMount() {
     // set the map to show SF
@@ -29,9 +33,18 @@ class JobMap extends React.Component {
     // this.map = new google.maps.Map(this.mapNode, mapOptions);
   }
 
+    //   const callScript = () => {
+    //     const script = document.createElement('script');
+    //     script.className = 'autocomplete'
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+    //     script.async = true;
+    //     document.body.appendChild(script);
+    // };
+
   render() {
     return <div id="map-container" ref={ map => this.mapNode = map }> This is the map container</div>;
   }
 }
+
 
 export default JobMap;
