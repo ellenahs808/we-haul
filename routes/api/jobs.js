@@ -6,7 +6,7 @@ const Job = require('../../models/Job')
 const jwt = require('jsonwebtoken');
 
 
-router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
 
 router.get('/', (req, res) => {
     Job.find()
