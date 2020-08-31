@@ -19,10 +19,10 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
-    // userType: {
-    //     type: String,
-    //     required: true,
-    // },
+    userType: {
+        type: String,
+        required: true,
+    },
     phoneNumber: {
       type: String,
       required: true,

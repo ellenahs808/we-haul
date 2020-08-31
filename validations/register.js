@@ -58,6 +58,10 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = "Passwords must match";
   }
 
+  if (Validator.isEmpty(data.userType)) {
+    errors.userType = "User type field is required";
+  }
+
   return {
     errors,
     isValid: Object.keys(errors).length === 0,
