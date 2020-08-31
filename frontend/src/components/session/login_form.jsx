@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import Typical from 'react-typical';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -13,6 +14,44 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.loginDemoUser = this.loginDemoUser.bind(this);
+    }
+
+    loginDemoUser(e) {
+        e.preventDefault();
+        const demoUser = { email: 'shanelle@wehaul.com', password: 'password', firstName: 'Shanelle', lastName: 'Valencia', phoneNumber: '1234567890' };
+        let { email, password, firstName, lastName, phoneNumber } = demoUser;
+
+        let interval = 100;
+
+        let login = () => {
+            this.props.login(this.state);
+        }
+
+        if (this.state.email !== email) {
+            let inputEmail = setInterval(() => {
+                if (this.state.email !== email) {
+                    let tempEmail = email.slice(0, this.state.email.length + 1);
+                    this.setState({ email: tempEmail })
+                } else {
+                    clearInterval(inputEmail);
+                    fillPassword();
+                }
+            }, interval)
+        }
+
+        let fillPassword = () => {
+            let inputPassword = setInterval(() => {
+                if (this.state.password !== password) {
+                    let tempPassword = password.slice(0, this.state.password.length + 1);
+                    this.setState({ password: tempPassword })
+                } else {
+                    clearInterval(inputPassword);
+                    login();
+                }
+            }, interval)
+        }
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -53,26 +92,40 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <p className="typical">
+                {" "}
+                <Typical
+                  loop={2000}
+                  wrapper="b"
+                  steps={[1000, "Shanelle sux.", 1000, 'shanelle sucks', 1000, 'shanelle boo']}
+                />{" "}
+              </p>
+
+              <div>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+                <br />
+                <input type="submit" value="Submit" />
+                <button type="submit" onClick={this.loginDemoUser}>
+                  DEMO SIGN IN
+                </button>
+                {this.renderErrors()}
+              </div>
+            </form>
+          </div>
         );
     }
 }
