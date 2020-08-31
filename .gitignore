@@ -1,6 +1,5 @@
 /config/keys.js
 /node_modules
-/fontend/src/config/keys_mapbox.js
 /fontend/src/config/keys_dev_front.js
 
 /frontend/node_modules

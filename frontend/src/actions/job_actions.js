@@ -59,5 +59,5 @@ export const updateJob = job => {
 
 export const deleteJob = jobId => {
     return APIUtil.deleteJob
-        .then(() => removeJob)
+        .then(() => removeJob(jobId))
 }
