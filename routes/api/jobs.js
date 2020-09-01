@@ -25,7 +25,8 @@ router.post('/',
             requester: req.body.requester,
             //change to google api address
             startAddress: req.body.startAddress,
-            endAddress: req.body.endAddress
+            endAddress: req.body.endAddress,
+            user: req.user.id
         })
         newJob.save().then((job) => res.json(job))
     }
