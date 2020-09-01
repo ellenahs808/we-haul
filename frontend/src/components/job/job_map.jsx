@@ -4,10 +4,7 @@ import Typical from 'react-typical';
 import mapboxgl from 'mapbox-gl';
 import { mapBoxPublicKey } from '../../config/keys_dev_front';
 
-
-
-
-    
+ 
   const JobMap = (props) => {
       const lng = -122.44;
       const lat = 37.76;
