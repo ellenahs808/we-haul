@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <div>
+              <div className='signup-form'>
                 <input
                   type="text"
                   value={this.state.firstName}
