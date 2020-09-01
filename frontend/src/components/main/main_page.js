@@ -5,12 +5,12 @@ class MainPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='full_page'>
                 <h1>WeHaul</h1>
-                <JobMap />
                 <footer>
                     Copyright &copy; 2020 WeHaul
         </footer>
+                <JobMap />
             </div>
         );
     }
