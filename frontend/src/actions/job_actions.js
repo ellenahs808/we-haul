@@ -3,6 +3,7 @@ import * as JobAPIUTIL from '../util/jobs_api_util'
 export const RECEIVE_JOBS = 'RECEIVE_JOBS';
 export const RECEIVE_JOB = 'RECEIVE_JOB'
 export const DELETE_JOB = 'DELETE_JOB';
+export const RECEIVE_JOB_ERRORS = "RECEIVE_JOB_ERRORS";
 
 export const receiveJobs = jobs => (
     {
@@ -24,6 +25,13 @@ export const removeJob = job => (
         job
     }
 )
+
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_JOB_ERRORS,
+    errors,
+  };
+};
 
 export const fetchJobs = () => dispatch => (
     JobAPIUTIL.getJobs() 
