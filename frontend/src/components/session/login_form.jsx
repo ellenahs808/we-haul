@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
+            userType: '',
             errors: {}
         };
 
@@ -99,7 +100,14 @@ class LoginForm extends React.Component {
                 <Typical
                   loop={2000}
                   wrapper="b"
-                  steps={[1000, "Shanelle sux.", 1000, 'shanelle sucks', 1000, 'shanelle boo']}
+                  steps={[
+                    1000,
+                    "Shanelle sux.",
+                    1000,
+                    "shanelle sucks",
+                    1000,
+                    "shonelle boo",
+                  ]}
                 />{" "}
               </p>
 
@@ -118,10 +126,18 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
                 <br />
+                <select value={this.state.userType} onChange={this.update("userType")}>
+                    <option value="">Select Type</option>
+                    <option value="user">User</option>
+                    <option value="hauler">Hauler</option>
+                </select>
+
                 <input type="submit" value="Submit" />
+
                 <button type="submit" onClick={this.loginDemoUser}>
                   DEMO SIGN IN
                 </button>
+
                 {this.renderErrors()}
               </div>
             </form>

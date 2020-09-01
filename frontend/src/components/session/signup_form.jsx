@@ -12,6 +12,7 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
             password2: '',
+            userType: '',
             errors: {}
         };
 
@@ -26,7 +27,8 @@ class SignupForm extends React.Component {
             phoneNumber: this.state.phoneNumber,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            userType: this.state.userType
         };
 
         this.props.signup(user, this.props.history);
@@ -80,27 +82,36 @@ class SignupForm extends React.Component {
                 />
                 <br />
                 <input
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update("email")}
-                    placeholder="Email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
                 />
                 <br />
                 <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
                 />
                 <br />
                 <input
-                    type="password"
-                    value={this.state.password2}
-                    onChange={this.update("password2")}
-                    placeholder="Confirm Password"
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
                 />
                 <br />
-                <input type="submit" value="Submit"/>
+
+                <select value={this.state.userType} onChange={this.update('userType')}>
+                    <option value="">Select Type</option>
+                    <option value='user'>User</option>
+                    <option value='hauler'>Hauler</option>
+                </select>
+
+                <br />
+
+                <input type="submit" value="Submit" />
                 {this.renderErrors()}
               </div>
             </form>

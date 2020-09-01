@@ -20,6 +20,7 @@ router.get(
       lastName: req.user.lastName,
       phoneNumber: req.user.phoneNumber,
       email: req.user.email,
+      userType: req.user.userType
     });
   }
 );
@@ -43,7 +44,8 @@ router.post("/register", (req, res) => {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           password: req.body.password,
-          phoneNumber: req.body.phoneNumber
+          phoneNumber: req.body.phoneNumber,
+          userType: req.body.userType
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -93,6 +95,7 @@ router.post('/login', (req, res) => {
             lastName: user.lastName,
             email: user.email,
             phoneNumber: user.phoneNumber,
+            userType: user.userType
           };
        jwt.sign(
          payload,
