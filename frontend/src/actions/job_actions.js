@@ -71,20 +71,5 @@ export const deleteJob = (jobId) => dispatch => (
         .then(job => dispatch(removeJob(job)))
 )
 
-export const createJob = job => {
-    return APIUtil.createJob(job)
-        .then(job => dispatch(receiveJob(job)))
-        .catch(err => console.log(err))
-};
 
-export const updateJob = job => {
-    return APIUtil.updateJob(job)
-        .then(job => dispatch(receiveJob(job)))
-        .catch(err => console.log(err))
-}
-
-export const deleteJob = jobId => {
-    return APIUtil.deleteJob
-        .then(() => removeJob)
-}
 
