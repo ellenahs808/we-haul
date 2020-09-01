@@ -25,22 +25,15 @@ function Modal({ modal, closeModal }) {
 
     return (
       <div>
-        <div onClick={closeModal} className="modal-close">
+        <div onClick={closeModal} className="modal-screen">
           
             <div className="modal-form" onClick={(e) => e.stopPropagation()}>
                 {component}
             </div>
-            <div className="modal-screen">
-                <Home />
-            </div>
+ 
         </div>
       </div>
-      // <div onClick={closeModal} className='modal-close'>
-      //     <div onClick={e => e.stopPropagation()} className='modal-form'>
-      //         <div>{component}</div>
-      //         {/* <div className='modal-screen'><Home/></div> */}
-      //     </div>
-      // </div>
+
     );
 }
 
