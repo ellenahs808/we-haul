@@ -33,11 +33,11 @@ const JobSchema = new Schema({
     required: true,
   },
 
-  requester: {
-    type: Schema.Types.Mixed,
-    ref: "users",
-    required: true,
-  },
+  // requester: {
+  //   type: Schema.Types.Mixed,
+  //   ref: "users",
+  //   required: true,
+  // },
   driver: {
     type: Schema.Types.ObjectId,
     ref: "users",
