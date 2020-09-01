@@ -1,4 +1,6 @@
 import React from 'react';
+import keys from "../../config/keys_dev_front";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 
 class JobForm extends React.Component{
@@ -39,12 +41,12 @@ class JobForm extends React.Component{
                 value={this.state.details}
                 placeholder="What do you want moved?"
               />
-              <input
+              {/* <input
                 type="text"
                 onChange={this.update("startAddress")}
                 value={this.state.startAddress}
                 placeholder="Start"
-              />
+              /> */}
               <input
                 type="text"
                 onChange={this.update("endAddress")}
@@ -52,9 +54,26 @@ class JobForm extends React.Component{
                 placeholder="End"
               />
 
-              <button type="submit">
-                Request a Hauler
-              </button>
+              <GooglePlacesAutocomplete
+                apiKey={keys.googleMapsKey}
+                autocompletionRequest={{
+                  bounds: [
+                    { lat: 37.6, lng: -122.54 },
+                    { lat: 37.9, lng: -122.34 },
+                  ],
+                  componentRestrictions: {
+                    country: ["us"],
+                  },
+                }}
+                placeholder="825 Battery Street, San Francisco"
+                onChange={({ description }) =>
+                  this.setState({ startAddress: description })
+                }
+                value={this.state.startAddress}
+                loader={<div className="task-form-loader">Loading...</div>}
+              />
+
+              <button type="submit">Request a Hauler</button>
             </form>
           </div>
         );
