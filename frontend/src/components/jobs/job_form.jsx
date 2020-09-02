@@ -32,19 +32,6 @@ class JobForm extends React.Component{
         this.setState(setAddress)
     }
 
-    // handleChangeEnd(e) {
-    //     e.preventDefault();
-    //     let setEndAddress = {endAddress: e.target.value}
-    //     this.setState(setEndAddress)
-    // }
-
-    // handleSelect(address) {
-    //   geocodeByAddress(address)
-    //     .then(results => getLatLng(results[0]))
-    //     .then(latLng => console.log('Success', latLng))
-    //     .catch(error => console.error('Error', error));
-    // }
-
     render(){
         return (
           <div>
@@ -61,18 +48,6 @@ class JobForm extends React.Component{
                 value={this.state.details}
                 placeholder="Fill out move details."
               />
-              {/* <input
-                type="text"
-                onChange={this.update("startAddress")}
-                value={this.state.startAddress}
-                placeholder="Start"
-              /> */}
-              {/* <input
-                type="text"
-                onChange={this.update("endAddress")}
-                value={this.state.endAddress}
-                placeholder="End"
-              /> */}
               <GooglePlacesAutocomplete
                 // apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
