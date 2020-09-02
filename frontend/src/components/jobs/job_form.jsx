@@ -11,11 +11,11 @@ class JobForm extends React.Component{
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
         this.props.createJob(this.state)       
     }
 
@@ -31,6 +31,19 @@ class JobForm extends React.Component{
         let setAddress = {startAddress: e.target.value}
         this.setState(setAddress)
     }
+
+    // handleChangeEnd(e) {
+    //     e.preventDefault();
+    //     let setEndAddress = {endAddress: e.target.value}
+    //     this.setState(setEndAddress)
+    // }
+
+    // handleSelect(address) {
+    //   geocodeByAddress(address)
+    //     .then(results => getLatLng(results[0]))
+    //     .then(latLng => console.log('Success', latLng))
+    //     .catch(error => console.error('Error', error));
+    // }
 
     render(){
         return (
@@ -61,7 +74,7 @@ class JobForm extends React.Component{
                 placeholder="End"
               /> */}
               <GooglePlacesAutocomplete
-                apiKey={keys.googleMapsKey}
+                // apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
                   bounds: [
                     { lat: 37.6, lng: -122.54 },
@@ -72,15 +85,15 @@ class JobForm extends React.Component{
                   },
                 }}
                 placeholder="825 Battery Street, San Francisco"
-                // onChange={this.update('startAddress')}
-                onSelect={({ description }) =>
+
+                onSelect={({description}) =>
                   this.setState({ startAddress: description })
                 }
-                value={this.state.startAddress}
+
                 loader={<div className="task-form-loader">Loading...</div>}
               />
               <GooglePlacesAutocomplete
-                apiKey={keys.googleMapsKey}
+                // apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
                   bounds: [
                     { lat: 37.6, lng: -122.54 },
@@ -91,10 +104,11 @@ class JobForm extends React.Component{
                   },
                 }}
                 placeholder="825 Battery Street, San Francisco"
+
                 onSelect={({ description }) =>
                   this.setState({ endAddress: description })
                 }
-                value={this.state.endAddress}
+    
                 loader={<div className="task-form-loader">Loading...</div>}
               />
 
