@@ -53,12 +53,12 @@ class JobForm extends React.Component{
                 value={this.state.startAddress}
                 placeholder="Start"
               /> */}
-              <input
+              {/* <input
                 type="text"
                 onChange={this.update("endAddress")}
                 value={this.state.endAddress}
                 placeholder="End"
-              />
+              /> */}
               <GooglePlacesAutocomplete
                 apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
@@ -78,7 +78,7 @@ class JobForm extends React.Component{
                 value={this.state.startAddress}
                 loader={<div className="task-form-loader">Loading...</div>}
               />
-              {/* <GooglePlacesAutocomplete
+              <GooglePlacesAutocomplete
                 apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
                   bounds: [
@@ -91,11 +91,11 @@ class JobForm extends React.Component{
                 }}
                 placeholder="825 Battery Street, San Francisco"
                 onSelect={({ description }) =>
-                  this.setState({ [endAddress]: description })
+                  this.setState({ endAddress: description })
                 }
                 value={this.state.endAddress}
                 loader={<div className="task-form-loader">Loading...</div>}
-              /> */}
+              />
 
               <button type="submit">Request a Hauler</button>
             </form>
