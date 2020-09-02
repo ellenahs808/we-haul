@@ -25,6 +25,7 @@ class JobForm extends React.Component{
         })
     }
 
+    
     handleChange(e) {
         e.preventDefault();
         let setAddress = {startAddress: e.target.value}
