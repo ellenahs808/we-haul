@@ -27,9 +27,9 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <div><button type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
-                    <div><button type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
+                <div className='nav-session'>
+                    <div><button className='nav-signup' type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
+                    <div><button className='nav-login' type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
                 </div>
             );
         }
@@ -39,7 +39,6 @@ class NavBar extends React.Component {
  
         return (
           <div className='navbar'>
-            <img className="logo" src={logoImg} alt="logo" width="280px" />
             <div onClick={e => e.stopPropagation()} className='nav-session' >
                 {this.getLinks()}
             </div>

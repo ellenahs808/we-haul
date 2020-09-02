@@ -1,9 +1,49 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
+    height: 40px;
+    flex-direction: row;
+  
 }
 
 .nav-session {
-    float: left;
-    padding: 30px;
+    display: inline-block;
+    // padding: 30px;
+}
+
+.nav-btn {
+    display: inline-block;
+}
+
+
+.nav-signup {
+    background-color: #f0673d;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 90px;
+    // margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.nav-login {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 90px;
+    // margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
