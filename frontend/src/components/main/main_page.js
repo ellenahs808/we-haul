@@ -3,7 +3,7 @@ import Splash from './splash';
 
 import JobMap from '../job/job_map'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import keys from '../../config/keys'
+import keys from '../../config/keys_mapbox'
 import { Form } from 'react-bootstrap'
 import JobForm from '../jobs/job_form_container';
 
