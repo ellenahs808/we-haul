@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 import Splash from './splash';
+
 import JobMap from '../job/job_map'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import keys from '../../config/keys_dev_front'
 import { Form } from 'react-bootstrap'
-
+import JobForm from '../jobs/job_form_container';
 
 
 const MainPage = (props) => {
@@ -23,44 +24,22 @@ const MainPage = (props) => {
         //     callScript();
             
         // })
-
-
-    
+ 
         return (
-          <div className="full_page">
-            <h1>WeHaul</h1>
-            <footer>Copyright &copy; 2020 WeHaul</footer>
-            <JobMap />
-            <form>
-              <GooglePlacesAutocomplete
-                apiKey={keys.googleMapsKey}
-                autocompletionRequest={{
-                  bounds: [
-                    { lat: 37.6, lng: -122.54 },
-                    { lat: 37.9, lng: -122.34 },
-                  ],
-                  componentRestrictions: {
-                    country: ["us"],
-                  },
-                }}
-                placeholder="825 Battery Street, San Francisco"
-                onSelect={({ description }) =>
-                  this.setState({ startAddress: description })
-                }
-                loader={<div className="task-form-loader">Loading...</div>}
-              />
-              {/* <iframe
-                src={`https://www.google.com/maps/embed/v1/directions?key=${keys.googleMapsKey}&origin=825+Battery+Street,+San+Francisco,+CA,+USA&destination=490+Post+Street,+San+Francisco,+CA,+USA`}
-                width="600"
-                height="450"
-                frameborder="0"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"
-       
-              ></iframe> */}
-            </form>
-          </div>
+            <div className='full_page'>
+
+                <h1>WeHaul</h1>
+                <JobForm />
+                <Splash />
+                <JobMap />
+                <footer>
+                    Copyright &copy; 2020 WeHaul
+                </footer>
+              
+
+
+            </div>
+
         );
     
 }

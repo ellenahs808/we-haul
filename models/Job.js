@@ -32,6 +32,7 @@ const JobSchema = new Schema({
     type: Array,
     required: true,
   },
+
   // requester: {
   //   type: Schema.Types.Mixed,
   //   ref: "users",

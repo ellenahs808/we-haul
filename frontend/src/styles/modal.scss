@@ -1,0 +1,29 @@
+.modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+// .modal-close{
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // width: 65%;
+  // height: 65%; 
+  // transform: translate(-50%, -50%);
+// }
+
+.modal-form {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: -220px;
+    width: 400px;
+    padding: 20px;
+    z-index: 999999;
+    border-radius: 3px;
+}

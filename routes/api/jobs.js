@@ -18,16 +18,18 @@ router.get('/', (req, res) => {
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-
+        // geocodeUtil.parseAddress(req.body.st)
         const newJob = new Job({
             user: req.body.userId, // imported from session
             type: req.body.carType, //car type
             details: req.body.details,
             startAddress: req.body.startAddress,
             endAddress: req.body.endAddress,
-            startLatLong: req.body.startLatLong, // array
-            endLatLong: req.body.endLatLong, // array
-            status: req.body.status, // not-started - default assignment 0
+   //         startLatLong: req.body.startLatLong, // array
+     //       endLatLong: req.body.endLatLong, // array
+       //     status: req.body.status, // not-started - default assignment 0
+            user: req.user.id
+
         })
         newJob.save().then((job) => res.json(job))
     }

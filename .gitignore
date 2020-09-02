@@ -1,10 +1,5 @@
 /config/keys.js
 /node_modules
-<<<<<<< HEAD
 /frontend/src/config/keys_mapbox.js
 /frontend/src/config/keys_dev_front.js
-=======
-/fontend/src/config/keys_dev_front.js
->>>>>>> master
-
 /frontend/node_modules
