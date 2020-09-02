@@ -161,7 +161,7 @@ class LoginForm extends React.Component {
           <div onClick={(e) => e.stopPropagation()}>
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
-                <p className="typical">
+                {/* <p className="typical">
                   {" "}
                   <Typical
                     loop={2000}
@@ -175,7 +175,7 @@ class LoginForm extends React.Component {
                       "shonelle boo",
                     ]}
                   />{" "}
-                </p>
+                </p> */}
                 <input
                   type="text"
                   value={this.state.email}
