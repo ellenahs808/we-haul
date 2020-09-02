@@ -28,9 +28,8 @@ const MainPage = (props) => {
         return (
             <div className='full_page'>
 
-                <h1>WeHaul</h1>
-                <JobForm />
                 <Splash />
+                <JobForm />
                 <JobMap />
                 <footer>
                     Copyright &copy; 2020 WeHaul
