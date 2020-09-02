@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { withRouter, link } from 'react-router-dom';
 import Typical from 'react-typical';
 import mapboxgl from 'mapbox-gl';
-import { mapBoxPublicKey } from '../../config/keys';
+import { mapBoxPublicKey } from '../../config/keys_mapbox';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
  
