@@ -10,11 +10,20 @@ const users = require("./routes/api/users");
 const jobs = require("./routes/api/jobs");
 
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
+
+
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to mongoDB"))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => res.send("Hello World"));
 
 app.use(passport.initialize());
 require('./config/passport')(passport);
@@ -28,12 +37,7 @@ app.use("/api/jobs", jobs);
 
 
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend/build'));
-  app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  })
-}
+
 
 
 

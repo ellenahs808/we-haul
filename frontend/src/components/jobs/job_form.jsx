@@ -1,6 +1,6 @@
 import React from 'react';
-import keys from "../../config/keys";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+// import keys from "../../config/keys";
+// import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 
 class JobForm extends React.Component{
@@ -60,7 +60,7 @@ class JobForm extends React.Component{
                 value={this.state.endAddress}
                 placeholder="End"
               />
-              <GooglePlacesAutocomplete
+              {/* <GooglePlacesAutocomplete
                 apiKey={keys.googleMapsKey}
                 autocompletionRequest={{
                   bounds: [
@@ -78,7 +78,7 @@ class JobForm extends React.Component{
                 }
                 value={this.state.startAddress}
                 loader={<div className="task-form-loader">Loading...</div>}
-              />
+              /> */}
               {/* <GooglePlacesAutocomplete
                 apiKey={keys.googleMapsKey}
                 autocompletionRequest={{

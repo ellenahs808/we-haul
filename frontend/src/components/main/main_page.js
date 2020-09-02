@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import Splash from './splash';
 
-import JobMap from '../job/job_map'
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import keys from '../../config/keys'
+// import JobMap from '../job/job_map'
+// import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+// import keys from '../../config/keys'
 import { Form } from 'react-bootstrap'
-import JobForm from '../jobs/job_form_container';
+// import JobForm from '../jobs/job_form_container';
 
 
 const MainPage = (props) => {
@@ -29,9 +29,9 @@ const MainPage = (props) => {
             <div className='full_page'>
 
                 <h1>WeHaul</h1>
-                <JobForm />
+                {/* <JobForm /> */}
                 <Splash />
-                <JobMap />
+                {/* <JobMap /> */}
                 <footer>
                     Copyright &copy; 2020 WeHaul
                 </footer>

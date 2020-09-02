@@ -1,106 +1,112 @@
-import React, { useEffect, useState, useRef } from "react";
-import { withRouter, link } from 'react-router-dom';
-import Typical from 'react-typical';
-import mapboxgl from 'mapbox-gl';
-import { mapBoxPublicKey } from '../../config/keys';
-import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+// import React, { useEffect, useState, useRef } from "react";
+// import { withRouter, link } from 'react-router-dom';
+// import Typical from 'react-typical';
+// import mapboxgl from 'mapbox-gl';
+// import { mapBoxPublicKey } from '../../config/keys_mapbox';
+// import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
  
-  const JobMap = (props) => {
-      const lng = -122.44;
-      const lat = 37.76;
-      const zoom = 11;
+//   const JobMap = (props) => {
+//       const lng = -122.44;
+//       const lat = 37.76;
+//       const zoom = 11;
      
-   const [map, setMap] = useState(null);
-   const mapContainer = useRef(null);
+//    const [map, setMap] = useState(null);
+//    const mapContainer = useRef(null);
 
-  useEffect(() => {
-    mapboxgl.accessToken = mapBoxPublicKey;
-    const bounds = [
-      [-122.54, 37.6], // [west, south]
-      [-122.34, 37.9], // [east, north]
-    ];
+//   useEffect(() => {
+//     mapboxgl.accessToken = mapBoxPublicKey;
+//     const bounds = [
+//       [-122.54, 37.6], // [west, south]
+//       [-122.34, 37.9], // [east, north]
+//     ];
 
-    const initializeMap = ({ setMap, mapContainer }) => {
-      const map = new mapboxgl.Map({
-        container: mapContainer.current, // container id
-        style: "mapbox://styles/mapbox/streets-v11",
-        center: [lng, lat], // starting position
-        zoom: zoom, // starting zoom
-      });
-      map.addControl(new mapboxgl.NavigationControl());
-      map.addControl(
-        new mapboxgl.GeolocateControl({
-          positionOptions: {
-            enableHighAccuracy: true,
-          },
-          trackUserLocation: true,
-        })
-      );
-      // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
+//     const initializeMap = ({ setMap, mapContainer }) => {
+//       const map = new mapboxgl.Map({
+//         container: mapContainer.current, // container id
+//         style: "mapbox://styles/mapbox/streets-v11",
+//         center: [lng, lat], // starting position
+//         zoom: zoom, // starting zoom
+//       });
+//       map.addControl(new mapboxgl.NavigationControl());
+//       map.addControl(
+//         new mapboxgl.GeolocateControl({
+//           positionOptions: {
+//             enableHighAccuracy: true,
+//           },
+//           trackUserLocation: true,
+//         })
+//       );
+//       // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
 
-      const directions = new MapboxDirections({
-        accessToken: mapboxgl.accessToken,
-      });
-      map.addControl(directions, "top-left");
+//       const directions = new MapboxDirections({
+//         accessToken: mapboxgl.accessToken,
+//       });
+//       map.addControl(directions, "top-left");
 
-      directions.setOrigin("moultrie st, san francisco");
-      directions.setDestination("market st, san francisco");
+//       directions.setOrigin("moultrie st, san francisco");
+//       directions.setDestination("market st, san francisco");
 
-      map.setMaxBounds(bounds);
-      setMap(map);
-    };
-    if (!map) initializeMap({ setMap, mapContainer });
-  }, [map]);
+//       map.setMaxBounds(bounds);
+//       setMap(map);
+//     };
+//     if (!map) initializeMap({ setMap, mapContainer });
+//   }, [map]);
   
 
   
   
  
-// Add zoom and rotation controls to the map.
+// // Add zoom and rotation controls to the map.
 
-    return (
-      <div>
-            <div ref={el => mapContainer.current = el} className="map_container" />
-      </div>
-    );
+//     return (
+//       <div>
+//             <div ref={el => mapContainer.current = el} className="map_container" />
+//       </div>
+//     );
   
-}
+// }
 
 
-export default JobMap;
+// export default JobMap;
 
 
 
 
 
-  //   const callScript = () => {
-    //     const script = document.createElement('script');
-    //     script.className = 'autocomplete'
-    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-    //     script.async = true;
-    //     document.body.appendChild(script);
-    // };
-    //     const script = document.createElement('script');
-    //     script.className = 'autocomplete'
-    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-    //     script.async = true;
-    //     document.body.appendChild(script);
-    // };
-    //     const script = document.createElement('script');
-    //     script.className = 'autocomplete'
-    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-    //     script.async = true;
-    //     document.body.appendChild(script);
-    // };
-    //     document.body.appendChild(script);
-    // };
-    //     document.body.appendChild(script);
-    // };
-    //     document.body.appendChild(script);
-    // };
-    //     document.body.appendChild(script);
-    // };
-    // };
-    // };
-    // };
+
+
+
+
+
+
+//   //   const callScript = () => {
+//     //     const script = document.createElement('script');
+//     //     script.className = 'autocomplete'
+//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+//     //     script.async = true;
+//     //     document.body.appendChild(script);
+//     // };
+//     //     const script = document.createElement('script');
+//     //     script.className = 'autocomplete'
+//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+//     //     script.async = true;
+//     //     document.body.appendChild(script);
+//     // };
+//     //     const script = document.createElement('script');
+//     //     script.className = 'autocomplete'
+//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+//     //     script.async = true;
+//     //     document.body.appendChild(script);
+//     // };
+//     //     document.body.appendChild(script);
+//     // };
+//     //     document.body.appendChild(script);
+//     // };
+//     //     document.body.appendChild(script);
+//     // };
+//     //     document.body.appendChild(script);
+//     // };
+//     // };
+//     // };
+//     // };
