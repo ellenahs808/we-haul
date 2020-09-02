@@ -10,6 +10,14 @@ class MainPage extends React.Component {
         return (
             <div className='full_page'>
 
+                <h1>WeHaul</h1>
+                <JobForm />
+                <Splash />
+                <footer>
+                    Copyright &copy; 2020 WeHaul
+                </footer>
+                <JobMap />
+
 
             </div>
         );
