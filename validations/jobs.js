@@ -2,7 +2,7 @@ const Validator = require('validator');
 const validText = require('./valid-text');
 
 
-module.exports = function validateTaskInput(dat) {
+module.exports = function validateJobInput(dat) {
   const errors = {};
   const data = { ...dat }; // Clone so we don't manipulate arguments
 

@@ -3,7 +3,7 @@ import Splash from './splash';
 
 import JobMap from '../job/job_map'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import keys from '../../config/keys'
+import keys from '../../config/keys_mapbox'
 import { Form } from 'react-bootstrap'
 import JobForm from '../jobs/job_form_container';
 
@@ -11,19 +11,19 @@ import JobForm from '../jobs/job_form_container';
 const MainPage = (props) => {
 
 
-        // const callScript = () => {
-        // const script = document.createElement("script");
-        // script.className = "autocomplete";
-        // script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-        // script.async = true;
-        // document.body.appendChild(script);
-        // };
+        const callScript = () => {
+        const script = document.createElement("script");
+        script.className = "autocomplete";
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
+        script.async = true;
+        document.body.appendChild(script);
+        };
 
 
-        // useEffect(() => {
-        //     callScript();
+        useEffect(() => {
+            callScript();
             
-        // })
+        })
  
         return (
             <div className='full_page'>

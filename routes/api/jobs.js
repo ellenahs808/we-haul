@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const Job = require('../../models/Job')
 const jwt = require('jsonwebtoken');
+const validateJobInput = require('../../validations/jobs');
 
 const geocodeUtil = require('../../util/geocode_util');
 
@@ -19,25 +20,32 @@ router.get('/', (req, res) => {
 
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
+    
     (req, res) => {
+
+        // const { errors, isValid } = validateJobInput(req.body);
+    
+        //     if (!isValid) {
+        //         return res.status(400).json(errors);
+        //     }
+   
         geocodeUtil
           .parseAddress(req.body.startAddress, req.body.endAddress)
             .then((gMapsResponse) => {
                 const newJob = new Job({
-                type: req.body.type,
-                details: req.body.details,
-                requester: req.body.requester,
-                startAddress: gMapsResponse.data.results[0].formatted_address,
-                endAddress: gMapsResponse.data.results[1].formatted_address,
-                user: req.user.id,
-                //         startLatLong: req.body.startLatLong, // array
+                  type: req.body.type,
+                  details: req.body.details,
+                  startAddress: gMapsResponse.data.routes[0].legs[0].start_address,
+                  endAddress: gMapsResponse.data.routes[0].legs[0].end_address,
+                  user: req.user.id,
+                  //         startLatLong: req.body.startLatLong, // array
                   //       endLatLong: req.body.endLatLong, // array
-                    //     status: req.body.status, // not-started - default assignment 0
+                  //     status: req.body.status, // not-started - default assignment 0
                 });
-            newJob.save();
+            newJob.save()
           })
           .then((job) => res.json(job))
-          .catch((err) => res.json(err));
+          .catch((err) => res.json(err))
           return res;
     }
 )
