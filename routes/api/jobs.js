@@ -20,37 +20,39 @@ router.post('/',
     (req, res) => {
 
         const newJob = new Job({
-            type: req.body.type,
+            user: req.body.userId, // imported from session
+            type: req.body.carType, //car type
             details: req.body.details,
-            requester: req.body.requester,
-            //change to google api address
             startAddress: req.body.startAddress,
-            endAddress: req.body.endAddress
+            endAddress: req.body.endAddress,
+            startLatLong: req.body.startLatLong, // array
+            endLatLong: req.body.endLatLong, // array
+            status: req.body.status, // not-started - default assignment 0
         })
         newJob.save().then((job) => res.json(job))
     }
 )
 
-router.patch('/:id', 
-    passport.authenticate('jwt', {session: false}),
-    (req, res) => {
-        const {
-            driver,
-            status, 
-        } = req.body;
 
-        Job.findById(req.params.id) 
-            .then((job) => {
-                job.driver = driver;
-                job.status = status;
 
-                job.save() 
-                    .then((savedJob) => res.json(savedJob))
-                    .catch((err) => res.json(err));
-            })
-        return res;
-    }
-)
+router.patch(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { driver, status } = req.body;
+
+    Job.findById(req.params.id).then((job) => {
+      job.driver = driver;
+      job.status = status;
+
+      job
+        .save()
+        .then((savedJob) => res.json(savedJob))
+        .catch((err) => res.json(err));
+    });
+    return res;
+  }
+);
 
 router.delete('/:id', 
     passport.authenticate('jwt', {session: false}),
@@ -61,6 +63,17 @@ router.delete('/:id',
     });
     }
 )
+
+
+// module.exports = router;
+//     passport.authenticate('jwt', {session: false}),
+//     (req, res, next) => {
+//         Job.findByIdAndRemove(req.params.id, req.body, function (err, job) {
+//         if (err) return next(err);
+//         res.json(job);
+//     });
+//     }
+
 
 
 module.exports = router;

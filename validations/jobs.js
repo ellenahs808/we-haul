@@ -20,8 +20,8 @@ module.exports = function validateTaskInput(dat) {
     errors.text = 'Request detail is required.';
   }
 
-  if (!Validator.isLength(data.details, { min: 30, max: 200 })) {
-    errors.text = 'Request moving detail should be at least 30 characters.';
+  if (!Validator.isLength(data.details, { min: 15, max: 200 })) {
+    errors.text = 'Request moving detail should be at least 15 characters.';
   }
 
   if (Validator.isEmpty(data.startAddress)) {
