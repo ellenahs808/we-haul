@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-
+        // geocodeUtil.parseAddress(req.body.st)
         const newJob = new Job({
             type: req.body.type,
             details: req.body.details,
