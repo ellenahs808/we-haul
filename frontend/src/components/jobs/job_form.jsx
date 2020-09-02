@@ -1,5 +1,5 @@
 import React from 'react';
-import keys from "../../config/keys_dev_front";
+import keys from "../../config/keys";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 
