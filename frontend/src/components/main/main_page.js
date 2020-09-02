@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import Splash from './splash';
 import JobMap from '../job/job_map'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import keys from '../../config/keys_dev_front'
