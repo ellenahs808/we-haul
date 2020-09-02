@@ -71,5 +71,3 @@ export const deleteJob = (jobId) => dispatch => (
         .then(job => dispatch(removeJob(job)))
 )
 
-
-

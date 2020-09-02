@@ -2,5 +2,4 @@
 /node_modules
 /frontend/src/config/keys_mapbox.js
 /frontend/src/config/keys_dev_front.js
-
 /frontend/node_modules

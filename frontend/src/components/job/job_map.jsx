@@ -3,6 +3,7 @@ import { withRouter, link } from 'react-router-dom';
 import Typical from 'react-typical';
 import mapboxgl from 'mapbox-gl';
 import { mapBoxPublicKey } from '../../config/keys_dev_front';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
  
   const JobMap = (props) => {
@@ -20,7 +21,6 @@ import { mapBoxPublicKey } from '../../config/keys_dev_front';
       [-122.34, 37.9], // [east, north]
     ];
 
-
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current, // container id
@@ -37,13 +37,25 @@ import { mapBoxPublicKey } from '../../config/keys_dev_front';
           trackUserLocation: true,
         })
       );
+      // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
+
+      const directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+      });
+      map.addControl(directions, "top-left");
+
+      directions.setOrigin("moultrie st, san francisco");
+      directions.setDestination("market st, san francisco");
+
       map.setMaxBounds(bounds);
       setMap(map);
     };
     if (!map) initializeMap({ setMap, mapContainer });
-
   }, [map]);
+  
 
+  
+  
  
 // Add zoom and rotation controls to the map.
 
@@ -68,4 +80,27 @@ export default JobMap;
     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
     //     script.async = true;
     //     document.body.appendChild(script);
+    // };
+    //     const script = document.createElement('script');
+    //     script.className = 'autocomplete'
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+    //     script.async = true;
+    //     document.body.appendChild(script);
+    // };
+    //     const script = document.createElement('script');
+    //     script.className = 'autocomplete'
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
+    //     script.async = true;
+    //     document.body.appendChild(script);
+    // };
+    //     document.body.appendChild(script);
+    // };
+    //     document.body.appendChild(script);
+    // };
+    //     document.body.appendChild(script);
+    // };
+    //     document.body.appendChild(script);
+    // };
+    // };
+    // };
     // };
