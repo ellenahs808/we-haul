@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { googleMapsKey } = require("../frontend/src/config/keys_dev_front");
+const { googleMapsKey } = require("../frontend/src/config/keys");
 
 module.exports = {
   parseAddress: (address1, address2) => {
