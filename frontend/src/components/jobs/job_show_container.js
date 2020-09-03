@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 
-import { fetchJobs, deleteJob } from '../../actions/job_actions';
+import { fetchJobs, deleteJob, fetchJob } from '../../actions/job_actions';
 import JobShow from './job_show';
 import { openModal, closeModal } from '../../actions/modal_actions';
+
 
 const mSTP = state => {
     // console.log(jobId)
@@ -17,7 +18,8 @@ const mDTP = dispatch => ({
     fetchJobs: () => dispatch(fetchJobs()),
     deleteJob: jobId => dispatch(deleteJob(jobId)),
     openModal: (modal) => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchJob: jobId => dispatch(fetchJob(jobId))
 });
 
 export default connect(mSTP, mDTP)(JobShow);
