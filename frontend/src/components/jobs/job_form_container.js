@@ -9,11 +9,8 @@ const mapSTP = (state) => ({
         type: '',
         startAddress: '',
         endAddress: '',
-        
     }
-    }
-)
-
+})
 
 const mapDTP = dispatch => ({
     createJob: jobData => dispatch(createJob(jobData))

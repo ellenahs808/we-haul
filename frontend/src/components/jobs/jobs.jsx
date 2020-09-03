@@ -15,11 +15,17 @@ class Job extends React.Component {
         console.log(this.props.jobs)
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchJobs();
     }
 
-    render()   {   
+    componentDidUpdate(prevProps) {
+        if (prevProps.address.startAddress !== this.props.address.startAddress && prevProps.address.endAddress !== this.props.address.endAdress ) {
+            this.props.fetchJobs();
+        }
+    }
+
+    render() {
         return (
             <div id="job_index_container">
                 <div id="job_show_sub_left">
@@ -36,7 +42,8 @@ class Job extends React.Component {
                         ))}
                 </div>
                 <div id="job_show_sub_right">
-                        <JobMapContainer />
+                        <JobMapContainer 
+                        address={this.props.address}/>
                 </div>
             </div>
         )

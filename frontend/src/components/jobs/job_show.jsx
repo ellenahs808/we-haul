@@ -7,12 +7,20 @@ const JobShow = (props) => {
     return (
 
       <div>
+        <label className="job_label">Haul Details:
+          <div className="job_info">{props.job.details}</div>
+        </label>
+        <label className="job_label">Origin:
+          <div className="job_info">{props.job.startAddress}</div>
+        </label>
+        <label className="job_label">Destination:
+          <div className="job_info">{props.job.endAddress}</div>
+        </label>
         <button onClick={() => props.updateAddress({startAddress: props.job.startAddress, endAddress: props.job.endAddress})}>View Route</button>
-       <button onClick={() => console.log(props.job.details)}>Click me</button>
-        <div>{props.job.startAddress}</div>
-        <div>{props.job.endAddress}</div>
-        <div>{props.job.description}</div>
       </div>
+
+      // cancel job?
+      //
       // <div>
       //   <div></div>
       //   <Link onClick={console.log(this.state.details)}>

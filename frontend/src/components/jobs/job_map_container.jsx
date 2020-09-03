@@ -4,7 +4,7 @@ import {updateAddress, removeAddress} from '../../actions/address_actions'
 
 
 const mSTP = state => ({
-  address: state.address
+  // address: state.address
 })
 
 const mDTP = dispatch => ({

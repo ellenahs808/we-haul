@@ -7,7 +7,8 @@ import {updateAddress, removeAddress} from '../../actions/address_actions'
 
 const mapSTP = (state) => {
     return {
-        jobs: Object.values(state.jobs.all)
+        jobs: Object.values(state.jobs.all),
+        address: state.address
     }
 }
 

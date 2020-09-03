@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { withRouter, link } from 'react-router-dom';
-import Typical from 'react-typical';
 import mapboxgl from 'mapbox-gl';
 import { mapBoxPublicKey } from '../../config/keys_mapbox';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
- 
   const JobMap = (props) => {
       const lng = -122.44;
       const lat = 37.76;
@@ -13,9 +10,11 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
      
    const [map, setMap] = useState(null);
    const mapContainer = useRef(null);
+  //  const start = useState(props.address.startAddress)
+  //  const end = useState(props.address.endAddress)
 
-  useEffect(() => {
-    mapboxgl.accessToken = mapBoxPublicKey;
+    useEffect(() => {
+      mapboxgl.accessToken = mapBoxPublicKey;
     const bounds = [
       [-122.54, 37.6], // [west, south]
       [-122.34, 37.9], // [east, north]
@@ -28,17 +27,7 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
         center: [lng, lat], // starting position
         zoom: zoom, // starting zoom
       });
-      // map.addControl(new mapboxgl.NavigationControl());
-      // map.addControl(
-      //   new mapboxgl.GeolocateControl({
-      //     positionOptions: {
-      //       enableHighAccuracy: true,
-      //     },
-      //     trackUserLocation: true,
-      //   })
-      // );
-      // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
-
+  
       const directions = new MapboxDirections({
         accessToken: mapboxgl.accessToken,
       });
@@ -55,13 +44,8 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
     };
     if (!map) initializeMap({ setMap, mapContainer });
   }, [map]);
-  
 
-  
-  
- 
-// Add zoom and rotation controls to the map.
-
+    // console.log(start)
     return (
       <div className="map_wrapper">
           <div>{props.address.startAddress}</div>
@@ -72,46 +56,5 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
   
 }
 
-
 export default JobMap;
 
-
-
-
-
-
-
-
-
-
-
-//   //   const callScript = () => {
-//     //     const script = document.createElement('script');
-//     //     script.className = 'autocomplete'
-//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-//     //     script.async = true;
-//     //     document.body.appendChild(script);
-//     // };
-//     //     const script = document.createElement('script');
-//     //     script.className = 'autocomplete'
-//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-//     //     script.async = true;
-//     //     document.body.appendChild(script);
-//     // };
-//     //     const script = document.createElement('script');
-//     //     script.className = 'autocomplete'
-//     //     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.geocodeKey}&libraries=places`;
-//     //     script.async = true;
-//     //     document.body.appendChild(script);
-//     // };
-//     //     document.body.appendChild(script);
-//     // };
-//     //     document.body.appendChild(script);
-//     // };
-//     //     document.body.appendChild(script);
-//     // };
-//     //     document.body.appendChild(script);
-//     // };
-//     // };
-//     // };
-//     // };
