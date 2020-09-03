@@ -49,7 +49,7 @@ export const fetchJobs = () => dispatch => (
 )
 
 export const fetchJob = (id) => dispatch => (
-    JobAPIUTIL.getJob()
+    JobAPIUTIL.getJob(id)
         .then(job => dispatch(receiveJob(job)))
         .catch(err => console.log(err))
 )

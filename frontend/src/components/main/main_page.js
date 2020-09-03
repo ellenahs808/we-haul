@@ -5,7 +5,8 @@ import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import keys from '../../config/keys_mapbox'
 import { Form } from 'react-bootstrap'
 import JobForm from '../jobs/job_form_container';
-
+import UserJob from '../jobs/user_job_container';
+import {Link} from 'react-router-dom';
 
 
 const MainPage = (props) => {
@@ -30,7 +31,9 @@ const MainPage = (props) => {
                 
                 <Splash />
                 <JobForm />
-      
+                <Link to='/userjob'>HELPME</Link>
+                <JobMap />
+
                 <footer>
                     Copyright &copy; 2020 WeHaul
                 </footer>
