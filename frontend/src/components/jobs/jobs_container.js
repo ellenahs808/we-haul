@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {fetchJobs} from '../../actions/job_actions';
 import Jobs from './jobs';
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapSTP = (state) => {
@@ -11,7 +12,8 @@ const mapSTP = (state) => {
 
 const mapDTP = dispatch => {
     return {
-        fetchJobs: () => dispatch(fetchJobs())
+        fetchJobs: () => dispatch(fetchJobs()),
+        openModal: type => dispatch(openModal(type))
     }
 }
 

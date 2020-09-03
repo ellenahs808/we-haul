@@ -21,9 +21,11 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
+
                     <div><Link to='/'><img src={trucklogo} className='logo-nav'></img></Link></div>
                     <div className='nav-jobs'><Link to='/jobs' className='jobs-link'>Jobs</Link></div>
                     <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
+
                 </div>
             );
         } else {

@@ -5,9 +5,10 @@ import JobShow from './job_show';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-    let jobId = state.jobs.jobId;
+    // console.log(jobId)
+    let jobId = state.ui.modal.jobId;
     return {
-        job: Object.values(state.jobs).filter(job => job.id === jobId)[0],
+        job: Object.values(state.jobs.all).filter(job => job.id === jobId)[0],
         currentUserId: state.session.user.id
     }
 };

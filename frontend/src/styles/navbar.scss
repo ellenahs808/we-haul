@@ -18,7 +18,9 @@
 
 
 .nav-signup {
+
     background-color: #f17752;
+
     border: none;
     color: white;
     padding: 5px 20px;
@@ -94,6 +96,7 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+
     right: 0px;
     top: 0px;
     position: absolute;
@@ -110,18 +113,22 @@
 
 .nav-jobs{
      background-color: lightblue;
+
     border: none;
     color: white;
     padding: 5px 20px;
     text-align: center;
     font-size: 16px;
+
     width: 70px;
     // margin: 4px 2px;
     // opacity: 0.6;
+
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+
     right: 100px;
     top: 0px;
     position: absolute;
@@ -134,4 +141,5 @@
 
 .nav-jobs:hover{
     background: lime;
+
 }
