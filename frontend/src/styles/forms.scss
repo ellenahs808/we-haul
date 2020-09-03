@@ -7,7 +7,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 425px;
-    height: 380px;
+    height: 500px;
 }
 
 
@@ -21,5 +21,322 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 425px;
-    height: 380px;
+    height: 570px;
+    position: absolute;
+    top: -70px;
+}
+
+.typical{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    position: relative;
+    top: -40px;
+}
+.login-info{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    padding-top: 0px;
+    position: relative;
+    top: -20px;
+}
+.login-info1{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    position: relative;
+    top: -20px;
+}
+
+.login-box1{
+    width: 70%;
+    height: 40px;
+    border: 1px solid rgba(200, 200, 200, .5);
+    outline: none;
+    padding-left: 10px;
+    
+}
+
+.login-box2{
+    width: 70%;
+    height: 40px;
+    border: 1px solid rgba(200, 200, 200, .5);
+    outline: none;
+    padding-left: 10px;
+}
+
+.login-type-box{
+    width: 73%;
+    height: 40px;
+    border: 1px solid rgba(200, 200, 200, .5);
+    outline: none;
+    padding-left: 10px;
+    color: grey;
+    position: relative;
+    top: -20px;
+}
+
+.login-type{
+    display: flex;
+    justify-content: center;
+}
+
+.login-submit{
+    display: flex;
+    text-align:center;
+    justify-content:center;
+    padding-top: 20px;
+    position: relative;
+    top: -20px;
+}
+
+.login-submit-button{
+    outline:none;
+    border:none;
+    width: 75%;
+    height: 40px;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    cursor: pointer;
+    font-family: 'Menlo';
+}
+
+.login-submit-button:hover{
+    background: lime;
+}
+
+.demo{
+    display: flex;
+    text-align:center;
+    justify-content:center;
+    padding-top: 20px;
+}
+
+.demo-user-button{
+    outline:none;
+    border: none;
+    width: 30%;
+    border-radius: 25px;
+    color: white;
+    background: rgb(131, 215, 226);
+    position: absolute;
+    left: 100px;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Menlo';
+}
+
+.demo-hauler-button{
+    outline:none;
+    border: none;
+    width: 30%;
+    border-radius: 25px;
+    color: white;
+    background: rgb(51, 148, 187);
+    position: absolute;
+    padding: 10px;
+    right: 70px;
+    cursor: pointer;
+    font-family: 'Menlo';
+}
+
+.demo-user-button:hover{
+    background: grey;
+}
+.demo-hauler-button:hover{
+    background: grey;
+}
+
+
+//signup form
+
+
+.signup-info{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    padding-top: 10px;
+    position: relative;
+    top: 70px;
+}
+
+.signup-box{
+    width: 70%;
+    height: 40px;
+    border: 1px solid rgba(200, 200, 200, .5);
+    outline: none;
+    padding-left: 10px;
+    
+}
+
+.signup-type-box{
+    width: 74%;
+    height: 45px;
+    border: 1px solid rgba(200, 200, 200, .5);
+    outline: none;
+    padding-left: 10px;
+    color: grey;
+    position: relative;
+    top: 40px;
+}
+
+.signup-type{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.signup-submit{
+    display: flex;
+    text-align:center;
+    justify-content:center;
+    padding-top: 20px;
+    position: relative;
+    top: 20px;
+}
+
+.signup-submit-button{
+    outline:none;
+    border:none;
+    width: 75%;
+    height: 40px;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    cursor: pointer;
+    font-family: 'Menlo';
+}
+
+.signup-submit-button:hover{
+    background: lime;
+}
+
+.signup-header{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+    font-family: 'Menlo';
+    font-size: 30px;
+}
+
+
+
+
+//job-form
+
+.type-icon{
+    width: 100px;
+    height: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.job-form-container{
+    display: flex;
+    position: relative;
+    border: 3px solid lightgrey;
+    border-radius: 20px;
+    width: 650px;
+    height: 600px;
+    z-index: 1;
+    margin-left: 400px;
+
+}
+
+.job-radio{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.icon-type{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Menlo';
+}
+
+.radio-button{
+    display: flex;
+    text-align: center;
+    margin-left: 63px;
+}
+
+.job-details{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: 100px;
+    font-family: 'Menlo';
+}
+
+.job-details-box{
+    vertical-align: top;
+    width: 300px;
+    font-family: 'Menlo';
+}
+
+.job-submit{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    left: 20px;
+}
+
+.job-address{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.job-start-address{
+    position: relative;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.job-end-address{
+    position: relative;
+    padding-top: 20px;
+}
+
+.google-places-autocomplete__input {
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+}
+
+.job-submit-button{
+    outline:none;
+    border: none;
+    border-radius: 40px;
+    padding: 20px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 30%;
+    font-family: 'Menlo';
+}
+
+.job-submit-button:hover{
+    background: #00FF00;
 }

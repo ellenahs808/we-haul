@@ -8,6 +8,7 @@ import { Form } from 'react-bootstrap'
 import JobForm from '../jobs/job_form_container';
 
 
+
 const MainPage = (props) => {
 
 
@@ -27,7 +28,7 @@ const MainPage = (props) => {
  
         return (
             <div className='full_page'>
-
+                
                 <Splash />
                 <JobForm />
                 <JobMap />

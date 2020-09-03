@@ -161,53 +161,68 @@ class LoginForm extends React.Component {
           <div onClick={(e) => e.stopPropagation()}>
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
-                {/* <p className="typical">
-                  {" "}
+                <p className="typical">
                   <Typical
-                    loop={2000}
+                    loop={10000}
                     wrapper="b"
                     steps={[
-                      1000,
-                      "Shanelle sux.",
-                      1000,
-                      "shanelle sucks",
-                      1000,
-                      "shonelle boo",
+                      2000,
+                      "We Haul. ",
+                      2000,
+                      "We Move. ",
+                      2000,
+                      "We Code. ",
                     ]}
-                  />{" "}
-                </p> */}
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
+                  />
+                </p>
+                <label className="login-info">
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    placeholder="Email"
+                    className="login-box1"
+                  />
+                </label>
+
                 <br />
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
+
+                <label className="login-info1">
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                    className="login-box2"
+                  />
+                </label>
+
                 <br />
-                <select
-                  value={this.state.userType}
-                  onChange={this.update("userType")}
-                >
-                  <option value="">Select Type</option>
-                  <option value="user">User</option>
-                  <option value="hauler">Hauler</option>
-                </select>
+                <div className='login-type'>
+                  <select
+                    value={this.state.userType}
+                    onChange={this.update("userType")}
+                    className='login-type-box'>
+                    <option value="">Select Type</option>
+                    <option value="user">User</option>
+                    <option value="hauler">Hauler</option>
+                  </select>
+                </div>
+                
+                <div className='login-submit'>
+                  <button type='submit' className='login-submit-button'>Submit</button>
+                  {/* <input type="submit" value="Submit" /> */}
+                </div>
+                
+                <div className='demo'>
+                  <button type="submit" onClick={this.loginDemoUser} className='demo-user-button'>
+                    DEMO USER
+                  </button>
+                  <button type="submit" onClick={this.loginDemoHauler} className='demo-hauler-button'>
+                    DEMO HAULER
+                  </button>
+                </div>
 
-                <input type="submit" value="Submit" />
-
-                <button type="submit" onClick={this.loginDemoUser}>
-                  DEMO USER SIGN IN
-                </button>
-
-                <button type="submit" onClick={this.loginDemoHauler}>
-                  DEMO HAULER SIGN IN
-                </button>
 
                 {this.renderErrors()}
               </div>
