@@ -44,6 +44,7 @@ const seedJobs = (x) => {
         email: "kodi@wehaul.com",
         phoneNumber: "1234567890",
         password: "password",
+        password2: "password",
         firstName: "Kodi",
         lastName: "Codes",
         userType: "hauler",
@@ -51,6 +52,7 @@ const seedJobs = (x) => {
       {
         email: "shanelle@wehaul.com",
         password: "password",
+        password2: "password",
         firstName: "Shanelle",
         lastName: "Valencia",
         phoneNumber: "1234567890",
