@@ -3,7 +3,7 @@
     height: 700px;
     position: relative;
     z-index: 0;
-    top: 20px;
+    top: 0px;
 }
 
 .svg-wave {
@@ -14,6 +14,10 @@
     width: 100%;
     display: block;
     z-index: 1;
+}
+
+.wave-container{
+    height: 800px;
 }
 
 // @keyframes animateWave {

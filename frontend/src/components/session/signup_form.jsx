@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class SignupForm extends React.Component {
@@ -59,59 +59,86 @@ class SignupForm extends React.Component {
         return (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <div className='signup-form'>
-                <input
-                  type="text"
-                  value={this.state.firstName}
-                  onChange={this.update("firstName")}
-                  placeholder="First Name"
-                />
-                <br />
-                <input
-                  type="text"
-                  value={this.state.lastName}
-                  onChange={this.update("lastName")}
-                  placeholder="Last Name"
-                />
-                <br />
-                <input
-                  type="text"
-                  value={this.state.phoneNumber}
-                  onChange={this.update("phoneNumber")}
-                  placeholder="XXX-XXX-XXXX"
-                />
-                <br />
-                <input
-                  type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
-                />
-                <br />
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-                <br />
-                <input
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.update("password2")}
-                  placeholder="Confirm Password"
-                />
-                <br />
+              <div className="signup-form">
+          
+                <div className="signup-header">Sign Up Now!</div>
 
-                <select value={this.state.userType} onChange={this.update('userType')}>
+                <div className="signup-info">
+                  <input
+                    type="text"
+                    value={this.state.firstName}
+                    onChange={this.update("firstName")}
+                    placeholder="First Name"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-info">
+                  <input
+                    type="text"
+                    value={this.state.lastName}
+                    onChange={this.update("lastName")}
+                    placeholder="Last Name"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-info">
+                  <input
+                    type="text"
+                    value={this.state.phoneNumber}
+                    onChange={this.update("phoneNumber")}
+                    placeholder="XXX-XXX-XXXX"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-info">
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                    placeholder="Email"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-info">
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-info">
+                  <input
+                    type="password"
+                    value={this.state.password2}
+                    onChange={this.update("password2")}
+                    placeholder="Confirm Password"
+                    className="signup-box"
+                  />
+                </div>
+                <div className="signup-type">
+                  <select
+                    value={this.state.userType}
+                    onChange={this.update("userType")}
+                    className="signup-type-box"
+                  >
                     <option value="">Select Type</option>
-                    <option value='user'>User</option>
-                    <option value='hauler'>Hauler</option>
-                </select>
+                    <option value="user">User</option>
+                    <option value="hauler">Hauler</option>
+                  </select>
+                </div>
 
                 <br />
 
-                <input type="submit" value="Submit" />
+                <div className="signup-submit">
+                  <input
+                    type="submit"
+                    value="Submit"
+                    className="signup-submit-button"
+                  />
+                </div>
+
                 {this.renderErrors()}
               </div>
             </form>

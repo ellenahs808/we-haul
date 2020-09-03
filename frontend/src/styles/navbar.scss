@@ -1,8 +1,10 @@
 .navbar {
     display: inline-block;
-    height: 40px;
+    height: 28px;
     flex-direction: row;
-  
+    width: 100%;
+    background: darkgrey;
+    border-bottom: 1px solid black;
 }
 
 .nav-session {
@@ -16,7 +18,9 @@
 
 
 .nav-signup {
-    background-color: #f4511e;
+
+    background-color: #f17752;
+
     border: none;
     color: white;
     padding: 5px 20px;
@@ -24,16 +28,27 @@
     font-size: 16px;
     width: 90px;
     // margin: 4px 2px;
-    opacity: 0.6;
+    // opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+    right: 90px;
+    top: 0px;
+    position: absolute;
 }
 
+.nav-signup:hover{
+    background: cyan;
+}
+
+.nav-signup:focus{
+    border: none;
+    outline: none;
+}
 
 .nav-login {
-    background-color: #f4511e;
+    background-color: #ee5324;
     border: none;
     color: white;
     padding: 5px 20px;
@@ -41,27 +56,90 @@
     font-size: 16px;
     width: 90px;
     // margin: 4px 2px;
-    opacity: 0.6;
+    // opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
+    cursor: pointer;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.nav-login:hover{
+    background: lime;
+}
+
+.nav-login:focus{
+    border: none;
+    outline: none;
+}
+.logo-nav{
+    position: absolute;
+    width:50px;
+    height:50px;
+    top: -10px;
     cursor: pointer;
 }
 
-
-
-.nav-logout {
-    background-color: #f4511e;
+.nav-logout-button {
+    background-color: red;
     border: none;
     color: white;
     padding: 5px 20px;
     text-align: center;
     font-size: 16px;
-    width: 90px;
+    width: 100px;
     // margin: 4px 2px;
-    opacity: 0.6;
+    // opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.nav-logout-button:focus{
+    border: none;
+    outline: none;
+}
+
+.nav-logout-button:hover{
+    background:black;
+}
+
+.nav-jobs{
+     background-color: lightblue;
+
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+
+    width: 70px;
+    // margin: 4px 2px;
+    // opacity: 0.6;
+
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    right: 100px;
+    top: 0px;
+    position: absolute;
+}
+
+.jobs-link{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-jobs:hover{
+    background: lime;
+
 }
