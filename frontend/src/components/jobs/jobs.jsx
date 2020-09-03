@@ -1,6 +1,10 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import JobRoutes from './job_route';
+import JobShow from './job_show';
+import { Link } from "react-router-dom";
+import JobRoute from './job_route';
+
+
 
 class Job extends React.Component {
     constructor(props){
@@ -22,9 +26,19 @@ class Job extends React.Component {
         return (
             <div>
                 <h2>All Jobs</h2>
+                {/* {console.log(this.state.jobs)} */}
                 {this.state.jobs.map(job => (
-                    <JobRoutes key={job.id} details={job.details}/>
-                ))}
+                    <Link onClick={() => this.props.openModal('jobShow')}> 
+                    <JobRoute 
+                    key={job.id} 
+                    details={job.details}
+                    openModal={this.props.openModal}
+                    // startAddress={job.startAddress}
+                    // endAddress={job.endAddress}
+                    /></Link>
+                    
+                    ))}
+  
             </div>
         )
     }

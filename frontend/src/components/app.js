@@ -9,6 +9,9 @@ import SignupFormContainer from './session/signup_form_container';
 import JobsContainer from './jobs/jobs_container';
 import Modal from './modal/modal_container';
 import NewJobsContainer from './jobs/jobs_container';
+import JobShowContainer from './jobs/job_show_container';
+
+
 
 const App = () => (
     <div>
@@ -21,6 +24,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/jobs" component={JobsContainer} />
             <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>
+
         </Switch>
     </div>
 );
