@@ -11,8 +11,10 @@ const User = require('../models/User')
 
 const seedUsers = (x) => {
     const users = []
+    debugger
     
-    for (let i = 0; i < users.length; i += 1) {
+    for (let i = 0; i < x; i += 1) {
+        console.log(users)
         const rand = Math.floor(Math.random() * 1000)
         const rand2 = Math.floor(Math.random() * 1000)
         const rand3 = Math.floor(Math.random() * 1000)
@@ -22,7 +24,7 @@ const seedUsers = (x) => {
             email: `${lastNames[ rand2 % (lastNames.length)]}${firstNames[ rand % (firstNames.length)]}@wehaulbetter.com`,
             password: 'password',
             password2: 'password',
-            phoneNumber: phonNumbers[rand3 % (phoneNumbers.length)],
+            phoneNumber: phoneNumbers[rand3 % (phoneNumbers.length)],
             userType: 'user'
         }
         users.push(newUser)
@@ -31,18 +33,33 @@ const seedUsers = (x) => {
     return users;
 }
 
-
-export const seedJobs = (x) => {
+const seedJobs = (x) => {
     const users = seedUsers(x);
+    
     const objects = []
 
 
-    const demoUsers = [{email: 'kodi@wehaul.com', password:'password', firstName: 'Kodi', lastName: 'Codes', userType: 'hauler'},{ email: 'shanelle@wehaul.com', password: 'password', firstName: 'Shanelle', lastName: 'Valencia', phoneNumber: '1234567890', userType: 'user' }]
+    const demoUsers = [
+      {
+        email: "kodi@wehaul.com",
+        phoneNumber: "1234567890",
+        password: "password",
+        firstName: "Kodi",
+        lastName: "Codes",
+        userType: "hauler",
+      },
+      {
+        email: "shanelle@wehaul.com",
+        password: "password",
+        firstName: "Shanelle",
+        lastName: "Valencia",
+        phoneNumber: "1234567890",
+        userType: "user",
+      },
+    ];
     const demoUser = new User(demoUsers[0]);
     
-    demoUser.save()  .then((user) => {
-
-        })
+    demoUser.save().then((user) => {})
     const demoHauler = new User(demoUsers[1]);
     demoHauler.save().then((user) => {});
     
@@ -50,7 +67,7 @@ export const seedJobs = (x) => {
 
 
 
-    for (let i = 0; i < users.length; i += 1) {
+    for (let i = 0; i < x; i += 1) {
         const rand = Math.floor(Math.random() * 1000);
         const rand2 = Math.floor(Math.random() * 1000);
         const rand3 = Math.floor(Math.random() * 1000);
@@ -85,3 +102,7 @@ export const seedJobs = (x) => {
     return objects;
 }
 
+module.exports = {
+    seedJobs, 
+    seedUsers
+}
