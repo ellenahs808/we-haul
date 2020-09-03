@@ -1,0 +1,43 @@
+#job_index_container {
+    display: flex;
+    flex-direction: row;
+    max-height: 100vh;
+}
+
+#job_show_sub_right {
+    display: flex;
+    width: 70%;
+    
+}
+#job_show_sub_left {
+    display: block;
+    width: 30%;
+    flex-direction: column;
+    overflow-y: auto;
+    list-style: none;
+
+}
+
+.job-distingsetails {
+    background-color: purple; 
+    
+}
+
+
+.map_container {
+    height: 80vh;
+    width: 100%;
+}
+
+.map_wrapper {
+    width: 100%;
+}
+
+.directions-ctrl-directions {
+   
+}
+
+.mapbox-directions-component-keyline {
+    display: none;
+    
+}

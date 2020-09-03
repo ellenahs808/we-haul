@@ -28,15 +28,15 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
         center: [lng, lat], // starting position
         zoom: zoom, // starting zoom
       });
-      map.addControl(new mapboxgl.NavigationControl());
-      map.addControl(
-        new mapboxgl.GeolocateControl({
-          positionOptions: {
-            enableHighAccuracy: true,
-          },
-          trackUserLocation: true,
-        })
-      );
+      // map.addControl(new mapboxgl.NavigationControl());
+      // map.addControl(
+      //   new mapboxgl.GeolocateControl({
+      //     positionOptions: {
+      //       enableHighAccuracy: true,
+      //     },
+      //     trackUserLocation: true,
+      //   })
+      // );
       // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), "top-left");
 
       const directions = new MapboxDirections({
@@ -60,7 +60,7 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
 // Add zoom and rotation controls to the map.
 
     return (
-      <div>
+      <div className="map_wrapper">
             <div ref={el => mapContainer.current = el} className="map_container" />
       </div>
     );

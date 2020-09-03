@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import Splash from './splash';
 
-import JobMap from '../job/job_map'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import keys from '../../config/keys_mapbox'
 import { Form } from 'react-bootstrap'
@@ -31,7 +30,7 @@ const MainPage = (props) => {
                 
                 <Splash />
                 <JobForm />
-                <JobMap />
+      
                 <footer>
                     Copyright &copy; 2020 WeHaul
                 </footer>
