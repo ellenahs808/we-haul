@@ -3,47 +3,15 @@ import { Link } from "react-router-dom";
 import Modal from 'react-modal'
 
 
-
-// class JobShow extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = this.props.job
-//     this.handleModal = this.handleModal.bind(this);
-//     // console.log(this.state);
-//   }
-
-  // handleClaim = () => {
-  //     setState({
-  //         status: state.status + 1,
-  //         hauler: this.props.currentUserId
-  //     })
-
-  // componentDidMount() {
-  //   this.props.fetchJobs();
-  // }
-
-
-  // handleModal() {
-  //   this.props
-  //     .fetchJob(this.props.key)
-  //     .then(() => this.props.openModal("jobShow"));
-  // }
-
-  // render() {
-    // const { job } = this.props;
-    // const details = this.props.details
-    
 const JobShow = (props) => {
     return (
 
       <div>
-       <Link onClick={console.log(props.job.details)}>Click me</Link>
-
+        <button onClick={() => props.updateAddress({startAddress: props.job.startAddress, endAddress: props.job.endAddress})}>View Route</button>
+       <button onClick={() => console.log(props.job.details)}>Click me</button>
         <div>{props.job.startAddress}</div>
         <div>{props.job.endAddress}</div>
         <div>{props.job.description}</div>
-       
-
       </div>
       // <div>
       //   <div></div>
@@ -75,5 +43,34 @@ const JobShow = (props) => {
 //   }
 // };
 
-
 export default JobShow;
+
+// class JobShow extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = this.props.job
+//     this.handleModal = this.handleModal.bind(this);
+//     // console.log(this.state);
+//   }
+
+  // handleClaim = () => {
+  //     setState({
+  //         status: state.status + 1,
+  //         hauler: this.props.currentUserId
+  //     })
+
+  // componentDidMount() {
+  //   this.props.fetchJobs();
+  // }
+
+
+  // handleModal() {
+  //   this.props
+  //     .fetchJob(this.props.key)
+  //     .then(() => this.props.openModal("jobShow"));
+  // }
+
+  // render() {
+    // const { job } = this.props;
+    // const details = this.props.details
+    
