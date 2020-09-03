@@ -24,14 +24,14 @@ const JobSchema = new Schema({
     type: String,
     required: true,
   },
-  startLatLong: {
-    type: Array,
-    required: true,
-  },
-  endLatLong: {
-    type: Array,
-    required: true,
-  },
+  // startLatLong: {
+  //   type: Array,
+  //   required: true,
+  // },
+  // endLatLong: {
+  //   type: Array,
+  //   required: true,
+  // },
 
   // requester: {
   //   type: Schema.Types.Mixed,
