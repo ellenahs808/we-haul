@@ -5,10 +5,9 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const passport = require('passport');
 const path = require('path');
-
 const users = require("./routes/api/users");
 const jobs = require("./routes/api/jobs");
-
+const { seedJobs, seedUsers } = require('./seeds/scripts');
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -34,6 +33,13 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/jobs", jobs);
+app.get('/seeds', (req, res) => {
+
+  seedJobs(50);
+
+  console.log(seedJobs());
+  res.send('we have the seeds');
+})
 
 
 

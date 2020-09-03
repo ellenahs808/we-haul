@@ -24,13 +24,13 @@ module.exports = function validateJobInput(dat) {
     errors.text = 'Request moving detail should be at least 15 characters.';
   }
 
-  if (Validator.isEmpty(data.startAddress)) {
-    errors.text = 'Start address is required.';
-  }
+  // if (Validator.isEmpty(data.startAddress)) {
+  //   errors.text = 'Start address is required.';
+  // }
 
-   if (Validator.isEmpty(data.endAddress)) {
-     errors.text = "Destination address is required.";
-   }
+  //  if (Validator.isEmpty(data.endAddress)) {
+  //    errors.text = "Destination address is required.";
+  //  }
 
   if (Validator.isEmpty(data.details)) {
     errors.text = 'Moving details are required.';
