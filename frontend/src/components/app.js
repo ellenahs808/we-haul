@@ -10,7 +10,7 @@ import JobsContainer from './jobs/jobs_container';
 import Modal from './modal/modal_container';
 import NewJobsContainer from './jobs/jobs_container';
 import JobShowContainer from './jobs/job_show_container';
-
+import UserJobContainer from './jobs/user_job_container';
 
 
 const App = () => (
@@ -20,11 +20,11 @@ const App = () => (
         {/* <MainPage /> */}
         <Switch>
             <Route exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
             <ProtectedRoute exact path="/jobs" component={JobsContainer} />
             <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>
-
+            <ProtectedRoute  exact path='/userjob' component={UserJobContainer}/>
         </Switch>
     </div>
 );

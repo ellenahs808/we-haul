@@ -5,8 +5,8 @@ export const getJobs = () => {
     return axios.get('/api/jobs')
 }
 
-export const getJob = (jobId) => {
-    return axios.get(`/api/jobs/${jobId}`)
+export const getJob = (id) => {
+    return axios.get(`/api/jobs/user/${id}`)
 }
 export const createJob = (jobData) => {
     return axios.post('/api/jobs/', jobData)

@@ -18,6 +18,12 @@ router.get('/', (req, res) => {
         .catch((err) => res.status(404).json({ nojobsfound: 'No jobs found.'}))
 })
 
+router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Job.find({user: req.params.user_id})
+      .then(((jobs) => res.json(jobs)))
+      .catch((err) => res.status(404).json({nojobfound: 'No jobs found from that user'}))
+})
+
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     

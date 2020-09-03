@@ -9,7 +9,7 @@ const JobsReducer = (state ={all:{}, user: {}, new: undefined}, action) => {
             newState.all = action.jobs.data;
             return newState;
         case RECEIVE_JOB:
-            newState.user = action.jobs.data;
+            newState.user = action.job.data;
             return newState;
         case RECEIVE_NEW_JOB:
             newState.new = action.job.data;
