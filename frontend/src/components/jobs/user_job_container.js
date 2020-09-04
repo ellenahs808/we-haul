@@ -9,7 +9,7 @@ const mapSTP = (state) => {
     // const userId = ownProps.match.params.userId;
 
     return {
-        // jobs: Object.values(state.jobs.all).filter(job => job.user === state.session.user.id)[0],
+        // job: Object.values(state.jobs.user).filter(job => job.user === state.session.user.id)[0],
         jobs: Object.values(state.jobs.user),
         currentUser: state.session.user,
     }
