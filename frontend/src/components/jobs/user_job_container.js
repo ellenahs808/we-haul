@@ -1,8 +1,8 @@
-import { receiveCurrentUser } from '../../actions/session_actions';
+// import { receiveCurrentUser } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import { fetchJob, deleteJob, fetchJobs} from '../../actions/job_actions';
 import UserJob from './user_job';
-import { withRouter } from 'react-router-dom';
+
 
 
 const mapSTP = (state) => {

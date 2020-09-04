@@ -20,7 +20,10 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createJob(this.state)   
+
+        // debugger
+        this.props.createJob(this.state)       
+
     }
 
     update(field) {
@@ -160,11 +163,13 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-submit">
-                    {/* <Link to='/userjob' className='job-submit-link'> */}
+
+                    
                     <button type="submit" className="job-submit-button">
                       Request a Hauler.
                     </button>
-                    {/* </Link> */}
+                   
+
                 </div>
                 {this.renderErrors()}
               </form>

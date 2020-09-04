@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import mapboxgl from 'mapbox-gl';
-import { mapBoxPublicKey } from '../../config/keys_mapbox';
+// import { mapBoxPublicKey } from '../../config/keys_mapbox';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
 
