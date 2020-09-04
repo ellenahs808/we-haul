@@ -10,7 +10,7 @@
 
 #job_show_sub_right {
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 72%;
     
 }
@@ -37,6 +37,7 @@
     font-weight: 700;
     margin-right: 25%;
     margin-left: 35%;
+    margin-top: 30px;
     // margin: 0 auto;
 }
 
@@ -85,7 +86,7 @@
 
 
 .mapboxgl-canvas {
-    padding-left: 45px;
+    padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     // margin-left: 30px;
@@ -173,4 +174,22 @@
 
 .accept-btn:hover {
     background-color: rgb(236, 153, 153);
+}
+
+.job-form-pad {
+    padding-top: 10px;
+}
+
+// #jobmap_jobshow {
+//     width: 75%;
+//     height: 100vh;
+// }
+
+#divider_div {
+    margin-top: 10%;
+    margin-right: 5%;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-self: center;
 }
