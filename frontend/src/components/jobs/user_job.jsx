@@ -19,48 +19,22 @@ class UserJob extends React.Component {
       lat: 37.76,
       zoom: 11,
     };
-    // this.deleteExtraJobs = this.deleteExtraJobs.bind(this);
+  
   }
-  // componentDidMount() {
-  //   this.props.fetchJob(this.props.currentUser.id);
 
-
-  //   if (this.props.jobs.length > 1) {
-  //     this.props.deleteJob(this.props.jobs[0]._id);
-  //     window.location.reload(false);
-  //   }
   componentWillMount() {
-    
     this.props.fetchJob(this.props.currentUser.id);
-    
-    // const bounds = [
-    //   [-122.54, 37.6], // [west, south]
-    //   [-122.34, 37.9], // [east, north]
-    // ];
-    // const map = new mapboxgl.Map({
-    //   container: this.mapContainer,
-    //   style: "mapbox://styles/mapbox/streets-v11",
-    //   center: [this.state.lng, this.state.lat],
-    //   zoom: this.state.zoom,
-    // });
-    // map.setMaxBounds(bounds);
-    // this.setState({ map: map });
   }
 
-//   componentDidMount() {
 
-    // const directions = new MapboxDirections({
-    //   accessToken: mapboxgl.accessToken,
-    //   unit: "metric",
-    //   profile: "mapbox/driving",
-    // });
-
-    // map.addControl(directions, "top-left");
-    // directions.setOrigin(this.props.address.startAddress);
-    // directions.setDestination(this.props.address.endAddress);
+  componentDidUpdate() {
+    // if (this.props.jobs.length > 0) {
+      this.props.fetchJob(this.props.currentUser.id);
+    // }
+  }
 
 
-//   }
+  
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
@@ -74,16 +48,10 @@ class UserJob extends React.Component {
 
 
   render() {
-    // this.deleteExtraJobs()
+  
     const ownJobs = this.props.jobs[0];
 
-   
-
-    // if (this.props.jobs.length < 1) {
-    //     return(
-    //         <JobForm/>
-    //     )
-    // }
+  
 
     if (!ownJobs) {
       return null;
