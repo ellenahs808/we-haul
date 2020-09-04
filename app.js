@@ -34,9 +34,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/jobs", jobs);
 app.get('/seeds', (req, res) => {
-  seedJobs(50)
-  
-  // console.log(seedJobs(50));
+  seedJobs(25)
   res.send('we have the seeds');
 })
 
