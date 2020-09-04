@@ -54,11 +54,12 @@ export const fetchJob = (id) => dispatch => (
         .catch(err => console.log(err))
 )
 
-export const createJob = (jobData) => dispatch => (
-    JobAPIUTIL.createJob(jobData)
+export const createJob = (jobData) => dispatch => {
+    // debugger
+ return   JobAPIUTIL.createJob(jobData)
         .then(job => dispatch(receiveNewJob(job)))
         .catch(err => console.log(err))
-)
+}
 
 export const updateJob = (jobData) => dispatch => (
     JobAPIUTIL.updateJob(jobData)

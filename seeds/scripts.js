@@ -11,7 +11,7 @@ const User = require('../models/User')
 
 const seedUsers = (x) => {
     const users = []
-    debugger
+    // debugger
     
     for (let i = 0; i < x; i += 1) {
         console.log(users)

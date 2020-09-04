@@ -1,4 +1,4 @@
-
+//user-job show
 .user-job-div {
     padding: 100px;
     border: 1px solid rgba(110, 110, 110, 0.274);
@@ -21,7 +21,7 @@
 .user-request-container {
     border: 3px solid lightgrey;
     width: 400px;
-    height: 400px;
+    height: 480px;
     align-items: right;
     display: inline-block;
 }
@@ -79,7 +79,7 @@
     transition: 0.3s;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 130px;
+    margin-left: 140px;
     border-radius: 40px;
 }
 
@@ -89,6 +89,8 @@
 
 
 
+//job idx page
+
 #job_index_container {
     display: flex;
     flex-direction: row;
@@ -97,17 +99,26 @@
 
 #job_show_sub_right {
     display: flex;
+    height: 100vh;
     width: 70%;
     
 }
 #job_show_sub_left {
     display: block;
-    width: 30%;
+    width: 23%;
+    height: 100vh;
     flex-direction: column;
     overflow-y: auto;
     list-style: none;
-
+    border: 2px solid gray;
 }
+
+
+#job_show_sub_left > h2 {
+    align-items: center;
+    font-size: 30px;
+}
+
 
 .job-distingsetails {
     background-color: purple; 
@@ -116,7 +127,7 @@
 
 
 .map_container {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
 }
 
@@ -133,3 +144,94 @@
     
 }
 
+
+.mapboxgl-control-container {
+    height: 30%;
+}
+
+.mapboxgl-canvas-container {
+    height: 100%;
+}
+
+
+.job-idx-left-container {
+    border: 1px solid rgb(163, 162, 162);
+    border-radius: 15px;
+    // padding: 0 20px;
+}
+
+.job-idx-pad {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.job-title {
+    font-size: 21px;
+    font-family: 'Menlo';
+    background-color: rgb(233, 232, 232);
+    padding: 2px 15px;
+}
+
+
+.job-title-haul {
+    font-size: 21px;
+    font-family: 'Menlo';
+    background-color: rgb(219, 248, 219);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 8px 15px;
+    // border-radius: 15px;
+}
+
+.job_label {
+    align-items: center;
+}
+
+
+.job-info {
+    padding: 10px 15px;
+    line-height: 1.2;
+}
+
+.div-btn {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.route-btn {
+    outline:none;
+    border:none;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+    color: black;
+    background: rgb(221, 221, 221);
+    cursor: pointer;
+
+}
+
+.route-btn:hover {
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+
+
+.accept-btn {
+    outline:none;
+    border:none;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+    color: black;
+    background: rgb(208, 236, 208);
+    margin-left: 28px;
+    cursor: pointer;
+
+}
+
+.accept-btn:hover {
+    background-color: rgb(236, 153, 153);
+}

@@ -33,7 +33,7 @@ const MainPage = (props) => {
                 <JobForm />
 
                 {/* <Link to='/userjob'>HELPME</Link> */}
-                <JobMap />
+                {/* <JobMap /> */}
 
                 <footer>
                     Copyright &copy; 2020 WeHaul

@@ -1,31 +1,45 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import Modal from 'react-modal'
+import React from 'react';
 
 
 const JobShow = (props) => {
     return (
-
-      <div>
-        <label className="job_label">Haul Details:
-          <div className="job_info">{props.job.details}</div>
-        </label>
-        <label className="job_label">Origin:
-          <div className="job_info">{props.job.startAddress}</div>
-        </label>
-        <label className="job_label">Destination:
-          <div className="job_info">{props.job.endAddress}</div>
-        </label>
-        <button onClick={() => props.updateAddress({startAddress: props.job.startAddress, endAddress: props.job.endAddress})}>View Route</button>
+      <div className="job-idx-pad">
+        <div className="job-idx-left-container">
+          <label className="job_label">
+            <div className='job-title-haul'>Haul Details:</div>
+            <div className="job-info">{props.job.details}</div>
+          </label>
+          <label className="job_label">
+            <div className='job-title'>Origin:</div>
+            <div className="job-info">{props.job.startAddress}</div>
+          </label>
+          <label className="job_label">
+            <div className='job-title'>Destination:</div>
+            <div className="job-info">{props.job.endAddress}</div>
+          </label>
+          <div className='div-btn'>
+            <button
+              className='route-btn'
+              onClick={() =>
+                props.updateAddress({
+                  startAddress: props.job.startAddress,
+                  endAddress: props.job.endAddress,
+                })
+              }
+            >
+              View Route
+            </button>
+            <button className='accept-btn'>Accept Job</button>
+          </div>
+        </div>
       </div>
-
       // cancel job?
       //
       // <div>
       //   <div></div>
       //   <Link onClick={console.log(this.state.details)}>
       //     <h1>Job Details</h1>
-      //   </Link> 
+      //   </Link>
       //   <p>Job Details</p>
       //   <div className="job-listings">
       //     <div>Requester name:</div>

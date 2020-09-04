@@ -248,6 +248,7 @@
     justify-content: center;
     padding-right: -100%;
     padding-bottom: 20px;
+    padding-top: 52px;
 }
 
 .job-form-container{
@@ -259,7 +260,6 @@
     width: 700px;
     height: 670px;
     z-index: 1;
-
 
 }
 
@@ -330,6 +330,7 @@
     padding-top: 20px;
     width: 300px;
 }
+
 .job-end-address{
     position: relative;
     padding-top: 20px;
@@ -356,11 +357,12 @@
 
 .suggestion-container {
     position: absolute;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.931);
     color: rgb(126, 126, 126);
     padding: 3px 15px 3px 10px;
     border-radius: 3px;
     width: auto;
+    z-index: 10 !important;
 }
 
 .suggestion {
@@ -372,13 +374,11 @@
     color: black;
     cursor: pointer;
     background-color: rgba(135, 206, 250, 0.698);
-    z-index: 10 !important;
+    // z-index: 10 !important;
 }
 
 
-// .google-places-autocomplete__input:hover {
-//     background-color: lightgray;
-// }
+
 
 
 .job-submit-button{
