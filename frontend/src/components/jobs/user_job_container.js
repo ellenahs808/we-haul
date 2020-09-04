@@ -12,6 +12,7 @@ const mapSTP = (state) => {
         // job: Object.values(state.jobs.user).filter(job => job.user === state.session.user.id)[0],
         jobs: Object.values(state.jobs.user),
         currentUser: state.session.user,
+        status: state.jobs.user
     }
 };
 
