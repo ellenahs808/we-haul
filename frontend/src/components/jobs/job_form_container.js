@@ -9,6 +9,7 @@ const mapSTP = (state) => ({
         type: '',
         startAddress: '',
         endAddress: '',
+    errors: state.errors.session
     }
 })
 

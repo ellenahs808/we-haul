@@ -5,7 +5,7 @@ import car from '../images/car.png';
 import van from '../images/van.png';
 import truck from '../images/truck.png';
 import jet from '../images/jet.png';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class JobForm extends React.Component{
     constructor(props) {
@@ -14,14 +14,16 @@ class JobForm extends React.Component{
         this.state = this.props.job
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
 
     }
 
     handleSubmit(e) {
         e.preventDefault();
+
         // debugger
         this.props.createJob(this.state)       
+
     }
 
     update(field) {
@@ -30,11 +32,16 @@ class JobForm extends React.Component{
         })
     }
 
-    
-    handleChange(e) {
-        e.preventDefault();
-        let setAddress = {startAddress: e.target.value}
-        this.setState(setAddress)
+    renderErrors() {
+      return (
+        <ul>
+          {Object.keys(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {this.state.errors[error]}
+            </li>
+          ))}
+        </ul>
+      );
     }
 
     render(){
@@ -156,12 +163,15 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-submit">
+
                     
                     <button type="submit" className="job-submit-button">
                       Request a Hauler.
                     </button>
                    
+
                 </div>
+                {this.renderErrors()}
               </form>
             </div>
           </div>
