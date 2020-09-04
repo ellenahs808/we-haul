@@ -21,8 +21,7 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 425px;
-
-    height: 600px;
+    height: 620px;
     position: absolute;
     top: -70px;
 }
@@ -182,7 +181,7 @@
     justify-content:center;
     padding-top: 10px;
     position: relative;
-    top: 70px;
+    top: 50px;
 }
 
 .signup-box{
@@ -202,7 +201,7 @@
     padding-left: 10px;
     color: grey;
     position: relative;
-    top: 40px;
+    top: 20px;
 }
 
 .signup-type{
@@ -217,7 +216,7 @@
     justify-content:center;
     padding-top: 20px;
     position: relative;
-    top: 20px;
+    top: 0px;
 }
 
 .signup-submit-button{
@@ -253,10 +252,20 @@
     justify-content: center;
     text-align: center;
     list-style: none;
-    top: 50px;
+    top: 10px;
     left: 65px;
     width: 70%;
     
+}
+
+.errors1{
+    list-style: none;
+    position: relative;
+    right: 20px;
+    font-family: 'Menlo';
+    color: red;
+    font-size: 10px;
+   
 }
 
 
