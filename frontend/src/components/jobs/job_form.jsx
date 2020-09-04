@@ -20,9 +20,8 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-
-        // debugger
-        this.props.createJob(this.state)       
+        this.props.createJob(this.state)
+        this.props.history.push('/userjob')
 
     }
 
