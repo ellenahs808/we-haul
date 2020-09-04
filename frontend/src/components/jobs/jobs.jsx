@@ -19,11 +19,11 @@ class Job extends React.Component {
         this.props.fetchJobs();
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.address.startAddress !== this.props.address.startAddress && prevProps.address.endAddress !== this.props.address.endAdress ) {
-            this.props.fetchJobs();
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.address.startAddress !== this.props.address.startAddress && prevProps.address.endAddress !== this.props.address.endAdress ) {
+    //         this.props.fetchJobs();
+    //     }
+    // }
 
     render() {
         return (
@@ -38,12 +38,13 @@ class Job extends React.Component {
                         job={job}
                         updateAddress={this.props.updateAddress}
                         removeAddress={this.props.removeAddress}
+                        fetchJobs={this.props.fetchJobs}
                         />
                         ))}
                 </div>
                 <div id="job_show_sub_right">
                         <JobMapContainer 
-                        address={this.props.address}/>
+                        />
                 </div>
             </div>
         )
