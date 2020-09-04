@@ -1,5 +1,7 @@
 .navbar {
     display: inline-block;
+    position: fixed;
+    z-index: 9999;
     height: 28px;
     flex-direction: row;
     width: 100%;
