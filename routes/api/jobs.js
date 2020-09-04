@@ -29,11 +29,11 @@ router.post('/',
     
     (req, res) => {
 
-        // const { errors, isValid } = validateJobInput(req.body);
+        const { errors, isValid } = validateJobInput(req.body);
     
-        //     if (!isValid) {
-        //         return res.status(400).json(errors);
-        //     }
+            if (!isValid) {
+                return res.status(400).json(errors);
+            }
    
         geocodeUtil
           .parseAddress(req.body.startAddress, req.body.endAddress)
@@ -49,9 +49,9 @@ router.post('/',
                   //     status: req.body.status, // not-started - default assignment 0
                 });
             newJob.save()
+            .then((job) => res.json(job))
+            .catch((err) => res.json(err))
           })
-          .then((job) => res.json(job))
-          .catch((err) => res.json(err))
           return res;
     }
 )
