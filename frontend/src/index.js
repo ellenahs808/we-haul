@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import mapboxgl from 'mapbox-gl'
+import { mapBoxPublicKey } from './config/keys_dev_front'
 // import App from './App';
 // import axios from 'axios';
 
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore({});
   }
-
+  mapboxgl.accessToken = mapBoxPublicKey
   window.getState = store.getState;
   const root = document.getElementById("root");
 
