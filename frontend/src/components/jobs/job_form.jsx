@@ -14,8 +14,10 @@ class JobForm extends React.Component{
         this.state = this.props.job
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
+    }
 
+    componentWillReceiveProps(nextProps) {
+      this.setState({ errors: nextProps.errors })
     }
 
     handleSubmit(e) {
@@ -34,7 +36,7 @@ class JobForm extends React.Component{
 
     renderErrors() {
       return (
-        <ul>
+        <ul className='errors'>
           {Object.keys(this.state.errors).map((error, i) => (
             <li key={`error-${i}`}>
               {this.state.errors[error]}
@@ -120,7 +122,7 @@ class JobForm extends React.Component{
                           country: ["us"],
                         },
                       }}
-                      placeholder="825 Battery Street, San Francisco"
+                      placeholder="Enter Start Address..."
                       onSelect={({ description }) =>
                         this.setState({ startAddress: description })
                       }
@@ -147,7 +149,7 @@ class JobForm extends React.Component{
                           country: ["us"],
                         },
                       }}
-                      placeholder="825 Battery Street, San Francisco"
+                      placeholder="Enter End Address..."
                       onSelect={({ description }) =>
                         this.setState({ endAddress: description })
                       }
@@ -171,7 +173,10 @@ class JobForm extends React.Component{
                    
 
                 </div>
-                {this.renderErrors()}
+
+                <div className='form-errors'>
+                  {this.renderErrors()}
+                </div>
               </form>
             </div>
           </div>
