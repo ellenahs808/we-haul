@@ -19,6 +19,13 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.currentUser === true) {
+        this.props.history.push('/');
+      }
+      this.setState({ errors: nextProps.errors })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         let user = {
@@ -45,7 +52,7 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className='errors'>
+            <ul className='errors1'>
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>{this.state.errors[error]}</li>
                 ))}
