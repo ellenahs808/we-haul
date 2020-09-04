@@ -4,7 +4,9 @@ import {updateAddress, removeAddress} from '../../actions/address_actions'
 
 
 const mSTP = state => ({
-  address: state.address
+  address: state.address,
+  type: state.session.user.userType,
+  requester: state.jobs.user
 })
 
 const mDTP = dispatch => ({
