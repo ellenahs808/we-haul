@@ -36,11 +36,11 @@ class JobForm extends React.Component{
     renderErrors() {
       return (
         <ul className='errors'>
-     
-            <li>
-              {Object.values(this.state.errors)}
+          {Object.keys(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {this.state.errors[error]}
             </li>
-    
+          ))}
         </ul>
       );
     }
