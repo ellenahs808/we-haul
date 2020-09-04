@@ -10,8 +10,9 @@ const mapSTP = (state) => ({
         type: '',
         startAddress: '',
         endAddress: '',
-    errors: state.errors.session
-    }
+        errors: {}
+    },
+    errors: state.errors.job
 })
 
 const mapDTP = dispatch => ({
