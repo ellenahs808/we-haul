@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/jobs.scss';
+import JobForm from './job_form';
 
 class UserJob extends React.Component{
     constructor(props) {
@@ -31,23 +32,24 @@ class UserJob extends React.Component{
             )
         }
     }
-    // deleteExtraJobs() {
-    //     this.props.jobs.map((job,idx) => {
-    //         if (this.props.jobs.length > 1 && idx === 0) {
-    //             this.props.deleteJob(job._id)
-    //         }
-    //     })
-    // }
+    
 
 
     render() {
         // this.deleteExtraJobs()
         const ownJobs = this.props.jobs[0];
         
+
         if (this.props.jobs.length > 1) {
             this.props.deleteJob(this.props.jobs[0]._id);
             window.location.reload(false);
         }
+
+        // if (this.props.jobs.length < 1) {
+        //     return(
+        //         <JobForm/>
+        //     )
+        // }
 
         if (!ownJobs) {
             return null;
@@ -62,7 +64,7 @@ class UserJob extends React.Component{
                             <div classname='job-details'>{ownJobs.startAddress}</div>
                             <div className='dropoff-address'>Drop off address:</div>
                             <div classname='job-details'>{ownJobs.endAddress}</div>
-                            {this.statusUpdate()}
+                            {/* {this.statusUpdate()} */}
                             <br />
                             <button className='delete-btn' onClick={() => { window.location.reload(false); this.props.deleteJob(ownJobs._id) }}>Delete</button>
                     </div>
