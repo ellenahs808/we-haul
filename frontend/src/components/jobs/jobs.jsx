@@ -1,10 +1,10 @@
 
-import React, { useState } from "react";
+import React from "react";
 import {withRouter} from 'react-router-dom';
 import JobShow from './job_show';
-import { Link } from "react-router-dom";
-import JobRoute from './job_route';
-import ReactDom from 'react-dom';
+// import { Link } from "react-router-dom";
+// import JobRoute from './job_route';
+// import ReactDom from 'react-dom';
 import JobMapContainer from './job_map_container'
 import '../../styles/jobs.scss'
 
@@ -29,7 +29,7 @@ class Job extends React.Component {
         return (
             <div id="job_index_container">
                 <div id="job_show_sub_left">
-                    <h2>All Jobs</h2>
+                    <div className='alljobs-header'>All Jobs</div>
                 
                 {this.props.jobs.map(job => (
                   

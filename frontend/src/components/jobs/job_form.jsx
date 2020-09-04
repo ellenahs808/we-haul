@@ -5,7 +5,7 @@ import car from '../images/car.png';
 import van from '../images/van.png';
 import truck from '../images/truck.png';
 import jet from '../images/jet.png';
-import {Link, Redirect} from 'react-router-dom';
+// import {Link, Redirect} from 'react-router-dom';
 
 class JobForm extends React.Component{
     constructor(props) {
@@ -14,15 +14,16 @@ class JobForm extends React.Component{
         this.state = this.props.job
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
+    }
 
+    componentWillReceiveProps(nextProps) {
+      this.setState({ errors: nextProps.errors })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
-        // debugger
-        this.props.createJob(this.state)       
+        this.props.createJob(this.state)
+        this.props.history.push('/userjob')
 
     }
 
@@ -34,7 +35,7 @@ class JobForm extends React.Component{
 
     renderErrors() {
       return (
-        <ul>
+        <ul className='errors'>
           {Object.keys(this.state.errors).map((error, i) => (
             <li key={`error-${i}`}>
               {this.state.errors[error]}
@@ -51,7 +52,7 @@ class JobForm extends React.Component{
               <form onSubmit={this.handleSubmit}>
                 <div className="job-radio">
                   <label>
-                    <img src={car} className="type-icon" />
+                    <img src={car} className="type-icon" alt="car-icon"/>
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -62,7 +63,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Car</div>
                   </label>
                   <label>
-                    <img src={van} className="type-icon" />
+                    <img src={van} className="type-icon" alt="van-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -73,7 +74,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Van</div>
                   </label>
                   <label>
-                    <img src={truck} className="type-icon" />
+                    <img src={truck} className="type-icon" alt="truck-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -84,7 +85,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Truck</div>
                   </label>
                   <label>
-                    <img src={jet} className="type-icon" />
+                    <img src={jet} className="type-icon" alt="jet-icon"/>
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -97,14 +98,15 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-details">
-                  Details:
-                  <input
-                    type="textarea"
-                    onChange={this.update("details")}
-                    value={this.state.details}
-                    placeholder="Fill out move details."
-                    className="job-details-box"
-                  />
+                  <label className="details-label">Details:
+                      <input
+                        type="textarea"
+                        onChange={this.update("details")}
+                        value={this.state.details}
+                        placeholder="Fill out move details."
+                        className="job-details-box"
+                      />
+                  </label>
                 </div>
 
                 <div className="job-address">
@@ -120,7 +122,7 @@ class JobForm extends React.Component{
                           country: ["us"],
                         },
                       }}
-                      placeholder="825 Battery Street, San Francisco"
+                      placeholder="Enter Start Address..."
                       onSelect={({ description }) =>
                         this.setState({ startAddress: description })
                       }
@@ -147,7 +149,7 @@ class JobForm extends React.Component{
                           country: ["us"],
                         },
                       }}
-                      placeholder="825 Battery Street, San Francisco"
+                      placeholder="Enter End Address..."
                       onSelect={({ description }) =>
                         this.setState({ endAddress: description })
                       }
@@ -171,7 +173,10 @@ class JobForm extends React.Component{
                    
 
                 </div>
-                {this.renderErrors()}
+
+                <div className='form-errors'>
+                  {this.renderErrors()}
+                </div>
               </form>
             </div>
           </div>

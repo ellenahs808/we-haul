@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {createJob} from '../../actions/job_actions';
 import JobForm from './job_form'
+import {withRouter} from 'react-router-dom'
 
 const mapSTP = (state) => ({
     currentUser: state.session.user,
@@ -9,12 +10,13 @@ const mapSTP = (state) => ({
         type: '',
         startAddress: '',
         endAddress: '',
-    errors: state.errors.session
-    }
+        errors: {}
+    },
+    errors: state.errors.job
 })
 
 const mapDTP = dispatch => ({
     createJob: jobData => dispatch(createJob(jobData))
 })
 
-export default connect(mapSTP, mapDTP)(JobForm);
+export default withRouter(connect(mapSTP, mapDTP)(JobForm));

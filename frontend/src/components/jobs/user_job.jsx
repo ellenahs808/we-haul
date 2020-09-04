@@ -1,9 +1,11 @@
 import React from 'react';
+
 import '../../styles/user_job.scss';
 import JobForm from './job_form';
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import mapboxgl from "mapbox-gl";
 import JobMapContainer from "./job_map_container";
+
 
 
 class UserJob extends React.Component {
@@ -63,9 +65,14 @@ class UserJob extends React.Component {
     }
   }
 
+
   render() {
     // this.deleteExtraJobs()
     const ownJobs = this.props.jobs[0];
+
+    componentDidMount(){
+        this.props.fetchJob(this.props.currentUser.id);
+
 
     if (this.props.jobs.length > 1) {
       this.props.deleteJob(this.props.jobs[0]._id);

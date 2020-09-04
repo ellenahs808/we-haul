@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Typical from 'react-typical';
 
 import '../../styles/forms.scss';
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
     loginDemoUser(e) {
         e.preventDefault();
         const demoUser = { email: 'shanelle@wehaul.com', password: 'password', firstName: 'Shanelle', lastName: 'Valencia', phoneNumber: '1234567890', userType: 'user' };
-        let { email, password, firstName, lastName, phoneNumber, userType } = demoUser;
+        let { email, password, userType } = demoUser;
 
         let interval = 100;
 
@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
 
         const demoHauler = {email: 'kodi@wehaul.com', password:'password', firstName: 'Kodi', lastName: 'Codes', userType: 'hauler'}
-        let {email, password, firstName, lastName, phoneNumber, userType} = demoHauler;
+        let {email, password, userType} = demoHauler;
         let interval = 100;
 
         let login = () => {
@@ -146,9 +146,9 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className='errors'>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} >
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -223,8 +223,10 @@ class LoginForm extends React.Component {
                   </button>
                 </div>
 
+                <div className='login-errors'>
+                  {this.renderErrors()}
+                </div>
 
-                {this.renderErrors()}
               </div>
             </form>
           </div>

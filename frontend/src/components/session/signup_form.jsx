@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 class SignupForm extends React.Component {
@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className='errors'>
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>{this.state.errors[error]}</li>
                 ))}
@@ -139,7 +139,10 @@ class SignupForm extends React.Component {
                   />
                 </div>
 
-                {this.renderErrors()}
+                <div className='signup-errors'>
+                  {this.renderErrors()}
+                </div>
+                
               </div>
             </form>
           </div>
