@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/jobs.scss';
-import JobForm from './job_form';
 
 class UserJob extends React.Component{
     constructor(props) {
@@ -12,7 +11,7 @@ class UserJob extends React.Component{
         // this.deleteExtraJobs = this.deleteExtraJobs.bind(this);
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchJob(this.props.currentUser.id);
 
     }

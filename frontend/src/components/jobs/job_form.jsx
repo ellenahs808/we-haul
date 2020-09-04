@@ -5,7 +5,7 @@ import car from '../images/car.png';
 import van from '../images/van.png';
 import truck from '../images/truck.png';
 import jet from '../images/jet.png';
-import {Link, Redirect} from 'react-router-dom';
+// import {Link, Redirect} from 'react-router-dom';
 
 class JobForm extends React.Component{
     constructor(props) {
@@ -22,9 +22,8 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-
-        // debugger
-        this.props.createJob(this.state)       
+        this.props.createJob(this.state)
+        this.props.history.push('/userjob')
 
     }
 
@@ -53,7 +52,7 @@ class JobForm extends React.Component{
               <form onSubmit={this.handleSubmit}>
                 <div className="job-radio">
                   <label>
-                    <img src={car} className="type-icon" />
+                    <img src={car} className="type-icon" alt="car-icon"/>
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -64,7 +63,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Car</div>
                   </label>
                   <label>
-                    <img src={van} className="type-icon" />
+                    <img src={van} className="type-icon" alt="van-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -75,7 +74,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Van</div>
                   </label>
                   <label>
-                    <img src={truck} className="type-icon" />
+                    <img src={truck} className="type-icon" alt="truck-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -86,7 +85,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Truck</div>
                   </label>
                   <label>
-                    <img src={jet} className="type-icon" />
+                    <img src={jet} className="type-icon" alt="jet-icon"/>
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -99,14 +98,15 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-details">
-                  Details:
-                  <input
-                    type="textarea"
-                    onChange={this.update("details")}
-                    value={this.state.details}
-                    placeholder="Fill out move details."
-                    className="job-details-box"
-                  />
+                  <label className="details-label">Details:
+                      <input
+                        type="textarea"
+                        onChange={this.update("details")}
+                        value={this.state.details}
+                        placeholder="Fill out move details."
+                        className="job-details-box"
+                      />
+                  </label>
                 </div>
 
                 <div className="job-address">

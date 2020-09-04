@@ -95,18 +95,19 @@
     display: flex;
     flex-direction: row;
     max-height: 100vh;
+    padding: 0;
 }
 
 #job_show_sub_right {
     display: flex;
     height: 100vh;
-    width: 70%;
+    width: 72%;
     
 }
 #job_show_sub_left {
     display: block;
     width: 23%;
-    height: 100vh;
+    height: 105vh;
     flex-direction: column;
     overflow-y: auto;
     list-style: none;
@@ -114,9 +115,19 @@
 }
 
 
-#job_show_sub_left > h2 {
+// #job_show_sub_left > h2 {
+//     align-items: center;
+    // font-size: 30px;
+//     margin-left: 200px;
+// }
+
+.alljobs-header {
     align-items: center;
-    font-size: 30px;
+    font-size: 36px;
+    font-weight: 700;
+    margin-right: 25%;
+    margin-left: 35%;
+    // margin: 0 auto;
 }
 
 
@@ -135,9 +146,18 @@
     width: 100%;
 }
 
-.directions-ctrl-directions {
-   
+// .directions-ctrl-directions {
+//    padding-left: 50px;
+// }
+
+.directions-control.directions-control-directions {
+    padding-left: 100px;
+    line-height: 1.6;
+    letter-spacing: 2px;
 }
+
+
+
 
 .mapbox-directions-component-keyline {
     display: none;
@@ -151,6 +171,15 @@
 
 .mapboxgl-canvas-container {
     height: 100%;
+}
+
+
+.mapboxgl-canvas {
+    padding-left: 45px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    // margin-left: 30px;
+    // padding-right: 30px;
 }
 
 
