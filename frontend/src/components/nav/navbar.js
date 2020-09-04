@@ -19,15 +19,21 @@ class NavBar extends React.Component {
 
     getLinks() {
         if (this.props.loggedIn) {
+            if (this.props.session.user.userType === 'hauler'){
             return (
                 <div>
-
                     <div><Link to='/'><img src={trucklogo} className='logo-nav'></img></Link></div>
                     <div className='nav-jobs'><Link to='/jobs' className='jobs-link'>Jobs</Link></div>
                     <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
-
                 </div>
-            );
+            )} else{
+                return (
+                <div>
+                    <div><Link to='/'><img src={trucklogo} className='logo-nav'></img></Link></div>
+                    <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
+                    <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
+                </div>
+            )}
         } else {
             return (
                 <div className='nav-session'>

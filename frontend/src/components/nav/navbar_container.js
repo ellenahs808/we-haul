@@ -6,7 +6,8 @@ import NavBar from './navbar';
 
 
 const mapStateToProps = state => ({
-    loggedIn: state.session.isAuthenticated
+    loggedIn: state.session.isAuthenticated,
+    session: state.session
 });
 
 
