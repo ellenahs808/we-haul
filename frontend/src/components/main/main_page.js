@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import Splash from './splash';
 
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+// import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import keys from '../../config/keys_mapbox'
-import { Form } from 'react-bootstrap'
+// import { Form } from 'react-bootstrap'
 import JobForm from '../jobs/job_form_container';
-import UserJob from '../jobs/user_job_container';
-import {Link} from 'react-router-dom';
+// import UserJob from '../jobs/user_job_container';
+// import {Link} from 'react-router-dom';
 
 
 const MainPage = (props) => {
