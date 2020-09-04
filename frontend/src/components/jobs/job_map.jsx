@@ -66,7 +66,7 @@ class JobMap extends React.Component {
     
     return(
       
-        <div ref={el => this.mapContainer = el} className="map_container" />
+        <div ref={el => this.mapContainer = el} className="map_container" id="jobmap_jobshow" />
     )
   }
 }

@@ -36,11 +36,11 @@ class JobForm extends React.Component{
     renderErrors() {
       return (
         <ul className='errors'>
-          {Object.keys(this.state.errors).map((error, i) => (
-            <li key={`error-${i}`}>
-              {this.state.errors[error]}
+     
+            <li>
+              {Object.values(this.state.errors)}
             </li>
-          ))}
+    
         </ul>
       );
     }
@@ -97,7 +97,7 @@ class JobForm extends React.Component{
                   </label>
                 </div>
 
-                <div className="job-details">
+                <div className="job-form-pad">
                   <label className="details-label">Details:
                       <input
                         type="textarea"
