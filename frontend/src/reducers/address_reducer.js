@@ -1,7 +1,7 @@
 import {UPDATE_ADDRESS, REMOVE_ADDRESS} from '../actions/address_actions'
 
 
-const addressReducer = (state = { startAddress: "", endAddress: ""}, action) => {
+const addressReducer = (state = { startAddress: "1650 Page St San Francisco, CA", endAddress: "798 Arguello Blvd San Francisco, CA"}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case UPDATE_ADDRESS:
@@ -14,3 +14,5 @@ const addressReducer = (state = { startAddress: "", endAddress: ""}, action) => 
 };
 
 export default addressReducer
+
+
