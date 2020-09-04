@@ -27,11 +27,11 @@ class UserJob extends React.Component {
   }
 
 
-  componentDidUpdate() {
-    // if (this.props.jobs.length > 0) {
-      this.props.fetchJob(this.props.currentUser.id);
-    // }
-  }
+  // componentDidUpdate() {
+  //   // if (this.props.jobs.length > 0) {
+  //     this.props.fetchJob(this.props.currentUser.id);
+  //   // }
+  // }
 
 
   
