@@ -20,8 +20,8 @@ class SignupForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      if (nextProps.currentUser === true) {
-        this.props.history.push('/');
+      if (nextProps.signedIn === true) {
+        this.props.history.push('/login');
       }
       this.setState({ errors: nextProps.errors })
     }
@@ -37,8 +37,10 @@ class SignupForm extends React.Component {
             password2: this.state.password2,
             userType: this.state.userType
         };
+        debugger
 
         this.props.signup(user, this.props.history);
+        // this.props.login(user)
     }
 
 
