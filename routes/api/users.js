@@ -7,6 +7,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require("../../validations/register");
 const validateLoginInput = require("../../validations/login");
+const Job = require("../../models/Job");
 
 
 
@@ -20,10 +21,21 @@ router.get(
       lastName: req.user.lastName,
       phoneNumber: req.user.phoneNumber,
       email: req.user.email,
-      userType: req.user.userType
+      userType: req.user.userType,
+      rating: req.user.rating,
+      numberOfRatings: req.user.numberOfRatings
     });
   }
 );
+
+
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id)
+      .then(((user) => res.json(user)))
+      .catch((err) => res.status(404).json({nouserfound: 'No user found'}))
+})
+
+
 
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
@@ -45,8 +57,10 @@ router.post("/register", (req, res) => {
           lastName: req.body.lastName,
           password: req.body.password,
           phoneNumber: req.body.phoneNumber,
-          userType: req.body.userType
-      });
+          userType: req.body.userType,
+          rating: req.body.rating,
+          numberOfRatings: req.body.numberOfRatings,
+        });
 
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -95,7 +109,9 @@ router.post('/login', (req, res) => {
             lastName: user.lastName,
             email: user.email,
             phoneNumber: user.phoneNumber,
-            userType: user.userType
+            userType: user.userType,
+            rating: user.rating,
+            numberOfRatings: user.numberOfRatings
           };
        jwt.sign(
          payload,
@@ -115,6 +131,28 @@ router.post('/login', (req, res) => {
    });
     })
 })
+
+
+router.patch(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { rating } = req.body;
+
+    User.findById(req.params.id).then((user) => {
+      user.rating = rating;
+      user.numberOfRatings = numberOfRatings;
+
+
+      user
+        .save()
+        .then((savedUser) => res.json(savedUser))
+        .catch((err) => res.json(err));
+    });
+
+    return res;
+  }
+);
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));

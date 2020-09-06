@@ -1,7 +1,8 @@
 import {
     RECEIVE_CURRENT_USER,
     RECEIVE_USER_LOGOUT,
-    RECEIVE_USER_LOGIN
+    RECEIVE_USER_LOGIN,
+    RECEIVE_USER,
 } from '../actions/session_actions';
 
 const initialState = {
@@ -26,6 +27,10 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isSignedIn: true,
+            };
+        case RECEIVE_USER:
+            return {
+                user: action.user.rating
             }
         default:
             return state;

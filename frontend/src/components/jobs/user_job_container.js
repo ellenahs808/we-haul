@@ -1,6 +1,7 @@
 // import { receiveCurrentUser } from '../../actions/session_actions';
 import { connect } from 'react-redux';
-import { fetchJob, deleteJob, fetchJobs} from '../../actions/job_actions';
+import { fetchJob, deleteJob, fetchJobs } from '../../actions/job_actions';
+import { updateUser, fetchUser } from '../../actions/session_actions';
 import UserJob from './user_job';
 
 
@@ -20,7 +21,9 @@ const mapSTP = (state) => {
 const mapDTP = dispatch => ({
     fetchJob: id => dispatch(fetchJob(id)),
     deleteJob: jobId => dispatch(deleteJob(jobId)),
-    fetchJobs: () => dispatch(fetchJobs())
+    fetchJobs: () => dispatch(fetchJobs()),
+    updateUser: user => dispatch(updateUser(user)),
+    fetchUser: userId => dispatch(fetchUser(userId))
 })
 
 

@@ -24,6 +24,7 @@ class UserJob extends React.Component {
 
   componentWillMount() {
     this.props.fetchJob(this.props.currentUser.id);
+
   }
 
 
@@ -35,16 +36,69 @@ class UserJob extends React.Component {
 
 
   
-
+  
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
       return <div>Pending for driver...</div>;
     } else if (this.props.jobs[0].status === 1) {
       return <div>A driver has taken your request!</div>;
     } else {
-      return <div>Your request has been completed!</div>;
+      const hauler = this.props.fetchUser(this.props.jobs[0].driver)
+      if (hauler.numberOfRatings > 0) {
+        return (
+          <div>
+            <div>Your request has been completed!</div>;
+              <form onSubmit={this.handleSubmit}>
+                <label>1
+                    <input 
+                        type="radio"
+                        value="1"
+                        name="rating"
+                      
+                    />
+                </label>
+                <label>2
+                    <input 
+                        type="radio"
+                        value="2"
+                        name="rating"
+                    />
+                </label>
+                <label>3
+                    <input 
+                        type="radio"
+                        value="3"
+                        name="rating"
+                    />
+                </label>
+                <label>4
+                    <input 
+                        type="radio"
+                        value="4"
+                        name="rating"
+                    />
+                </label>
+                <label>5
+                    <input 
+                        type="radio"
+                        value="5"
+                        name="rating"
+                    />
+                </label>
+               
+               <input type="submit">Submit Rating</input>
+               
+              </form>
+
+
+          </div>
+        )
+        
+      }
     }
-  }
+  };
+
+  
 
 
   render() {

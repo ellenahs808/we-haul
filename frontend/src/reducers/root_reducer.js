@@ -5,12 +5,15 @@ import errors from './errors_reducer';
 import jobs from './jobs_reducer';
 import ui from './ui_reducer';
 
+
 const RootReducer = combineReducers({
     session,
     address,
     errors,
     jobs,
-    ui
+    ui,
+
 });
+
 
 export default RootReducer;

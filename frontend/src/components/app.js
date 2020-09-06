@@ -11,6 +11,8 @@ import Modal from './modal/modal_container';
 import NewJobsContainer from './jobs/jobs_container';
 // import JobShowContainer from './jobs/job_show_container';
 import UserJobContainer from './jobs/user_job_container';
+import JobRatingContainer from './jobs/job_rating_container';
+
 
 
 const App = () => (
@@ -25,6 +27,9 @@ const App = () => (
             <ProtectedRoute exact path="/jobs" component={JobsContainer} />
             <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>
             <ProtectedRoute  exact path='/userjob' component={UserJobContainer}/>
+
+            <Route exact path="/rating" component={JobRatingContainer} />
+
         </Switch>
     </div>
 );
