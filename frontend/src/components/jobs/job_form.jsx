@@ -14,6 +14,7 @@ class JobForm extends React.Component{
         this.state = this.props.job
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this)
     }
 
     componentWillReceiveProps(nextProps) {
@@ -22,10 +23,12 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createJob(this.state)
-        // .then(this.props.history.push('/userjob'))
-          // .then(this.props.fetchJob(this.state.jobs.new.user))
-
+      this.props.createJob(this.state)
+        .then(() => {
+          if (this.props.errors.length <= 0) {
+            this.props.history.push('/userjob')
+          }
+        })
     }
 
     update(field) {

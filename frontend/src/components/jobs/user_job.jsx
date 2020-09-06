@@ -12,35 +12,34 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      jobs: [],
-      map: null,
-      lng: -122.44,
-      lat: 37.76,
-      zoom: 11,
-    };
+    // this.state = {
+    //   jobs: [],
+    //   map: null,
+    //   lng: -122.44,
+    //   lat: 37.76,
+    //   zoom: 11,
+    // };
   
   }
 
-  componentWillMount() {
-    this.props.fetchJob(this.props.currentUser.id);
+  componentDidMount() {
+    this.props.fetchJob(this.props.currentUser.id)
+  
   }
 
 
   // componentDidUpdate() {
-  //   // if (this.props.jobs.length > 0) {
+  //   if (this.props.jobs.length > 0) {
   //     this.props.fetchJob(this.props.currentUser.id);
-  //   // }
+  //   }
   // }
-
-
   
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
-      return <div>Pending for driver...</div>;
+      return <div>Waiting for hauler...</div>;
     } else if (this.props.jobs[0].status === 1) {
-      return <div>A driver has taken your request!</div>;
+      return <div>A hauler has taken your request!</div>;
     } else {
       return <div>Your request has been completed!</div>;
     }
@@ -51,11 +50,9 @@ class UserJob extends React.Component {
   
     const ownJobs = this.props.jobs[0];
 
-  
-
     if (!ownJobs) {
       return null;
-    }
+    } else { 
     
 
     return (
@@ -75,8 +72,8 @@ class UserJob extends React.Component {
               <button
                 className="delete-btn"
                 onClick={() => {
-                  window.location.reload(false);
                   this.props.deleteJob(ownJobs._id);
+                  this.props.history.push('/')
                 }}
               >
                 Delete
@@ -91,6 +88,7 @@ class UserJob extends React.Component {
         </div>
       </div>
     );
+    }
   }
 };
 
