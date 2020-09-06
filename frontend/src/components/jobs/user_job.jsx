@@ -70,10 +70,6 @@ class UserJob extends React.Component {
     // this.deleteExtraJobs()
     const ownJobs = this.props.jobs[0];
 
-    componentDidMount(){
-        this.props.fetchJob(this.props.currentUser.id);
-
-
     if (this.props.jobs.length > 1) {
       this.props.deleteJob(this.props.jobs[0]._id);
       window.location.reload(false);
