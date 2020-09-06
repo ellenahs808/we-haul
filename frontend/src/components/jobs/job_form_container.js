@@ -7,8 +7,10 @@ const mapSTP = (state) => ({
     currentUser: state.session.user,
     job: {
         details: '',
-        type: '',
+        type: '',  
         startAddress: '',
+        status: 0,
+        driver: '',
         endAddress: '',
         errors: {},
         user: ''
