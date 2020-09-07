@@ -1,9 +1,11 @@
 import React from 'react';
+import keys from '../../config/keys_mapbox'
 
 import '../../styles/user_job.scss';
-import JobForm from './job_form';
-import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-import mapboxgl from "mapbox-gl";
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
+import JobFormContainer from './job_form_container'
 import JobMapContainer from "./job_map_container";
 
 
@@ -22,9 +24,18 @@ class UserJob extends React.Component {
   
   }
 
+  callScript = () => {
+    const script = document.createElement("script");
+    script.className = "autocomplete";
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
+    script.async = true;
+    document.body.appendChild(script);
+    // console.log(props.userType)
+  };
+
   componentDidMount() {
     this.props.fetchJob(this.props.currentUser.id)
-  
+    this.callScript()
   }
 
 
@@ -51,7 +62,12 @@ class UserJob extends React.Component {
     const ownJobs = this.props.jobs[0];
 
     if (!ownJobs) {
-      return null;
+      return (
+        <div className="user_job_form">
+
+          <JobFormContainer />
+        </div>
+      )
     } else { 
     
 
@@ -73,7 +89,7 @@ class UserJob extends React.Component {
                 className="delete-btn"
                 onClick={() => {
                   this.props.deleteJob(ownJobs._id);
-                  this.props.history.push('/')
+                  window.location.reload();
                 }}
               >
                 Delete

@@ -141,7 +141,8 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user);
+        this.props.login(user)
+          
     }
 
     renderErrors() {
@@ -198,7 +199,7 @@ class LoginForm extends React.Component {
                 </label>
 
                 <br />
-                <div className='login-type'>
+                {/* <div className='login-type'>
                   <select
                     value={this.state.userType}
                     onChange={this.update("userType")}
@@ -207,7 +208,7 @@ class LoginForm extends React.Component {
                     <option value="user">User</option>
                     <option value="hauler">Hauler</option>
                   </select>
-                </div>
+                </div> */}
                 
                 <div className='login-submit'>
                   <button type='submit' className='login-submit-button'>Submit</button>
