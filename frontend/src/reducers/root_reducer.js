@@ -4,6 +4,7 @@ import address from './address_reducer'
 import errors from './errors_reducer';
 import jobs from './jobs_reducer';
 import ui from './ui_reducer';
+import haulerRating from './user_reducer';
 
 
 const RootReducer = combineReducers({
@@ -12,7 +13,7 @@ const RootReducer = combineReducers({
     errors,
     jobs,
     ui,
-
+    haulerRating,
 });
 
 

@@ -25,6 +25,8 @@
     width: 400px;
     height: 593px;
     align-items: right;
+    overflow-y: auto;
+    list-style: none;
     // display: inline-block;
 }
 
@@ -134,7 +136,7 @@
 
 
 .delete-div {
-    padding-top: 200px;
+    padding: 100px 0;
 }
 
 

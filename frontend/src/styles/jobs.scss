@@ -172,6 +172,23 @@
 
 }
 
+.complete-btn {
+    outline:none;
+    border:none;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+    color: black;
+    background: rgb(118, 184, 235);
+    margin-left: 28px;
+    cursor: pointer;
+
+}
+
+.complete-btn:hover {
+    background-color: rgb(61, 131, 237);
+}
+
 .accept-btn:hover {
     background-color: rgb(236, 153, 153);
 }

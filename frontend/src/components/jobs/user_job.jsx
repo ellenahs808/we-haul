@@ -18,21 +18,45 @@ class UserJob extends React.Component {
       lng: -122.44,
       lat: 37.76,
       zoom: 11,
+      rating: 0,
     };
-  
+    
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchJob(this.props.currentUser.id);
-
   }
 
 
-  // componentDidUpdate() {
-  //   // if (this.props.jobs.length > 0) {
-  //     this.props.fetchJob(this.props.currentUser.id);
-  //   // }
-  // }
+  componentDidUpdate() {
+    if (this.props.haulerRating.length === 0) {
+      this.props.fetchUser(this.props.jobs[0].driver);
+    }
+  }
+
+
+ update(field) {
+   return(e) => this.setState({
+     [field]: e.currentTarget.value
+   })
+ };
+
+
+// handleRatingClick(rating) {
+//   return(e) => this.setState({ rating });
+// }
+
+
+ handleSubmit(e) {
+   e.preventDefault();
+  //  this.props.updateUser(this.state)
+  //   .then(this.props.fetchUser(this.props.jobs[0].driver)
+  this.setState(() => ({
+    rating: this.props.haulerRating[1], driver: this.props.jobs[0].driver
+  }), () => this.props.updateUser(this.state))
+ };
 
 
   
@@ -43,18 +67,22 @@ class UserJob extends React.Component {
     } else if (this.props.jobs[0].status === 1) {
       return <div>A driver has taken your request!</div>;
     } else {
-      const hauler = this.props.fetchUser(this.props.jobs[0].driver)
-      if (hauler.numberOfRatings > 0) {
+      // this.props.fetchUser(this.props.jobs[0].driver)
+      // if (this.props.haulerRating[1] > 0) {
+        // debugger
         return (
           <div>
-            <div>Your request has been completed!</div>;
+            <div>Your request has been completed!</div>
+            <br/>
+            <div>Please submit a rating</div>
               <form onSubmit={this.handleSubmit}>
                 <label>1
                     <input 
                         type="radio"
                         value="1"
                         name="rating"
-                      
+                        onChange={this.update("value")}
+                        // onClick={ this.handleRatingClick(1) }
                     />
                 </label>
                 <label>2
@@ -62,6 +90,8 @@ class UserJob extends React.Component {
                         type="radio"
                         value="2"
                         name="rating"
+                        onChange={this.update("value")}
+                        // onClick={ this.handleRatingClick(2) }
                     />
                 </label>
                 <label>3
@@ -69,6 +99,8 @@ class UserJob extends React.Component {
                         type="radio"
                         value="3"
                         name="rating"
+                        onChange={this.update("value")}
+                        // onClick={ this.handleRatingClick(3) }
                     />
                 </label>
                 <label>4
@@ -76,6 +108,8 @@ class UserJob extends React.Component {
                         type="radio"
                         value="4"
                         name="rating"
+                        onChange={this.update("value")}
+                        // onClick={ this.handleRatingClick(4) }
                     />
                 </label>
                 <label>5
@@ -83,18 +117,21 @@ class UserJob extends React.Component {
                         type="radio"
                         value="5"
                         name="rating"
+                        onChange={this.update("value")}
+                        // onClick={ this.handleRatingClick(5) }
                     />
                 </label>
-               
-               <input type="submit">Submit Rating</input>
+               <br/>
+               <input 
+                type="submit"
+                value="Submit Rating"
+                onSubmit={this.handleSubmit}
+              />
                
               </form>
-
-
           </div>
         )
-        
-      }
+      
     }
   };
 
