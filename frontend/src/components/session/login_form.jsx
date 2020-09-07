@@ -1,7 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Typical from 'react-typical';
-
 import '../../styles/forms.scss';
 
 
@@ -162,20 +160,9 @@ class LoginForm extends React.Component {
           <div onClick={(e) => e.stopPropagation()}>
             <form onSubmit={this.handleSubmit}>
               <div className="login-form">
-                {/* <p className="typical">
-                  <Typical
-                    loop={10000}
-                    wrapper="b"
-                    steps={[
-                      2000,
-                      "We Haul. ",
-                      2000,
-                      "We Move. ",
-                      2000,
-                      "We Code. ",
-                    ]}
-                  />
-                </p> */}
+                <p className="typical">
+                  We Haul. We Move.  
+                </p>
                 <label className="login-info">
                   <input
                     type="text"

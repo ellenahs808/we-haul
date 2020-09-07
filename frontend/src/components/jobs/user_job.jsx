@@ -1,27 +1,12 @@
 import React from 'react';
 import keys from '../../config/keys_mapbox'
-
 import '../../styles/user_job.scss';
-// import JobForm from './job_form';
-// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-// import mapboxgl from "mapbox-gl";
 import JobFormContainer from './job_form_container'
-import JobMapContainer from "./job_map_container";
-
-
+import UserJobMapContainer from "./job_map_container";
 
 class UserJob extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   jobs: [],
-    //   map: null,
-    //   lng: -122.44,
-    //   lat: 37.76,
-    //   zoom: 11,
-    // };
-  
   }
 
   callScript = () => {
@@ -30,21 +15,12 @@ class UserJob extends React.Component {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
     script.async = true;
     document.body.appendChild(script);
-    // console.log(props.userType)
   };
 
   componentDidMount() {
     this.props.fetchJob(this.props.currentUser.id)
     this.callScript()
   }
-
-
-  // componentDidUpdate() {
-  //   if (this.props.jobs.length > 0) {
-  //     this.props.fetchJob(this.props.currentUser.id);
-  //   }
-  // }
-  
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
@@ -58,19 +34,15 @@ class UserJob extends React.Component {
 
 
   render() {
-  
     const ownJobs = this.props.jobs[0];
-
     if (!ownJobs) {
       return (
         <div className="user_job_form">
-
           <JobFormContainer />
         </div>
       )
     } else { 
     
-
     return (
       <div className="user-job-div">
         <div className="user-job-container">
@@ -98,7 +70,7 @@ class UserJob extends React.Component {
           </div>
           <div className="user-map-container">
             <div className="map-div">
-              <JobMapContainer />
+              <UserJobMapContainer />
             </div>
           </div>
         </div>
