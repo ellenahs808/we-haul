@@ -24,7 +24,7 @@ class JobShow extends React.Component {
     }), () => this.props.updateJob(this.state))
 
   }
-  
+
   render() {
     // debugger
     return (
@@ -56,7 +56,7 @@ class JobShow extends React.Component {
             </button>
             {this.props.job.status === 0 ? <button className='accept-btn' onClick={() => this.handleUpdate()}>Accept Job</button>
             : this.props.job.status === 1 ? <button className='complete-btn' onClick={() => this.handleComplete()}>Complete Job</button>
-            : <button className='complete-btn' onClick={() => this.handleComplete()}>Completed</button>
+            : <button className='complete-btn' onClick={() => this.handleComplete()}>Complete</button>
             }
             
             {/* <button className='accept-btn' onClick={() => this.handleUpdate()}>Accept Job</button> */}
