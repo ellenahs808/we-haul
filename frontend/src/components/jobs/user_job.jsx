@@ -1,9 +1,11 @@
 import React from 'react';
+import keys from '../../config/keys_mapbox'
 
 import '../../styles/user_job.scss';
-import JobForm from './job_form';
-import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-import mapboxgl from "mapbox-gl";
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
+import JobFormContainer from './job_form_container'
 import JobMapContainer from "./job_map_container";
 
 
@@ -12,35 +14,43 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      jobs: [],
-      map: null,
-      lng: -122.44,
-      lat: 37.76,
-      zoom: 11,
-    };
+    // this.state = {
+    //   jobs: [],
+    //   map: null,
+    //   lng: -122.44,
+    //   lat: 37.76,
+    //   zoom: 11,
+    // };
   
   }
 
-  componentWillMount() {
-    this.props.fetchJob(this.props.currentUser.id);
+  callScript = () => {
+    const script = document.createElement("script");
+    script.className = "autocomplete";
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
+    script.async = true;
+    document.body.appendChild(script);
+    // console.log(props.userType)
+  };
+
+  componentDidMount() {
+    this.props.fetchJob(this.props.currentUser.id)
+    this.callScript()
   }
 
 
   // componentDidUpdate() {
-  //   // if (this.props.jobs.length > 0) {
+  //   if (this.props.jobs.length > 0) {
   //     this.props.fetchJob(this.props.currentUser.id);
-  //   // }
+  //   }
   // }
-
-
   
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
-      return <div>Pending for driver...</div>;
+      return <div>Waiting for hauler...</div>;
     } else if (this.props.jobs[0].status === 1) {
-      return <div>A driver has taken your request!</div>;
+      return <div>A hauler has taken your request!</div>;
     } else {
       return <div>Your request has been completed!</div>;
     }
@@ -51,11 +61,14 @@ class UserJob extends React.Component {
   
     const ownJobs = this.props.jobs[0];
 
-  
-
     if (!ownJobs) {
-      return null;
-    }
+      return (
+        <div className="user_job_form">
+
+          <JobFormContainer />
+        </div>
+      )
+    } else { 
     
 
     return (
@@ -75,8 +88,8 @@ class UserJob extends React.Component {
               <button
                 className="delete-btn"
                 onClick={() => {
-                  window.location.reload(false);
                   this.props.deleteJob(ownJobs._id);
+                  window.location.reload();
                 }}
               >
                 Delete
@@ -91,6 +104,7 @@ class UserJob extends React.Component {
         </div>
       </div>
     );
+    }
   }
 };
 

@@ -15,6 +15,7 @@ const mapSTP = (state) => ({
         errors: {},
         user: ''
     },
+    jobs: state.jobs,
     errors: state.errors.job
 })
 

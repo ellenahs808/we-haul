@@ -18,6 +18,7 @@ const MainPage = (props) => {
         script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
         script.async = true;
         document.body.appendChild(script);
+        // console.log(props.userType)
         };
 
 
@@ -30,7 +31,14 @@ const MainPage = (props) => {
             <div className='full_page'>
                 
                 <Splash />
-                <JobForm />
+
+                {
+                    (!props.session.user) ? null : (props.session.user.userType === 'user') ? <JobForm /> : null
+
+                 
+
+                }
+          
 
                 {/* <Link to='/userjob'>HELPME</Link> */}
 
