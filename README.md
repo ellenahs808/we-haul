@@ -14,7 +14,7 @@ Users can register as either drivers or requesters. Once they've logged in, they
 ## Written By:
 * [Adrian Apodaca](https://github.com/mufasubhai)
 * [Albert Chen](https://github.com/albert-d-chen)
-* [Kodi Schiflett](https://github.com/kshiflett88)
+* [Kodi Shiflett](https://github.com/kshiflett88)
 * [Shanelle Valencia](https://github.com/ellenahs808)
 
 
@@ -37,6 +37,7 @@ Users can register as either drivers or requesters. Once they've logged in, they
 ### Driver registration and User registration
 *Users are able to register as either drivers or requesters.*
 ![registration gif](https://github.com/ellenahs808/WeHaul/blob/master/frontend/src/components/images/signup.gif?raw=true)
+
 
 ### Driver job request with google maps autocomplete & Job Status Page
 *If registered as a requester, a user can complete a form to submit a request and view their request on their status page.*
