@@ -1,27 +1,12 @@
 import React from 'react';
 import keys from '../../config/keys_mapbox'
-
 import '../../styles/user_job.scss';
-// import JobForm from './job_form';
-// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-// import mapboxgl from "mapbox-gl";
 import JobFormContainer from './job_form_container'
-import JobMapContainer from "./job_map_container";
-
-
+import UserJobMapContainer from "./user_job_map_container";
 
 class UserJob extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   jobs: [],
-    //   map: null,
-    //   lng: -122.44,
-    //   lat: 37.76,
-    //   zoom: 11,
-    // };
-  
   }
 
   callScript = () => {
@@ -30,59 +15,53 @@ class UserJob extends React.Component {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
     script.async = true;
     document.body.appendChild(script);
-    // console.log(props.userType)
   };
 
   componentDidMount() {
-    this.props.fetchJob(this.props.currentUser.id)
     this.callScript()
+    this.props.fetchJob(this.props.currentUser.id)
   }
 
-
-  // componentDidUpdate() {
-  //   if (this.props.jobs.length > 0) {
-  //     this.props.fetchJob(this.props.currentUser.id);
-  //   }
-  // }
-  
+  componentDidUpdate() {
+    this.props.fetchJob(this.props.currentUser.id)
+    
+  }
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
-      return <div>Waiting for hauler...</div>;
+      return <p className="job-item-details">Waiting for hauler...</p>;
     } else if (this.props.jobs[0].status === 1) {
-      return <div>A hauler has taken your request!</div>;
+      return <p className="job-item-details">A hauler has taken your request!</p>;
     } else {
-      return <div>Your request has been completed!</div>;
+      return <p className="job-item-details">Your request has been completed!</p>;
     }
   }
 
 
   render() {
-  
     const ownJobs = this.props.jobs[0];
-
     if (!ownJobs) {
       return (
         <div className="user_job_form">
-
           <JobFormContainer />
         </div>
       )
     } else { 
     
-
     return (
       <div className="user-job-div">
-        <div className="user-job-container">
+        <div className="user_request_wrapper">
+
+
           <div className="user-request-container">
             <p className="request-details">Request details:</p>
-            <div classname="job-details">{ownJobs.details}</div>
-            <p className="pickup-address">Pickup address:</p>
-            <div classname="job-details">{ownJobs.startAddress}</div>
-            <p className="dropoff-address">Drop off address:</p>
-            <div classname="job-details">{ownJobs.endAddress}</div>
-            <p className="status-details">Status:</p>
-            <div>{this.statusUpdate()}</div>
+            <p className="job-item-details">{ownJobs.details}</p>
+            <p className="request-details">Pickup address:</p>
+            <p className="job-item-details">{ownJobs.startAddress}</p>
+            <p className="request-details">Drop off address:</p>
+            <p className="job-item-details">{ownJobs.endAddress}</p>
+            <p className="request-details">Status:</p>
+            <p className="job-item-details">{this.statusUpdate()}</p>
             <br />
             <div className="delete-div">
               <button
@@ -95,11 +74,11 @@ class UserJob extends React.Component {
                 Delete
               </button>
             </div>
-          </div>
+            </div>
           <div className="user-map-container">
             <div className="map-div">
-              <JobMapContainer />
-            </div>
+              <UserJobMapContainer />
+          </div>
           </div>
         </div>
       </div>

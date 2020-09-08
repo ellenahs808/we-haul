@@ -1,6 +1,5 @@
 import React from "react";
 import mapboxgl from 'mapbox-gl';
-// import { mapBoxPublicKey } from '../../config/keys_mapbox';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
 
@@ -14,9 +13,9 @@ class JobMap extends React.Component {
       lat: 37.76,
       zoom: 11
     }
-    // const [map, setMap] = useState(null);
+
   }
-  // mapboxgl.accessToken = mapBoxPublicKey
+
   
   componentDidMount() {
 
@@ -26,7 +25,7 @@ class JobMap extends React.Component {
   ];
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
     });
