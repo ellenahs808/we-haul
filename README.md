@@ -36,15 +36,15 @@ Users can register as either drivers or requesters. Once they've logged in, they
 ## Features:
 ### Driver registration and User registration
 *Users are able to register as either drivers or requesters.*
-![registration gif]()
+![registration gif](https://github.com/ellenahs808/WeHaul/blob/master/frontend/src/components/images/signup.gif?raw=true)
 
 ### Driver job request with google maps autocomplete & Job Status Page
 *If registered as a requester, a user can complete a form to submit a request and view their request on their status page.*
-![requester show page]()
+![requester show page](https://raw.githubusercontent.com/ellenahs808/WeHaul/master/frontend/src/components/images/userjob.gif)
 
 ### Driver job-list & status page
 *Drivers are able to view all available jobs and select jobs. They are also able to mark jobs as complete.*
-![driver show page]()
+![driver show page](https://github.com/ellenahs808/WeHaul/blob/master/frontend/src/components/images/jobshow.gif?raw=true)
 
  
 ### Coming soon! Driver Ratings & Messaging
