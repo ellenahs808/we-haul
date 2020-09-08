@@ -7,6 +7,8 @@ import keys from '../../config/keys_mapbox'
 import JobForm from '../jobs/job_form_container';
 // import UserJob from '../jobs/user_job_container';
 // import {Link} from 'react-router-dom';
+import Contacts from './contacts';
+
 
 
 const MainPage = (props) => {
@@ -31,22 +33,18 @@ const MainPage = (props) => {
             <div className='full_page'>
                 
                 <Splash />
-
                 {
                     (!props.session.user) ? null : (props.session.user.userType === 'user') ? <JobForm /> : null
 
-                 
-
                 }
+
           
 
-                {/* <Link to='/userjob'>HELPME</Link> */}
-
-                {/* <JobMap /> */}
 
 
-                <footer>
-                    Copyright &copy; 2020 WeHaul
+                <footer className="footer">
+                    <Contacts />
+                    <div className="copyright">Copyright &copy; 2020 WeHaul</div>
                 </footer>
               
 
