@@ -10,7 +10,7 @@
 
 #job_show_sub_right {
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 72%;
     
 }
@@ -22,11 +22,14 @@
     overflow-y: auto;
     list-style: none;
     border: 2px solid gray;
+    background: radial-gradient(circle, rgba(235,145,53,0.23713235294117652) 0%, rgba(235,145,53,0.1558998599439776)100%);
+
 }
 
 
 // #job_show_sub_left > h2 {
 //     align-items: center;
+    // font-size: 30px;
     // font-size: 30px;
 //     margin-left: 200px;
 // }
@@ -37,6 +40,8 @@
     font-weight: 700;
     margin-right: 25%;
     margin-left: 35%;
+    margin-top: 30px;
+    color:#ee532494;
     // margin: 0 auto;
 }
 
@@ -47,50 +52,50 @@
 }
 
 
-.map_container {
-    height: 60vh;
-    width: 100%;
-}
-
-.map_wrapper {
-    width: 100%;
-}
-
-// .directions-ctrl-directions {
-//    padding-left: 50px;
+// .map_container {
+//     height: 60vh;
+//     width: 100%;
 // }
 
-.directions-control.directions-control-directions {
-    padding-left: 100px;
-    line-height: 1.6;
-    letter-spacing: 2px;
-}
+// .map_wrapper {
+//     width: 100%;
+// }
+
+// // .directions-ctrl-directions {
+// //    padding-left: 50px;
+// // }
+
+// .directions-control.directions-control-directions {
+//     padding-left: 100px;
+//     line-height: 1.6;
+//     letter-spacing: 2px;
+// }
 
 
 
 
-.mapbox-directions-component-keyline {
-    display: none;
+// .mapbox-directions-component-keyline {
+//     display: none;
     
-}
+// }
 
 
-.mapboxgl-control-container {
-    height: 30%;
-}
+// .mapboxgl-control-container {
+//     height: 30%;
+// }
 
-.mapboxgl-canvas-container {
-    height: 100%;
-}
+// .mapboxgl-canvas-container {
+//     height: 100%;
+// }
 
 
-.mapboxgl-canvas {
-    padding-left: 45px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    // margin-left: 30px;
-    // padding-right: 30px;
-}
+// .mapboxgl-canvas {
+//     padding-left: 20px;
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//     // margin-left: 30px;
+//     // padding-right: 30px;
+// }
 
 
 .job-idx-left-container {
@@ -100,22 +105,27 @@
 }
 
 .job-idx-pad {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin: 5px;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(248, 222, 135, 0.624) 0%, rgb(255, 225, 194) 100%);
+
 }
 
 .job-title {
     font-size: 21px;
-    font-family: 'Menlo';
-    background-color: rgb(233, 232, 232);
+    font-family: 'Arial';
+    font-weight: 500;
+    // background-color: rgb(233, 232, 232);
     padding: 2px 15px;
+    color:  #ee532494;
 }
 
 
 .job-title-haul {
     font-size: 21px;
-    font-family: 'Menlo';
-    background-color: rgb(219, 248, 219);
+    font-family: 'Arial';
+    // background-color: rgb(219, 248, 219);
+    color: #ee532494;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 8px 15px;
@@ -130,6 +140,8 @@
 .job-info {
     padding: 10px 15px;
     line-height: 1.2;
+    color: grey;
+    font-weight: 500;
 }
 
 .div-btn {
@@ -152,7 +164,7 @@
 }
 
 .route-btn:hover {
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(138, 168, 143);
     color: white;
 }
 
@@ -171,6 +183,32 @@
 
 }
 
+.complete-btn {
+    outline:none;
+    border:none;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+    color: black;
+    background: rgb(168, 199, 223);
+    margin-left: 28px;
+    cursor: pointer;
+
+}
+
+.complete-btn:hover {
+    background-color: rgb(135, 157, 190);
+}
+
 .accept-btn:hover {
     background-color: rgb(236, 153, 153);
 }
+
+.job-form-pad {
+    padding-top: 10px;
+}
+
+// #jobmap_jobshow {
+//     width: 75%;
+//     height: 100vh;
+// }

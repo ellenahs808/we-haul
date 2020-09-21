@@ -19,32 +19,38 @@ class Job extends React.Component {
         this.props.fetchJobs();
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.address.startAddress !== this.props.address.startAddress && prevProps.address.endAddress !== this.props.address.endAdress ) {
-    //         this.props.fetchJobs();
-    //     }
-    // }
-
+    componentDidUpdate() {
+        this.props.fetchJobs();
+    }
     render() {
+        const filtered = this.props.jobs.filter(job => (job.status !== 2))
         return (
             <div id="job_index_container">
                 <div id="job_show_sub_left">
                     <div className='alljobs-header'>All Jobs</div>
                 
-                {this.props.jobs.map(job => (
+                {
+                
+                filtered.map(job => (
                   
                         <JobShow
                         key={job.id} 
                         job={job}
+                        currentUser={this.props.currentUser}
                         updateAddress={this.props.updateAddress}
                         removeAddress={this.props.removeAddress}
                         fetchJobs={this.props.fetchJobs}
+                        updateJob={this.props.updateJob}
+                        fetchJob={this.props.fetchJob}
                         />
                         ))}
                 </div>
                 <div id="job_show_sub_right">
+                    <div id="divider_div">
                         <JobMapContainer 
                         />
+
+                    </div>
                 </div>
             </div>
         )
@@ -53,35 +59,4 @@ class Job extends React.Component {
 
 export default withRouter(Job);
 
-  // componentWillReceiveProps(newState) {
-    //     this.setState({jobs: newState.jobs})
-    // }
-
-// const Jobs = (props) => {
-//   const [show, setShow] = useState(false);
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-//   return (
-//     <div>
-//       <button variant="primary" onClick={handleShow}>
-//         Launch demo modal
-//       </button>
-//       <Modal show={show} onHide={handleClose} animation={false}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Modal heading</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//         <Modal.Footer>
-//           <button variant="secondary" onClick={handleClose}>
-//             Close
-//           </button>
-//           <button variant="primary" onClick={handleClose}>
-//             Save Changes
-//           </button>
-//         </Modal.Footer>
-//       </Modal>
-//     </div>
-//   );
-// };
-
-// export default Jobs;
+ 

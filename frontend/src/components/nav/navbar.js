@@ -21,39 +21,38 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             if (this.props.session.user.userType === 'hauler'){
             return (
-                <div>
-                    <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
-                    <div className='nav-jobs'><Link to='/jobs' className='jobs-link'>Jobs</Link></div>
-                    <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
-                </div>
+                    <div>
+                        <div className='nav-jobs'><Link to='/jobs' className='jobs-link'>Jobs</Link></div>
+                        <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
+                    </div>
             )} else{
                 return (
-                <div>
-                    <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
-                    <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
-                    <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
-                </div>
+                    <div>
+                        <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
+                        <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
+                    </div>     
             )}
         } else {
             return (
-                <div className='nav-session'>
-                    <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
-                    <div><button className='nav-signup' type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
-                    <div><button className='nav-login' type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
-                </div>
+                    <div>
+                        <div><button className='nav-signup' type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
+                        <div><button className='nav-login' type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
+                    </div>
             );
         }
     }
 
     render() {
- 
         return (
           <div className='navbar'>
             <div onClick={e => e.stopPropagation()} className='nav-session' >
-                {this.getLinks()}
+                <div className='nav-session'>
+                    <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
+                    <div>
+                    </div>
+                                {this.getLinks()}
+                </div>
             </div>
-
-
           </div>
         );
     }

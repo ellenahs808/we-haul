@@ -101,11 +101,11 @@
     color: white;
     background: black;
     cursor: pointer;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .login-submit-button:hover{
-    background: lime;
+    background: #18cf15;
     color: black;
 }
 
@@ -127,7 +127,7 @@
     left: 100px;
     cursor: pointer;
     padding: 10px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .demo-hauler-button{
@@ -141,7 +141,7 @@
     padding: 10px;
     right: 70px;
     cursor: pointer;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .demo-user-button:hover{
@@ -166,7 +166,7 @@
     list-style: none;
     position: relative;
     right: 20px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
     color: red;
     font-size: 15px;
    
@@ -228,11 +228,11 @@
     color: white;
     background: black;
     cursor: pointer;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .signup-submit-button:hover{
-    background: lime;
+    background: #18cf15;
     color: black;
 }
 
@@ -242,7 +242,7 @@
     position: absolute;
     top: 30px;
     left: 110px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
     font-size: 30px;
 }
 
@@ -262,7 +262,7 @@
     list-style: none;
     position: relative;
     right: 20px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
     color: red;
     font-size: 10px;
    
@@ -286,6 +286,7 @@
     padding-right: -100%;
     padding-bottom: 20px;
     padding-top: 52px;
+    height: 0px;
 }
 
 .job-form-container{
@@ -297,7 +298,7 @@
     width: 700px;
     height: 590px;
     z-index: 1;
-    top: -180px;
+    top: -600px;
     background: lightblue;
 
 }
@@ -315,7 +316,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .radio-button{
@@ -331,17 +332,22 @@
     flex-direction: column;
     padding-top: 20px;
     height: 100px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
 }
 
 .details-label {
     margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 20px;
 }
 
 .job-details-box{
     vertical-align: top;
     width: 300px;
-    font-family: 'Menlo';
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: 400;
+    font-stretch: 100%;
     position: relative;
     width: 100%;
     height: 45px;
@@ -349,12 +355,7 @@
     margin-top: 15px;
     border-radius: 5px;
     border-color: rgb(206, 212, 218);
-    // top: -15px; 
-    // justify-content: start;
-    // position: absolute;
-    // pointer-events: none;
-    // left: 20px;
-    // top: 18px;
+  
 }
 
 .job-details-box:focus{
@@ -447,7 +448,7 @@
     background: rgb(0, 0, 0);
     color: white;
     cursor: pointer;
-    font-family: 'Menlo';
+    font-family: 'Arial';
     position: relative;
     top: -150px;
     left: 250px;
@@ -455,7 +456,7 @@
 }
 
 .job-submit-button:hover{
-    background: #00FF00;
+     background: #18cf15;
     color: black;
 }
 

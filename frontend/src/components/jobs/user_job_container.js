@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 import { fetchJob, deleteJob, fetchJobs} from '../../actions/job_actions';
 import UserJob from './user_job';
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -24,4 +25,4 @@ const mapDTP = dispatch => ({
 })
 
 
-export default connect(mapSTP, mapDTP)(UserJob);
+export default withRouter(connect(mapSTP, mapDTP)(UserJob));
