@@ -19,6 +19,7 @@ class UserJob extends React.Component {
       lat: 37.76,
       zoom: 11,
       rating: 0,
+      driver: ''
     };
     
 
@@ -44,15 +45,11 @@ class UserJob extends React.Component {
  };
 
 
-// handleRatingClick(rating) {
-//   return(e) => this.setState({ rating });
-// }
-
-
  handleSubmit(e) {
    e.preventDefault();
   //  this.props.updateUser(this.state)
   //   .then(this.props.fetchUser(this.props.jobs[0].driver)
+
   this.setState(() => ({
     rating: this.props.haulerRating[1], driver: this.props.jobs[0].driver
   }), () => this.props.updateUser(this.state))
@@ -81,7 +78,7 @@ class UserJob extends React.Component {
                         type="radio"
                         value="1"
                         name="rating"
-                        onChange={this.update("value")}
+                        onChange={this.update("rating")}
                         // onClick={ this.handleRatingClick(1) }
                     />
                 </label>
@@ -90,7 +87,7 @@ class UserJob extends React.Component {
                         type="radio"
                         value="2"
                         name="rating"
-                        onChange={this.update("value")}
+                        onChange={this.update("rating")}
                         // onClick={ this.handleRatingClick(2) }
                     />
                 </label>
@@ -99,7 +96,7 @@ class UserJob extends React.Component {
                         type="radio"
                         value="3"
                         name="rating"
-                        onChange={this.update("value")}
+                        onChange={this.update("rating")}
                         // onClick={ this.handleRatingClick(3) }
                     />
                 </label>
@@ -108,7 +105,7 @@ class UserJob extends React.Component {
                         type="radio"
                         value="4"
                         name="rating"
-                        onChange={this.update("value")}
+                        onChange={this.update("rating")}
                         // onClick={ this.handleRatingClick(4) }
                     />
                 </label>
@@ -117,7 +114,7 @@ class UserJob extends React.Component {
                         type="radio"
                         value="5"
                         name="rating"
-                        onChange={this.update("value")}
+                        onChange={this.update("rating")}
                         // onClick={ this.handleRatingClick(5) }
                     />
                 </label>
