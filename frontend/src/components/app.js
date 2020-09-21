@@ -14,7 +14,10 @@ import UserJobContainer from './jobs/user_job_container';
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 const App = () => (
     <div className="home_background">
         <Modal/>
@@ -25,7 +28,11 @@ const App = () => (
             {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
             <ProtectedRoute exact path="/jobs" component={JobsContainer} />
-            <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>            <ProtectedRoute  exact path='/userjob' component={UserJobContainer}/>
+
+            <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>
+            <ProtectedRoute  exact path='/userjob' component={UserJobContainer}/>
+
+
         </Switch>
 
     </div>

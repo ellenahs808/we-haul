@@ -24,6 +24,8 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
       .catch((err) => res.status(404).json({nojobfound: 'No jobs found from that user'}))
 })
 
+
+
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     
