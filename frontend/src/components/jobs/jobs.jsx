@@ -19,14 +19,19 @@ class Job extends React.Component {
         this.props.fetchJobs();
     }
 
+    componentDidUpdate() {
+        this.props.fetchJobs();
+    }
     render() {
-
+        const filtered = this.props.jobs.filter(job => (job.status !== 2))
         return (
             <div id="job_index_container">
                 <div id="job_show_sub_left">
                     <div className='alljobs-header'>All Jobs</div>
                 
-                {this.props.jobs.map(job => (
+                {
+                
+                filtered.map(job => (
                   
                         <JobShow
                         key={job.id} 
