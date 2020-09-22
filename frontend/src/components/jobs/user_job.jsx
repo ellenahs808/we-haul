@@ -22,10 +22,6 @@ class UserJob extends React.Component {
     this.props.fetchJob(this.props.currentUser.id)
   }
 
-  componentDidUpdate() {
-    this.props.fetchJob(this.props.currentUser.id)
-    
-  }
 
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
