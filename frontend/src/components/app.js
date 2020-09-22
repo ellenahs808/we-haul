@@ -14,10 +14,7 @@ import UserJobContainer from './jobs/user_job_container';
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 const App = () => (
     <div className="home_background">
         <Modal/>
