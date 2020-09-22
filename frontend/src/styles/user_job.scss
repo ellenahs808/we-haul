@@ -21,8 +21,7 @@
 
 
 .user-request-container {
-    border: 3px solid lightgrey;
-    width: 400px;
+    width: 600px;
     height: 593px;
     align-items: right;
     overflow-y: auto;
@@ -136,9 +135,7 @@
 // }
 
 
-.delete-div {
-    padding: 100px 0;
-}
+
 
 
 .delete-btn {
@@ -169,9 +166,7 @@
     display: flex;
     flex-direction: row;
     justify-self: center;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    padding-left: 20%;
+    padding: 10%;
     height: 60%;
     width: 60%;
   
@@ -201,16 +196,17 @@
 }
 
 .user-map-container .map-div {
-    width: 60%;
+
 }
 
 .user-map-container .mapbox-directions-steps {
-    width: 400px;
+    display: none;
 
 }
 
 #user_jobmap_jobshow .mapboxgl-canvas { 
-    height: 40vh;
+    height: 65vh;
+    width: 60vw;
     border: 2px solid grey;
     border-radius: 5px;
     width: 100%;
@@ -221,8 +217,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
-    height: 100%;
+    width: 70vw;
+    height: 70vh;
     border: 2px solid grey;
     border-radius: 5px;
     padding: 50px;
@@ -240,14 +236,10 @@ box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
 
 
 
-#job_show_sub_right {
-    width: 60%;
-    
 
-}
 
 #divider_div {
-    width: 100%;
+width: auto;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -260,42 +252,52 @@ box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
     
     font-style: arial;
     color: grey;
-    size: 16px;
+    size: 12px;
+
 }
 
 #jobmap_jobshow .mapboxgl-canvas { 
     display: flex;
-    
+    width: 60vw;
+    height: 60vh;
     border: 2px solid grey;
     border-radius: 5px;
-   width: 40%;
-   height: 60%;
+//    width: auto;.
+ 
    box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
+}
+
+#jobmap_jobshow .mapboxgl-control-container {
+    // width: 30vw;
 }
 
 #jobmap_jobshow {
     display: flex;
-    flex-direction: row;
-    width: 60%;
-    height: 50%;
+    flex-direction: column;
+    height: 70vh;
+    width: 57vw;
     padding: 10%;
+    padding-top: 80px;   
 
 }
 
 #jobmap_jobshow .mapbox-directions-steps {
-    width: 400px;
+    display: none;
+    width:70vw;
+    height: 20vh;
     font-size: 20px;
     font-style: arial;
-    line-height: 30px;
-    font-weight: 500;
+    line-height: 25px;
+    font-weight: 300;
+
     
 }
 #user_jobmap_jobshow .mapbox-directions-steps {
     width: 400px;
-    font-size: 16px;
+    font-size: 12px;
     font-style: arial;
-    line-height: 30px;
-    font-weight: 500;
+    line-height: 25px;
+    font-weight: 300;
     
 }
 
@@ -303,16 +305,17 @@ box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
   width: 400px;
     font-size: 20px;
     font-style: arial;
-    line-height: 30px;
+    line-height: 20px;
     font-weight: 500;
     color: #ec9d85;
+    margin: 0px;
 }
 
 .job-item-details {
     width: 400px;
     font-size: 16px;
     font-style: arial;
-    line-height: 30px;
+    line-height: 20px;
     font-weight: 400;
     color: grey;
 }

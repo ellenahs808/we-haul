@@ -46,11 +46,11 @@ class Job extends React.Component {
                         ))}
                 </div>
                 <div id="job_show_sub_right">
-                    <div id="divider_div">
+                  
                         <JobMapContainer 
                         />
 
-                    </div>
+                  
                 </div>
             </div>
         )

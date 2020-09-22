@@ -193,8 +193,7 @@ class UserJob extends React.Component {
             <p className="job-item-details">{ownJobs.endAddress}</p>
             <p className="request-details">Status:</p>
             <p className="job-item-details">{this.statusUpdate()}</p>
-            <br />
-            <div className="delete-div">
+            
               <button
                 className="delete-btn"
                 onClick={() => {
@@ -204,7 +203,7 @@ class UserJob extends React.Component {
               >
                 Delete
               </button>
-            </div>
+            
             </div>
           <div className="user-map-container">
             <div className="map-div">
