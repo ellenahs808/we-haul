@@ -94,12 +94,14 @@ router.post('/login', (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
+  // const userType = req.body.userType;
 
   User.findOne({ email })
     .then(user => {
       if (!user) {
         return res.status(404).json({ email: 'This user does not exist' });
       }
+
 
    bcrypt.compare(password, user.password).then((isMatch) => {
      if (isMatch) {
@@ -141,7 +143,7 @@ router.patch(
 
     User.findById(req.params.id).then((user) => {
       user.rating = rating;
-      user.numberOfRatings = numberOfRatings;
+      // user.numberOfRatings = numberOfRatings;
 
 
       user

@@ -17,6 +17,11 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
+    componentWillUpdate() {
+        window.location.reload(false);
+    }
+
+
     getLinks() {
         if (this.props.loggedIn) {
             if (this.props.session.user.userType === 'hauler'){
@@ -50,7 +55,7 @@ class NavBar extends React.Component {
                     <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
                     <div>
                     </div>
-                                {this.getLinks()}
+                    {this.getLinks()}
                 </div>
             </div>
           </div>
