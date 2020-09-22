@@ -1,12 +1,36 @@
 import React from 'react';
 import keys from '../../config/keys_mapbox'
 import '../../styles/user_job.scss';
+
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
+import JobMapContainer from "./job_map_container";
+
+
+
 import JobFormContainer from './job_form_container'
 import UserJobMapContainer from "./user_job_map_container";
+
 
 class UserJob extends React.Component {
   constructor(props) {
     super(props);
+
+
+    this.state = {
+      jobs: [],
+      map: null,
+      lng: -122.44,
+      lat: 37.76,
+      zoom: 11,
+      rating: 0,
+      driver: ''
+    };
+    
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   callScript = () => {
@@ -23,15 +47,119 @@ class UserJob extends React.Component {
   }
 
 
+
+  componentDidUpdate() {
+    if (this.props.haulerRating.length > 0) {
+      this.props.fetchUser(this.props.jobs[0].driver);
+    }
+  }
+
+
+ update(field) {
+   return(e) => this.setState({
+     [field]: e.currentTarget.value
+   })
+ };
+
+
+ handleSubmit(e) {
+   e.preventDefault();
+  //  this.props.updateUser(this.state)
+  //   .then(this.props.fetchUser(this.props.jobs[0].driver)
+
+  // componentDidUpdate() {
+  //   this.props.fetchJob(this.props.currentUser.id)
+    
+  // }
+
+
+  this.setState(() => ({
+    rating: this.props.haulerRating[1], driver: this.props.jobs[0].driver
+  }), () => this.props.updateUser(this.state))
+ };
+
+
+  
+  
   statusUpdate() {
     if (this.props.jobs[0].status === 0) {
       return <p className="job-item-details">Waiting for hauler...</p>;
     } else if (this.props.jobs[0].status === 1) {
       return <p className="job-item-details">A hauler has taken your request!</p>;
     } else {
+
+      // this.props.fetchUser(this.props.jobs[0].driver)
+      // if (this.props.haulerRating[1] > 0) {
+        // debugger
+        return (
+          <div>
+            <div>Your request has been completed!</div>
+            <br/>
+            <div>Please submit a rating</div>
+              <form onSubmit={this.handleSubmit}>
+                <label>1
+                    <input 
+                        type="radio"
+                        value="1"
+                        name="rating"
+                        onChange={this.update("rating")}
+                        // onClick={ this.handleRatingClick(1) }
+                    />
+                </label>
+                <label>2
+                    <input 
+                        type="radio"
+                        value="2"
+                        name="rating"
+                        onChange={this.update("rating")}
+                        // onClick={ this.handleRatingClick(2) }
+                    />
+                </label>
+                <label>3
+                    <input 
+                        type="radio"
+                        value="3"
+                        name="rating"
+                        onChange={this.update("rating")}
+                        // onClick={ this.handleRatingClick(3) }
+                    />
+                </label>
+                <label>4
+                    <input 
+                        type="radio"
+                        value="4"
+                        name="rating"
+                        onChange={this.update("rating")}
+                        // onClick={ this.handleRatingClick(4) }
+                    />
+                </label>
+                <label>5
+                    <input 
+                        type="radio"
+                        value="5"
+                        name="rating"
+                        onChange={this.update("rating")}
+                        // onClick={ this.handleRatingClick(5) }
+                    />
+                </label>
+               <br/>
+               <input 
+                type="submit"
+                value="Submit Rating"
+                onSubmit={this.handleSubmit}
+              />
+               
+              </form>
+          </div>
+        )
+      
+
       return <p className="job-item-details">Your request has been completed!</p>;
+
     }
-  }
+  };
+
+  
 
 
   render() {

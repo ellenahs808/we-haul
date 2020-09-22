@@ -56,7 +56,7 @@ class JobForm extends React.Component{
               <form onSubmit={this.handleSubmit}>
                 <div className="job-radio">
                   <label>
-                    <img src={car} className="type-icon" alt="car-icon"/>
+                    <img src={car} className="type-icon" alt="car-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -89,7 +89,7 @@ class JobForm extends React.Component{
                     <div className="icon-type">Truck</div>
                   </label>
                   <label>
-                    <img src={jet} className="type-icon" alt="jet-icon"/>
+                    <img src={jet} className="type-icon" alt="jet-icon" />
                     <input
                       type="radio"
                       onChange={this.update("type")}
@@ -102,14 +102,15 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-form-pad">
-                  <label className="details-label">Details:
-                      <input
-                        type="textarea"
-                        onChange={this.update("details")}
-                        value={this.state.details}
-                        placeholder="Fill out move details."
-                        className="job-details-box"
-                      />
+                  <label className="details-label">
+                    Details:
+                    <input
+                      type="textarea"
+                      onChange={this.update("details")}
+                      value={this.state.details}
+                      placeholder="Fill out move details."
+                      className="job-details-box"
+                    />
                   </label>
                 </div>
 
@@ -131,13 +132,12 @@ class JobForm extends React.Component{
                         this.setState({ startAddress: description })
                       }
                       suggestionsClassNames={{
-                        container: 'suggestion-container',
-                        suggestion: 'suggestion'
+                        container: "suggestion-container",
+                        suggestion: "suggestion",
                       }}
                       loader={
                         <div className="task-form-loader">Loading...</div>
                       }
-
                     />
                   </div>
 
@@ -158,8 +158,8 @@ class JobForm extends React.Component{
                         this.setState({ endAddress: description })
                       }
                       suggestionsClassNames={{
-                        container: 'suggestion-container',
-                        suggestion: 'suggestion'
+                        container: "suggestion-container",
+                        suggestion: "suggestion",
                       }}
                       loader={
                         <div className="task-form-loader">Loading...</div>
@@ -169,18 +169,12 @@ class JobForm extends React.Component{
                 </div>
 
                 <div className="job-submit">
-
-                    
-                    <button type="submit" className="job-submit-button">
-                      Request a Hauler.
-                    </button>
-                   
-
+                  <button type="submit" className="job-submit-button">
+                    Request a Hauler.
+                  </button>
                 </div>
 
-                <div className='form-errors'>
-                  {this.renderErrors()}
-                </div>
+                <div className="form-errors">{this.renderErrors()}</div>
               </form>
             </div>
           </div>

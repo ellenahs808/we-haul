@@ -24,6 +24,8 @@ router.get('/user/:user_id', passport.authenticate('jwt', { session: false }), (
       .catch((err) => res.status(404).json({nojobfound: 'No jobs found from that user'}))
 })
 
+
+
 router.post('/', 
     passport.authenticate('jwt', { session: false }),
     
@@ -44,6 +46,7 @@ router.post('/',
                   startAddress: gMapsResponse.data.routes[0].legs[0].start_address,
                   endAddress: gMapsResponse.data.routes[0].legs[0].end_address,
                   user: req.user.id,
+                  status: req.body.status,
                   //         startLatLong: req.body.startLatLong, // array
                   //       endLatLong: req.body.endLatLong, // array
                   //     status: req.body.status, // not-started - default assignment 0
@@ -68,8 +71,7 @@ router.patch(
       job.driver = driver;
       job.status = status;
 
-      job
-        .save()
+      job.save()
         .then((savedJob) => res.json(savedJob))
         .catch((err) => res.json(err));
     });
