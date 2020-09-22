@@ -17,7 +17,6 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       jobs: [],
       map: null,
@@ -25,7 +24,7 @@ class UserJob extends React.Component {
       lat: 37.76,
       zoom: 11,
       rating: 0,
-      driver: ''
+      id: ''
     };
     
 
@@ -44,16 +43,23 @@ class UserJob extends React.Component {
   componentDidMount() {
     this.callScript()
     this.props.fetchJob(this.props.currentUser.id)
+    // this.props.fetchUser(this.props.jobs[0].driver);
   }
 
 
 
   componentDidUpdate() {
-    if (this.props.haulerRating.length === 0) {
+    if (this.props.haulerRating.length > 0) {
+      // debugger
       this.props.fetchUser(this.props.jobs[0].driver);
     }
   }
 
+  // componentDidUpdate() {
+  //   this.props.fetchJob(this.props.currentUser.id)
+    
+  // }
+  
 
  update(field) {
    return(e) => this.setState({
@@ -64,18 +70,18 @@ class UserJob extends React.Component {
 
  handleSubmit(e) {
    e.preventDefault();
-  //  this.props.updateUser(this.state)
-  //   .then(this.props.fetchUser(this.props.jobs[0].driver)
-
-  // componentDidUpdate() {
-  //   this.props.fetchJob(this.props.currentUser.id)
-    
-  // }
+  //  let updatedUser = {id: this.props.jobs[0].driver, rating: e.currentTarget.value}
+  //  this.props.updateUser(updatedUser)
+  // this.props.updateUser(this.state)
 
 
   this.setState(() => ({
-    rating: this.props.haulerRating[1], driver: this.props.jobs[0].driver
+    rating: this.state.rating, id: this.props.jobs[0].driver
   }), () => this.props.updateUser(this.state))
+
+   
+  // debugger
+  // console.log(this.props.updateUser(this.props.jobs[0].driver));
  };
 
 
@@ -96,7 +102,7 @@ class UserJob extends React.Component {
             <div>Your request has been completed!</div>
             <br/>
             <div>Please submit a rating</div>
-              <form onSubmit={this.handleSubmit}>
+              <form>
                 <label>1
                     <input 
                         type="radio"
@@ -152,9 +158,6 @@ class UserJob extends React.Component {
               </form>
           </div>
         )
-      
-
-      return <p className="job-item-details">Your request has been completed!</p>;
 
     }
   };
@@ -164,6 +167,10 @@ class UserJob extends React.Component {
 
   render() {
     const ownJobs = this.props.jobs[0];
+    if (this.props.jobs.length > 1) {
+      this.props.deleteJob(this.props.jobs[0]._id);
+      window.location.reload(false);
+    }
     if (!ownJobs) {
       return (
         <div className="user_job_form">

@@ -14,7 +14,7 @@ class JobShow extends React.Component {
     this.setState(() => ({
       status: 1, driver: this.props.currentUser.id
     }), () => this.props.updateJob(this.state))
-
+    // debugger
   }
 
   handleComplete() {
@@ -22,7 +22,6 @@ class JobShow extends React.Component {
     this.setState(() => ({
       status: 2
     }), () => this.props.updateJob(this.state))
-
   }
 
   render() {
