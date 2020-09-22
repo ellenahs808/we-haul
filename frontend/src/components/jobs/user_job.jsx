@@ -1,9 +1,9 @@
 import React from 'react';
 
 import '../../styles/user_job.scss';
-import JobForm from './job_form';
-import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-import mapboxgl from "mapbox-gl";
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
 import JobMapContainer from "./job_map_container";
 
 

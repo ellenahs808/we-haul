@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Typical from 'react-typical';
+// import Typical from 'react-typical';
 
 import '../../styles/forms.scss';
 
