@@ -8,7 +8,7 @@ const path = require('path');
 const users = require("./routes/api/users");
 const jobs = require("./routes/api/jobs");
 const { seedJobs } = require('./seeds/scripts');
-const cors = require('cors')
+// const cors = require('cors')
 
 
 
@@ -29,12 +29,12 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
 
-app.use(cors())
+// app.use(cors())
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 
 
 
