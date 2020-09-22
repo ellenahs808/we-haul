@@ -1,6 +1,6 @@
 import {RECEIVE_JOBS, RECEIVE_JOB, RECEIVE_NEW_JOB, DELETE_JOB} from '../actions/job_actions';
 
-const JobsReducer = (state ={all:{}, user: {}, new: undefined}, action) => {
+const JobsReducer = (state ={all:{}, user: [], new: undefined}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
@@ -13,6 +13,7 @@ const JobsReducer = (state ={all:{}, user: {}, new: undefined}, action) => {
             return newState;
         case RECEIVE_NEW_JOB:
             newState.new = action.job.data;
+            newState.user.push(action.job.data)
             return newState;
         case DELETE_JOB:
             delete newState[action.job.id];

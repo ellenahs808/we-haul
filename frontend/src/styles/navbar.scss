@@ -5,8 +5,8 @@
     height: 28px;
     flex-direction: row;
     width: 100%;
-    background: rgb(233, 213, 213);
-    border-bottom: 1px solid black;
+    background:  linear-gradient(to right,#ec9d85 0%, #e9d5d5 80%,#fff1f1 100%);
+    border-bottom: 1px solid #cbd4db;
 }
 
 .nav-session {
@@ -18,6 +18,9 @@
     display: inline-block;
 }
 
+button {
+    border-radius: 2px;
+}
 
 .nav-signup {
 
@@ -41,7 +44,7 @@
 }
 
 .nav-signup:hover{
-    background: cyan;
+    background: #bed3fa;
     color: black;
 }
 
@@ -70,8 +73,8 @@
 }
 
 .nav-login:hover{
-    background: lime;
-    color: black;
+      background: #18cf15;
+    color: #0c570a;
 }
 
 .nav-login:focus{
@@ -87,7 +90,7 @@
 }
 
 .nav-logout-button {
-    background-color: red;
+    background-color:#e84f1c;
     border: none;
     color: white;
     padding: 5px 20px;
@@ -112,11 +115,11 @@
 }
 
 .nav-logout-button:hover{
-    background:black;
+    background: #6b220a;
 }
 
 .nav-jobs{
-    background-color: lightblue;
+    background-color:#bed3fa;
 
     border: none;
     color: white;
@@ -144,7 +147,7 @@
 }
 
 .nav-jobs:hover{
-    background: lime;
-    color: black;
+    background: #18cf15;
+    color: #0c570a;
 }
 

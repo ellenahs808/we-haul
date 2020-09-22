@@ -43,6 +43,8 @@ const MainPage = (props) => {
             <Splash />
             <JobForm />
 
+ 
+
             {/* <Link to='/userjob'>HELPME</Link> */}
 
             {/* <JobMap /> */}
