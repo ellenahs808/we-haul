@@ -8,6 +8,11 @@ const path = require('path');
 const users = require("./routes/api/users");
 const jobs = require("./routes/api/jobs");
 const { seedJobs } = require('./seeds/scripts');
+// const cors = require('cors')
+
+
+
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -18,11 +23,20 @@ if (process.env.NODE_ENV === "production") {
 
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to mongoDB"))
-  .catch((err) => console.log(err));
+.connect(db, { useNewUrlParser: true })
+.then(() => console.log("Connected to mongoDB"))
+.catch((err) => console.log(err));
 
 app.get("/", (req, res) => res.send("Hello World"));
+
+// app.use(cors())
+
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
+
+
 
 app.use(passport.initialize());
 require('./config/passport')(passport);

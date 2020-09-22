@@ -1,8 +1,17 @@
 import React from 'react';
 import keys from '../../config/keys_mapbox'
 import '../../styles/user_job.scss';
+
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
+import JobMapContainer from "./job_map_container";
+
+
+
 import JobFormContainer from './job_form_container'
 import UserJobMapContainer from "./user_job_map_container";
+
 
 class UserJob extends React.Component {
   constructor(props) {
@@ -20,6 +29,7 @@ class UserJob extends React.Component {
     
 
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   callScript = () => {
