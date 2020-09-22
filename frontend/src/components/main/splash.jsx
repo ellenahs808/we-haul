@@ -10,7 +10,7 @@ class Splash extends React.Component {
        
             <div className="wave-container">
               <img className="wave" src={splashImg} alt="splash" width="100%" />
-              <svg
+              {/* <svg
                 className="svg-wave"
                 id="Layer_1"
                 data-name="Layer 1"
@@ -23,7 +23,7 @@ class Splash extends React.Component {
                   transform="translate(-1 -61.42)"
                   />
               
-              </svg>
+              </svg> */}
                   </div>
 
         );
