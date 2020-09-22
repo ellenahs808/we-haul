@@ -1,13 +1,22 @@
 import React from 'react';
 import keys from '../../config/keys_mapbox'
 import '../../styles/user_job.scss';
+
+// import JobForm from './job_form';
+// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+// import mapboxgl from "mapbox-gl";
+import JobMapContainer from "./job_map_container";
+
+
+
 import JobFormContainer from './job_form_container'
 import UserJobMapContainer from "./user_job_map_container";
+
 
 class UserJob extends React.Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
+
 
     this.state = {
       jobs: [],
@@ -21,8 +30,7 @@ class UserJob extends React.Component {
     
 
     this.handleSubmit = this.handleSubmit.bind(this);
-=======
->>>>>>> master
+
   }
 
   callScript = () => {
@@ -79,7 +87,7 @@ class UserJob extends React.Component {
     } else if (this.props.jobs[0].status === 1) {
       return <p className="job-item-details">A hauler has taken your request!</p>;
     } else {
-<<<<<<< HEAD
+
       // this.props.fetchUser(this.props.jobs[0].driver)
       // if (this.props.haulerRating[1] > 0) {
         // debugger
@@ -145,9 +153,9 @@ class UserJob extends React.Component {
           </div>
         )
       
-=======
+
       return <p className="job-item-details">Your request has been completed!</p>;
->>>>>>> master
+
     }
   };
 
