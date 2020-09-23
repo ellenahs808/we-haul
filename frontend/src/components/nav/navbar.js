@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import "../../styles/navbar.scss";
 // import logoImg from '../images/logo.png';
 import trucklogo from '../images/trucklogo.png'
-
+import StarRatings from 'react-star-ratings'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -23,14 +23,42 @@ class NavBar extends React.Component {
 
 
     getLinks() {
+        const starRate = (this.props.currentUser.rating / this.props.currentUser.numberOfRatings);
+        const userName = this.props.currentUser.firstName;
         if (this.props.loggedIn) {
             if (this.props.session.user.userType === 'hauler'){
             return (
-                    <div>
-                        <div className='nav-jobs'><Link to='/jobs' className='jobs-link'>Jobs</Link></div>
-                        <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
-                    </div>
-            )} else{
+              <div>
+                <div className="nav-rating">
+                  <p className="nav-welcome">Welcome, {userName} your rating:</p>
+                  <div className='nav-stars'>
+                    <StarRatings
+                        rating={starRate}
+                        ingnoreInlineStyles={false}
+                        starDimension='22px'
+                        starRatedColor="purple"
+                        // starEmptyColor='white'
+                        numberOfStars={5}
+                        name="rating"
+                        starSpacing='1px'
+                    />
+                  </div>
+                </div>
+                <div className="nav-jobs">
+                  <Link to="/jobs" className="jobs-link">
+                    Jobs
+                  </Link>
+                </div>
+                <div className="nav-logout">
+                  <button
+                    onClick={this.logoutUser}
+                    className="nav-logout-button"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            );} else{
                 return (
                     <div>
                         <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
@@ -49,12 +77,11 @@ class NavBar extends React.Component {
 
     render() {
         return (
-          <div className='navbar'>
+            <div className='navbar'>
             <div onClick={e => e.stopPropagation()} className='nav-session' >
                 <div className='nav-session'>
                     <div><Link to='/'><img src={trucklogo} className='logo-nav' alt="truck-logo"></img></Link></div>
-                    <div>
-                    </div>
+                
                     {this.getLinks()}
                 </div>
             </div>
