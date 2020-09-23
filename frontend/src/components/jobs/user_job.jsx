@@ -17,15 +17,6 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   jobs: [],
-    //   map: null,
-    //   lng: -122.44,
-    //   lat: 37.76,
-    //   zoom: 11,
-    //   rating: 0,
-    //   id: ''
-    // };
 
     this.driverId = this.props.haulerRating.id;
     this.driverRating = this.props.haulerRating.rating;
@@ -54,18 +45,11 @@ class UserJob extends React.Component {
   }
 
 
-  // componentWillUpdate() {
-  //   if (!this.props.jobs[0]) return null;
-  //   this.props.fetchJob(this.props.jobs[0].driver)
-  // }
-  
 
  update(field) {
    return(e) => this.setState({
      [field]: parseInt(e.currentTarget.value), id: this.props.jobs[0].driver
     })
-
-  //  debugger
 
  };
 
@@ -88,17 +72,11 @@ class UserJob extends React.Component {
   this.props.deleteJob(this.props.jobs[0]._id);
   window.location.reload();
   
-  // this.props.updateUser(this.state)
-  // debugger
 
   // this.setState(() => ({
   //   rating: 2000, id: this.props.jobs[0].driver
   // }), () => this.props.updateUser(this.state))
 
-
-  // this.props.history.push('/')
-  
-  // console.log(this.props.updateUser(this.props.jobs[0].driver));
  };
 
 
@@ -135,7 +113,7 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 1)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
+        
               />
             </label>
             <label>
@@ -146,7 +124,7 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 2)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
+              
               />
             </label>
             <label>
@@ -157,7 +135,7 @@ class UserJob extends React.Component {
                 name="rating"
                 onChange={this.update("rating")}
                 checked={(this.state.rating === 3)}
-                // onClick={ this.handleSubmit }
+  
               />
             </label>
             <label>
@@ -168,7 +146,7 @@ class UserJob extends React.Component {
                 name="rating"
                 onChange={this.update("rating")}
                 checked={(this.state.rating === 4)}
-                // onClick={ this.handleSubmit }
+    
               />
             </label>
             <label>
@@ -179,7 +157,7 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 5)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
+
               />
             </label>
             <br />

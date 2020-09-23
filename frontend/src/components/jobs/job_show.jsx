@@ -58,7 +58,6 @@ class JobShow extends React.Component {
             : <button className='complete-btn' onClick={() => this.handleComplete()}>Complete</button>
             }
             
-            {/* <button className='accept-btn' onClick={() => this.handleUpdate()}>Accept Job</button> */}
           </div>
         </div>
       </div>
