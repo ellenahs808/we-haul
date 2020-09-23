@@ -1,14 +1,5 @@
 import React from 'react';
-import keys from '../../config/keys_mapbox'
 import '../../styles/user_job.scss';
-
-// import JobForm from './job_form';
-// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-// import mapboxgl from "mapbox-gl";
-import JobMapContainer from "./job_map_container";
-
-
-
 import JobFormContainer from './job_form_container'
 import UserJobMapContainer from "./user_job_map_container";
 
@@ -16,16 +7,6 @@ import UserJobMapContainer from "./user_job_map_container";
 class UserJob extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   jobs: [],
-    //   map: null,
-    //   lng: -122.44,
-    //   lat: 37.76,
-    //   zoom: 11,
-    //   rating: 0,
-    //   id: ''
-    // };
 
     this.driverId = this.props.haulerRating.id;
     this.driverRating = this.props.haulerRating.rating;
@@ -53,19 +34,11 @@ class UserJob extends React.Component {
     }
   }
 
-
-  // componentWillUpdate() {
-  //   if (!this.props.jobs[0]) return null;
-  //   this.props.fetchJob(this.props.jobs[0].driver)
-  // }
-  
-
  update(field) {
    return(e) => this.setState({
      [field]: parseInt(e.currentTarget.value), id: this.props.jobs[0].driver
     })
 
-  //  debugger
 
  };
 
@@ -76,34 +49,16 @@ class UserJob extends React.Component {
   let newRating = this.props.haulerRating.rating + this.state.rating;
   let newRatingCount = this.props.haulerRating.numberOfRatings + 1; 
   let driverId = this.props.haulerRating.id;
- 
-  console.log(newRating);
-  console.log(newRatingCount);
-  console.log(driverId);
-
 
   let updatedUser = {_id: driverId, rating: newRating, numberOfRatings: newRatingCount };
   console.log(updatedUser)
   this.props.updateUser(updatedUser);
   this.props.deleteJob(this.props.jobs[0]._id);
   window.location.reload();
-  
-  // this.props.updateUser(this.state)
-  // debugger
 
-  // this.setState(() => ({
-  //   rating: 2000, id: this.props.jobs[0].driver
-  // }), () => this.props.updateUser(this.state))
-
-
-  // this.props.history.push('/')
-  
-  // console.log(this.props.updateUser(this.props.jobs[0].driver));
  };
 
 
-  
-  
   statusUpdate() {
     let firstName = this.props.haulerRating.firstName
     let lastName = this.props.haulerRating.lastName
@@ -135,7 +90,6 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 1)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
               />
             </label>
             <label>
@@ -146,7 +100,6 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 2)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
               />
             </label>
             <label>
@@ -157,7 +110,6 @@ class UserJob extends React.Component {
                 name="rating"
                 onChange={this.update("rating")}
                 checked={(this.state.rating === 3)}
-                // onClick={ this.handleSubmit }
               />
             </label>
             <label>
@@ -168,7 +120,6 @@ class UserJob extends React.Component {
                 name="rating"
                 onChange={this.update("rating")}
                 checked={(this.state.rating === 4)}
-                // onClick={ this.handleSubmit }
               />
             </label>
             <label>
@@ -179,7 +130,6 @@ class UserJob extends React.Component {
                 name="rating"
                 checked={(this.state.rating === 5)}
                 onChange={this.update("rating")}
-                // onClick={ this.handleSubmit }
               />
             </label>
             <br />
@@ -188,8 +138,6 @@ class UserJob extends React.Component {
               value="Submit Rating"
               onClick={(e) => this.handleSubmit(e)}
             />
-
-            {/* </form> */}
           </div>
         );
 

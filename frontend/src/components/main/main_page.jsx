@@ -1,11 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Splash from './splash';
-
-import keys from '../../config/keys_mapbox'
 import JobForm from '../jobs/job_form_container';
-
-// import UserJob from '../jobs/user_job_container';
-// import {Link} from 'react-router-dom';
 import Contacts from './contacts';
 
 
