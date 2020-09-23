@@ -13,7 +13,7 @@ const geocodeUtil = require('../../util/geocode_util');
 
 router.get('/', (req, res) => {
     Job.find()
-        .sort({createdAt: 1})
+        .sort({createdAt: -1})
         .then((jobs) => res.json(jobs))
         .catch((err) => res.status(404).json({ nojobsfound: 'No jobs found.'}))
 })

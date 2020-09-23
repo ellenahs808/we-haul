@@ -66,6 +66,7 @@ class UserJob extends React.Component {
     })
 
   //  debugger
+
  };
 
 
@@ -200,10 +201,12 @@ class UserJob extends React.Component {
 
   render() {
     const ownJobs = this.props.jobs[0];
+
     if (this.props.jobs.length > 1) {
       this.props.deleteJob(this.props.jobs[0]._id);
       window.location.reload(false);
     }
+
     if (!ownJobs) {
       return (
         <div className="user_job_form">
