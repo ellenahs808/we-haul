@@ -17,70 +17,77 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.state = {
+    //   jobs: [],
+    //   map: null,
+    //   lng: -122.44,
+    //   lat: 37.76,
+    //   zoom: 11,
+    //   rating: 0,
+    //   id: ''
+    // };
     this.state = {
-      jobs: [],
-      map: null,
-      lng: -122.44,
-      lat: 37.76,
-      zoom: 11,
       rating: 0,
       id: ''
-    };
-    
+    }
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
-  callScript = () => {
-    const script = document.createElement("script");
-    script.className = "autocomplete";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-    script.async = true;
-    document.body.appendChild(script);
-  };
+  // callScript = () => {
+  //   const script = document.createElement("script");
+  //   script.className = "autocomplete";
+  //   script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // };
 
   componentDidMount() {
-    this.callScript()
+    // debugger
+    // this.callScript()
     this.props.fetchJob(this.props.currentUser.id)
-    // this.props.fetchUser(this.props.jobs[0].driver);
   }
 
 
 
   componentDidUpdate() {
-    if (this.props.haulerRating.length > 0) {
-      // debugger
+    if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
       this.props.fetchUser(this.props.jobs[0].driver);
     }
   }
 
-  // componentDidUpdate() {
-  //   this.props.fetchJob(this.props.currentUser.id)
-    
+
+  // componentWillUpdate() {
+  //   if (!this.props.jobs[0]) return null;
+  //   this.props.fetchJob(this.props.jobs[0].driver)
   // }
   
 
  update(field) {
    return(e) => this.setState({
-     [field]: e.currentTarget.value
-   })
+     [field]: parseInt(e.currentTarget.value), id: this.props.jobs[0].driver
+    })
+
+   debugger
  };
 
 
  handleSubmit(e) {
    e.preventDefault();
-  //  let updatedUser = {id: this.props.jobs[0].driver, rating: e.currentTarget.value}
-  //  this.props.updateUser(updatedUser)
+  //  let updatedUser = {id: this.props.jobs[0].driver, rating: 2}
   // this.props.updateUser(this.state)
-
+  // debugger
 
   this.setState(() => ({
-    rating: this.state.rating, id: this.props.jobs[0].driver
+    rating: 2, id: this.props.jobs[0].driver
   }), () => this.props.updateUser(this.state))
 
-   
-  // debugger
+
+  // this.props.history.push('/')
+  debugger
+  
   // console.log(this.props.updateUser(this.props.jobs[0].driver));
  };
 
@@ -96,20 +103,21 @@ class UserJob extends React.Component {
 
       // this.props.fetchUser(this.props.jobs[0].driver)
       // if (this.props.haulerRating[1] > 0) {
+
         // debugger
         return (
           <div>
             <div>Your request has been completed!</div>
             <br/>
             <div>Please submit a rating</div>
-              <form>
+              {/* <form> */}
                 <label>1
                     <input 
                         type="radio"
                         value="1"
                         name="rating"
                         onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(1) }
+                        // onClick={ this.handleSubmit }
                     />
                 </label>
                 <label>2
@@ -118,7 +126,7 @@ class UserJob extends React.Component {
                         value="2"
                         name="rating"
                         onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(2) }
+                        // onClick={ this.handleSubmit }
                     />
                 </label>
                 <label>3
@@ -127,7 +135,7 @@ class UserJob extends React.Component {
                         value="3"
                         name="rating"
                         onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(3) }
+                        // onClick={ this.handleSubmit }
                     />
                 </label>
                 <label>4
@@ -136,7 +144,7 @@ class UserJob extends React.Component {
                         value="4"
                         name="rating"
                         onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(4) }
+                        // onClick={ this.handleSubmit }
                     />
                 </label>
                 <label>5
@@ -145,17 +153,17 @@ class UserJob extends React.Component {
                         value="5"
                         name="rating"
                         onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(5) }
+                        // onClick={ this.handleSubmit }
                     />
                 </label>
                <br/>
                <input 
                 type="submit"
                 value="Submit Rating"
-                onSubmit={this.handleSubmit}
+                onClick={(e) => this.handleSubmit(e)}
               />
                
-              </form>
+              {/* </form> */}
           </div>
         )
 
