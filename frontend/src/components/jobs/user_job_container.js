@@ -15,7 +15,7 @@ const mapSTP = (state) => {
         jobs: Object.values(state.jobs.user),
         currentUser: state.session.user,
         status: state.jobs.user,
-        haulerRating: Object.values(state.haulerRating),
+        haulerRating: state.haulerRating,
         // numberOfRatings: state.haulerRating.numberOfRatings,
         // rating: state.haulerRating.rating,
         // hauler: state.jobs.user.driver

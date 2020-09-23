@@ -11,7 +11,6 @@ import Contacts from './contacts';
 
 
 const MainPage = (props) => {
-   
 
     return (
         <div className='full_page'>
