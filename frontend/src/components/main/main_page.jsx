@@ -12,19 +12,6 @@ import Contacts from './contacts';
 
 const MainPage = (props) => {
 
-    // const callScript = () => {
-    // const script = document.createElement("script");
-    // script.className = "autocomplete";
-    // script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-    // script.async = true;
-    // document.body.appendChild(script);
-    // };
-
-    // useEffect(() => {
-    //     callScript();
-        
-    // })
-
     return (
         <div className='full_page'>
             
