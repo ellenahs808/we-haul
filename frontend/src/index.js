@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import mapboxgl from 'mapbox-gl'
 import { mapBoxPublicKey } from './config/keys_dev_front'
-// import App from './App';
-// import axios from 'axios';
 
 import Root from './components/root';
 import configureStore from './store/store';

@@ -47,8 +47,6 @@ export const signup = user => dispatch =>
         localStorage.setItem('jwtToken', token);
         SessionAPIUtil.setAuthToken(token);
         const decoded = jwt_decode(token);
-        
-        // dispatch(receiveCurrentUser(decoded));
         dispatch(receiveCurrentUser(user));
     })
     .catch((err) => {
@@ -62,7 +60,6 @@ export const login = user => dispatch =>
             const { token } = res.data;
             localStorage.setItem('jwtToken', token);
             SessionAPIUtil.setAuthToken(token);
-            const decoded = jwt_decode(token);
             dispatch(receiveCurrentUser(user));
         })
         .catch((err) => {

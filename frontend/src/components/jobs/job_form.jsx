@@ -143,7 +143,6 @@ class JobForm extends React.Component{
 
                   <div className="job-end-address">
                     <GooglePlacesAutocomplete
-                      // apiKey={keys.googleMapsKey}
                       autocompletionRequest={{
                         bounds: [
                           { lat: 37.6, lng: -122.54 },
