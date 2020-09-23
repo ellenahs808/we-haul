@@ -31,7 +31,16 @@ router.get(
 
 router.get('/:id', (req, res) => {
     User.findById(req.params.id)
-      .then(((user) => res.json(user)))
+      .then(((user) =>  res.json({
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      phoneNumber: user.phoneNumber,
+      email: user.email,
+      userType: user.userType,
+      rating: user.rating,
+      numberOfRatings: user.numberOfRatings
+    })))
       .catch((err) => res.status(404).json({nouserfound: 'No user found'}))
 })
 
@@ -139,11 +148,11 @@ router.patch(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { rating } = req.body;
+    const { rating, numberOfRatings } = req.body;
 
     User.findById(req.params.id).then((user) => {
       user.rating = rating;
-      // user.numberOfRatings = numberOfRatings;
+      user.numberOfRatings = numberOfRatings;
 
 
       user

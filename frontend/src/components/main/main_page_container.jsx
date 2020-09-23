@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MainPage from './main_page';
+import MainPage from './main_page.jsx';
 import { withRouter } from 'react-router-dom'
 
 const mSTP = state => ({

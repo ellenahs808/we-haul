@@ -17,70 +17,83 @@ class UserJob extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.state = {
+    //   jobs: [],
+    //   map: null,
+    //   lng: -122.44,
+    //   lat: 37.76,
+    //   zoom: 11,
+    //   rating: 0,
+    //   id: ''
+    // };
+
+    this.driverId = this.props.haulerRating.id;
+    this.driverRating = this.props.haulerRating.rating;
+    this.ratingCount = this.props.haulerRating.numberofRatings;
     this.state = {
-      jobs: [],
-      map: null,
-      lng: -122.44,
-      lat: 37.76,
-      zoom: 11,
       rating: 0,
       id: ''
-    };
-    
+    }
+
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
-  callScript = () => {
-    const script = document.createElement("script");
-    script.className = "autocomplete";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-    script.async = true;
-    document.body.appendChild(script);
-  };
 
   componentDidMount() {
-    this.callScript()
     this.props.fetchJob(this.props.currentUser.id)
-    // this.props.fetchUser(this.props.jobs[0].driver);
   }
 
 
 
   componentDidUpdate() {
-    if (this.props.haulerRating.length > 0) {
-
+    if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
       this.props.fetchUser(this.props.jobs[0].driver);
     }
   }
 
-  // componentDidUpdate() {
-  //   this.props.fetchJob(this.props.currentUser.id)
-    
+
+  // componentWillUpdate() {
+  //   if (!this.props.jobs[0]) return null;
+  //   this.props.fetchJob(this.props.jobs[0].driver)
   // }
   
 
  update(field) {
    return(e) => this.setState({
-     [field]: e.currentTarget.value
-   })
+     [field]: parseInt(e.currentTarget.value), id: this.props.jobs[0].driver
+    })
  };
 
 
  handleSubmit(e) {
-   e.preventDefault();
-  //  let updatedUser = {id: this.props.jobs[0].driver, rating: e.currentTarget.value}
-  //  this.props.updateUser(updatedUser)
+  e.preventDefault();
+
+  let newRating = this.props.haulerRating.rating + this.state.rating;
+  let newRatingCount = this.props.haulerRating.numberOfRatings + 1; 
+  let driverId = this.props.haulerRating.id;
+ 
+  console.log(newRating);
+  console.log(newRatingCount);
+  console.log(driverId);
+
+
+  let updatedUser = {_id: driverId, rating: newRating, numberOfRatings: newRatingCount };
+  console.log(updatedUser)
+  this.props.updateUser(updatedUser);
+  window.location.reload();
+  
   // this.props.updateUser(this.state)
-
-
-  this.setState(() => ({
-    rating: this.state.rating, id: this.props.jobs[0].driver
-  }), () => this.props.updateUser(this.state))
-
-   
   // debugger
+
+  // this.setState(() => ({
+  //   rating: 2000, id: this.props.jobs[0].driver
+  // }), () => this.props.updateUser(this.state))
+
+
+  // this.props.history.push('/')
+  
   // console.log(this.props.updateUser(this.props.jobs[0].driver));
  };
 
@@ -96,68 +109,79 @@ class UserJob extends React.Component {
 
       // this.props.fetchUser(this.props.jobs[0].driver)
       // if (this.props.haulerRating[1] > 0) {
+
         // debugger
         return (
           <div>
             <div>Your request has been completed!</div>
-            <br/>
+            <br />
             <div>Please submit a rating</div>
-              <form>
-                <label>1
-                    <input 
-                        type="radio"
-                        value="1"
-                        name="rating"
-                        onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(1) }
-                    />
-                </label>
-                <label>2
-                    <input 
-                        type="radio"
-                        value="2"
-                        name="rating"
-                        onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(2) }
-                    />
-                </label>
-                <label>3
-                    <input 
-                        type="radio"
-                        value="3"
-                        name="rating"
-                        onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(3) }
-                    />
-                </label>
-                <label>4
-                    <input 
-                        type="radio"
-                        value="4"
-                        name="rating"
-                        onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(4) }
-                    />
-                </label>
-                <label>5
-                    <input 
-                        type="radio"
-                        value="5"
-                        name="rating"
-                        onChange={this.update("rating")}
-                        // onClick={ this.handleRatingClick(5) }
-                    />
-                </label>
-               <br/>
-               <input 
-                type="submit"
-                value="Submit Rating"
-                onSubmit={this.handleSubmit}
+            {/* <form> */}
+            <label>
+              1
+              <input
+                type="radio"
+                value="1"
+                name="rating"
+                checked={(this.state.rating === 1)}
+                onChange={this.update("rating")}
+                // onClick={ this.handleSubmit }
               />
-               
-              </form>
+            </label>
+            <label>
+              2
+              <input
+                type="radio"
+                value="2"
+                name="rating"
+                checked={(this.state.rating === 2)}
+                onChange={this.update("rating")}
+                // onClick={ this.handleSubmit }
+              />
+            </label>
+            <label>
+              3
+              <input
+                type="radio"
+                value="3"
+                name="rating"
+                onChange={this.update("rating")}
+                checked={(this.state.rating === 3)}
+                // onClick={ this.handleSubmit }
+              />
+            </label>
+            <label>
+              4
+              <input
+                type="radio"
+                value="4"
+                name="rating"
+                onChange={this.update("rating")}
+                checked={(this.state.rating === 4)}
+                // onClick={ this.handleSubmit }
+              />
+            </label>
+            <label>
+              5
+              <input
+                type="radio"
+                value="5"
+                name="rating"
+                checked={(this.state.rating === 5)}
+                onChange={this.update("rating")}
+                // onClick={ this.handleSubmit }
+              />
+            </label>
+            <br />
+            <input
+              type="submit"
+              value="Submit Rating"
+              onClick={(e) => this.handleSubmit(e)}
+            />
+
+            {/* </form> */}
           </div>
-        )
+        );
 
     }
   };
