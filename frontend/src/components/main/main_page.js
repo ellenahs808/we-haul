@@ -12,30 +12,8 @@ import JobForm from '../jobs/job_form_container';
 const MainPage = (props) => {
 
 
-    //     const callScript = () => {
-    //     const last = document.body.lastChild 
-        
-    //     if (last.className === 'autocomplete') {
-    //       document.body.removeChild(last);
-    //     //   continue;
-    //     } else { 
-    //       const script = document.createElement("script");
-    //       script.className = "autocomplete";
-    //       script.type = "text/javascript";
-    //       script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-    //       script.async = true;
-    //       document.body.appendChild(script);
-    //     }
-    // };
-    
 
-        useEffect(() => {
-            // debugger
-            
-            // callScript();
-            
-        })
-
+     
         
         
         return (

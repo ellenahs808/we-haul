@@ -32,16 +32,16 @@ class UserJob extends React.Component {
 
   }
 
-  callScript = () => {
-    const script = document.createElement("script");
-    script.className = "autocomplete";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
-    script.async = true;
-    document.body.appendChild(script);
-  };
+  // callScript = () => {
+  //   const script = document.createElement("script");
+  //   script.className = "autocomplete";
+  //   script.src = `https://maps.googleapis.com/maps/api/js?key=${keys.googleMapsKey}&libraries=places`;
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // };
 
   componentDidMount() {
-    this.callScript()
+    // this.callScript()
     this.props.fetchJob(this.props.currentUser.id)
     // this.props.fetchUser(this.props.jobs[0].driver);
   }
