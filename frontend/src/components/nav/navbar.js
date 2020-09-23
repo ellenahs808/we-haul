@@ -19,7 +19,7 @@ class NavBar extends React.Component {
     componentDidMount() {
       debugger
        this.user = this.props.fetchUser(this.props.currentUser.id);
-      console.log(this.user)
+
     }
     componentDidUpdate() {
         window.location.reload(false);
@@ -31,9 +31,9 @@ class NavBar extends React.Component {
 
     getLinks() {
       if (this.props.loggedIn) {
-        const starRate = (this.user.rating / this.user.numberOfRatings);
-        const userName = this.user.firstName;
-        if ((this.user.userType === 'hauler') && (this.user.numberOfRatings > 0)){
+        const starRate = (this.props.currentUser.rating / this.props.currentUser.numberOfRatings);
+        const userName = this.props.currentUser.firstName;
+        if ((this.props.session.user.userType === 'hauler') && (this.props.currentUser.numberOfRatings > 0)){
             return (
               <div>
                 <div className="nav-rating">
