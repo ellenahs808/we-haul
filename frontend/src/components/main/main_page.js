@@ -43,11 +43,7 @@ const MainPage = (props) => {
             <Splash />
             <JobForm />
 
- 
 
-            {/* <Link to='/userjob'>HELPME</Link> */}
-
-            {/* <JobMap /> */}
 
             <footer>Copyright &copy; 2020 WeHaul</footer>
 

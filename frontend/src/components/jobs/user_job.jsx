@@ -64,6 +64,9 @@ class UserJob extends React.Component {
    return(e) => this.setState({
      [field]: parseInt(e.currentTarget.value), id: this.props.jobs[0].driver
     })
+
+  //  debugger
+
  };
 
 
@@ -82,6 +85,7 @@ class UserJob extends React.Component {
   let updatedUser = {_id: driverId, rating: newRating, numberOfRatings: newRatingCount };
   console.log(updatedUser)
   this.props.updateUser(updatedUser);
+  this.props.deleteJob(this.props.jobs[0]._id);
   window.location.reload();
   
   // this.props.updateUser(this.state)
@@ -101,21 +105,27 @@ class UserJob extends React.Component {
   
   
   statusUpdate() {
+    let firstName = this.props.haulerRating.firstName
+    let lastName = this.props.haulerRating.lastName
     if (this.props.jobs[0].status === 0) {
       return <p className="job-item-details">Waiting for hauler...</p>;
     } else if (this.props.jobs[0].status === 1) {
-      return <p className="job-item-details">A hauler has taken your request!</p>;
+      console.log(this.props.haulerRating.firstName)
+      return (
+        <p className="job-item-details">
+          {firstName} {lastName} has taken your request!
+        <br/>
+        <i class="fas fa-phone-alt"> {this.props.haulerRating.phoneNumber}</i>
+        </p>
+      );
     } else {
-
-      // this.props.fetchUser(this.props.jobs[0].driver)
-      // if (this.props.haulerRating[1] > 0) {
 
         // debugger
         return (
           <div>
             <div>Your request has been completed!</div>
             <br />
-            <div>Please submit a rating</div>
+          <div>Please submit a rating:</div>
             {/* <form> */}
             <label>
               1

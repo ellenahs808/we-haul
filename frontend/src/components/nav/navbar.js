@@ -59,6 +59,7 @@ class NavBar extends React.Component {
                 </div>
               </div>
             );} else{
+              // if (this.props.jobs.user.ln)
                 return (
                     <div>
                         <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>

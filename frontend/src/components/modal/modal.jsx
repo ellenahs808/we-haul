@@ -3,9 +3,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 // import { withRouter } from 'react-router-dom';
 import '../../styles/modal.scss';
-// import JobShowContainer from '../jobs/job_show_container';
-import JobShow from '../jobs/job_show'
-import JobRoutes from "../jobs/job_route";
+
 
 
 function Modal({ modal, closeModal }) {
@@ -20,12 +18,6 @@ function Modal({ modal, closeModal }) {
             break;
         case 'signup':
             component = <SignupFormContainer />;
-            break;
-        case 'jobShow':
-            component = <JobShow jobId={modal.jobId} />;
-            break;
-        case 'jobRoute':
-            component = <JobRoutes />
             break;
         default:
             return null;
