@@ -9,12 +9,7 @@ const MainPage = (props) => {
           <div className="full_page">
             <Splash />
             <JobForm />
-
-
-
             <footer>Copyright &copy; 2020 WeHaul</footer>
-
-            
           </div>
         );
     

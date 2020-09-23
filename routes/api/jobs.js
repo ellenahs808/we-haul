@@ -5,11 +5,7 @@ const passport = require('passport');
 const Job = require('../../models/Job')
 const jwt = require('jsonwebtoken');
 const validateJobInput = require('../../validations/jobs');
-
 const geocodeUtil = require('../../util/geocode_util');
-
-
-// router.get("/test", (req, res) => res.json({ msg: "This is the jobs route" }));
 
 router.get('/', (req, res) => {
     Job.find()
@@ -47,9 +43,6 @@ router.post('/',
                   endAddress: gMapsResponse.data.routes[0].legs[0].end_address,
                   user: req.user.id,
                   status: req.body.status,
-                  //         startLatLong: req.body.startLatLong, // array
-                  //       endLatLong: req.body.endLatLong, // array
-                  //     status: req.body.status, // not-started - default assignment 0
                 });
             newJob.save()
             .then((job) => res.json(job))
@@ -88,17 +81,6 @@ router.delete('/:id',
     });
     }
 )
-
-
-// module.exports = router;
-//     passport.authenticate('jwt', {session: false}),
-//     (req, res, next) => {
-//         Job.findByIdAndRemove(req.params.id, req.body, function (err, job) {
-//         if (err) return next(err);
-//         res.json(job);
-//     });
-//     }
-
 
 
 module.exports = router;

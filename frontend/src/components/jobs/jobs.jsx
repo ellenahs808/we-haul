@@ -32,14 +32,7 @@ class Job extends React.Component {
             filtered = checkFilter
         }
         
-        // if (checkFilter.length === 0) {
-        //     filtered = this.props.jobs.filter(job => (job.status !== 2))
-        //     // debugger
-        // } else if (checkFilter.length > 0) {
-        //     filtered = this.props.jobs.filter(job => (job.driver === this.props.currentUser.id && job.status !== 2))
-        //     // debugger
-        // }
-        // console.log(filtered);
+      
         return (
             <div id="job_index_container">
                 <div id="job_show_sub_left">

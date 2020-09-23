@@ -12,10 +12,9 @@
 #job_show_sub_right {
     display: flex;
     height: 50%;
-    width: 30%;
-    
-    
+    width: 30%;  
 }
+
 #job_show_sub_left {
     display: block;
     width: 30vw;
@@ -66,7 +65,6 @@
     font-size: 21px;
     font-family: 'Arial';
     font-weight: 500;
-    // background-color: rgb(233, 232, 232);
     padding: 2px 15px;
     color:  #ee532494;
 }
@@ -75,12 +73,10 @@
 .job-title-haul {
     font-size: 21px;
     font-family: 'Arial';
-    // background-color: rgb(219, 248, 219);
     color: #ee532494;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 8px 15px;
-    // border-radius: 15px;
 }
 
 .job_label {
