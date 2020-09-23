@@ -59,9 +59,9 @@ class NavBar extends React.Component {
                 </div>
               </div>
             );} else{
+              // if (this.props.jobs.user.ln)
                 return (
                     <div>
-                        {/* if (this.props.jobs.user) */}
                         <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
                         <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
                     </div>     
