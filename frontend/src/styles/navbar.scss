@@ -151,3 +151,18 @@ button {
     color: #0c570a;
 }
 
+.nav-rating {
+    display: flex;
+    position: absolute;
+    top: -10px;
+    left: 60px;
+    // font-size: 14px;
+}
+
+.nav-welcome {
+    margin-right: 10px;
+}
+
+.nav-stars {
+ margin-top: 14px;
+}
