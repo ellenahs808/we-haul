@@ -8,17 +8,12 @@ import {withRouter} from 'react-router-dom'
 
 
 const mapSTP = (state) => {
-    // const userId = ownProps.match.params.userId;
 
     return {
-        // job: Object.values(state.jobs.user).filter(job => job.user === state.session.user.id)[0],
         jobs: Object.values(state.jobs.user),
         currentUser: state.session.user,
         status: state.jobs.user,
         haulerRating: state.haulerRating,
-        // numberOfRatings: state.haulerRating.numberOfRatings,
-        // rating: state.haulerRating.rating,
-        // hauler: state.jobs.user.driver
     }
 };
 

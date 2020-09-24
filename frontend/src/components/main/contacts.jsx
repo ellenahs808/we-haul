@@ -12,9 +12,12 @@ class Contacts extends React.Component {
           <div className="contacts-container">
             <div className="contact">
               <a href="https://github.com/mufasubhai">
-                <img src={adrian} className="contact-img" />
-                <div class="middle">
-                  <div class="text">Adrian</div>
+                <img src={adrian} 
+                className="contact-img"
+                alt="Adrian"
+                />
+                <div className="middle">
+                  <div className="text">Adrian</div>
                 </div>
               </a>
             </div>
@@ -22,12 +25,11 @@ class Contacts extends React.Component {
               <a href="https://github.com/albert-d-chen">
                 <img
                   src={albert}
-                  height="100px"
-                  width="100px"
+                  alt="Albert"
                   className="contact-img"
                 />
-              <div class="middle">
-                <div class="text">Albert</div>
+              <div className="middle">
+                <div className="text">Albert</div>
               </div>
               </a>
             </div>
@@ -35,12 +37,11 @@ class Contacts extends React.Component {
               <a href="https://github.com/kshiflett88">
                 <img
                   src={kodi}
-                  height="100px"
-                  width="100px"
+                  alt="Kodi"
                   className="contact-img"
                 />
-              <div class="middle">
-                <div class="text">Kodi</div>
+              <div className="middle">
+                <div className="text">Kodi</div>
               </div>
               </a>
             </div>
@@ -48,12 +49,11 @@ class Contacts extends React.Component {
               <a href="https://github.com/ellenahs808">
                 <img
                   src={shanelle}
-                  height="100px"
-                  width="100px"
+                  alt="Shanelle"
                   className="contact-img"
                 />
-              <div class="middle">
-                <div class="text">Shanelle</div>
+              <div className="middle">
+                <div className="text">Shanelle</div>
               </div>
               </a>
             </div>
