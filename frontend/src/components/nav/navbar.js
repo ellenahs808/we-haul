@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import "../../styles/navbar.scss";
-// import logoImg from '../images/logo.png';
 import trucklogo from '../images/trucklogo.png'
 import StarRatings from 'react-star-ratings'
 
@@ -18,7 +17,7 @@ class NavBar extends React.Component {
     }
     componentDidMount() {
       debugger
-       this.user = this.props.fetchUser(this.props.currentUser.id);
+       this.user = this.props.fetchCurrentUser(this.props.currentUser.id);
 
     }
     componentDidUpdate() {
