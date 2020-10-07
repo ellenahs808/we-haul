@@ -10,13 +10,18 @@ class NavBar extends React.Component {
     this.logoutUser = this.logoutUser.bind(this);
     this.user = {};
   }
+
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
   }
-  // componentDidMount() {
-  //   this.user = this.props.fetchUser(this.props.currentUser.id);
-  // }
+
+  componentDidMount() {
+    if (this.props.loggedIn) {
+      this.props.fetchJob(this.props.currentUser.id)
+    }
+  }
+
   componentDidUpdate() {
     window.location.reload(false);
   }

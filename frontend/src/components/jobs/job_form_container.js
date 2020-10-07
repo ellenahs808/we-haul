@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {createJob, fetchJob} from '../../actions/job_actions';
+import {createJob, fetchJob, deleteJob} from '../../actions/job_actions';
 import JobForm from './job_form'
 import {withRouter} from 'react-router-dom'
 
@@ -21,7 +21,8 @@ const mapSTP = (state) => ({
 
 const mapDTP = dispatch => ({
     createJob: jobData => dispatch(createJob(jobData)),
-    fetchJob: id => dispatch(fetchJob(id))
+    fetchJob: id => dispatch(fetchJob(id)),
+    deleteJob: jobId => dispatch(deleteJob(jobId)),
 })
 
 export default withRouter(connect(mapSTP, mapDTP)(JobForm));

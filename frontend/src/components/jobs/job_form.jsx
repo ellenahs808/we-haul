@@ -23,6 +23,9 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.props.jobs.user.length === 1) {
+          this.props.deleteJob(this.props.jobs.user[0]._id);
+        }
       this.props.createJob(this.state)
         .then(() => {
           if (this.props.errors.length <= 0) {

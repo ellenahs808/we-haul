@@ -29,9 +29,10 @@ class UserJob extends React.Component {
 
 
   componentDidUpdate() {
-    if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
+    if (Object.keys(this.props.haulerRating).length !== 0 && this.props.jobs.length > 0) {
       this.props.fetchUser(this.props.jobs[0].driver);
     }
+
   }
 
  update(field) {
@@ -150,12 +151,12 @@ class UserJob extends React.Component {
   render() {
     const ownJobs = this.props.jobs[0];
 
-    if (this.props.jobs.length > 1) {
-      this.props.deleteJob(this.props.jobs[0]._id);
-      window.location.reload(false);
-    }
-
-    if (!ownJobs) {
+    // if (this.props.jobs.length > 1) {
+    //   // debugger
+    //   this.props.deleteJob(this.props.jobs[0]._id);
+    //   window.location.reload(false);
+    // }
+    if (this.props.jobs.length === 0) {
       return (
         <div className="user_job_form">
           <JobFormContainer />
