@@ -22,23 +22,17 @@
 
 
 
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .copyright {
     color: rgb(124, 124, 124);
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 
 .contacts-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 30px 0;
     width: 100%;
 }

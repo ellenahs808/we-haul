@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/user_job.scss';
 import JobFormContainer from './job_form_container'
 import UserJobMapContainer from "./user_job_map_container";
+import Contacts from '../main/contacts'
 
 
 class UserJob extends React.Component {
@@ -80,65 +81,69 @@ class UserJob extends React.Component {
           <div>
             <div>Your request has been completed!</div>
             <br />
-          <div>Please submit a rating:</div>
-            {/* <form> */}
-            <label>
-              1
+            <div className="ratings-div">
+              <h2>Please submit a rating:</h2>
+              {/* <form> */}
+              <label>
+                1
+                <input
+                  type="radio"
+                  value="1"
+                  name="rating"
+                  checked={(this.state.rating === 1)}
+                  onChange={this.update("rating")}
+                />
+              </label>
+              <label>
+                2
+                <input
+                  type="radio"
+                  value="2"
+                  name="rating"
+                  checked={(this.state.rating === 2)}
+                  onChange={this.update("rating")}
+                />
+              </label>
+              <label>
+                3
+                <input
+                  type="radio"
+                  value="3"
+                  name="rating"
+                  onChange={this.update("rating")}
+                  checked={(this.state.rating === 3)}
+                />
+              </label>
+              <label>
+                4
+                <input
+                  type="radio"
+                  value="4"
+                  name="rating"
+                  onChange={this.update("rating")}
+                  checked={(this.state.rating === 4)}
+                />
+              </label>
+              <label>
+                5
+                <input
+                  type="radio"
+                  value="5"
+                  name="rating"
+                  checked={(this.state.rating === 5)}
+                  onChange={this.update("rating")}
+                />
+              </label>
+              <br /><br />
               <input
-                type="radio"
-                value="1"
-                name="rating"
-                checked={(this.state.rating === 1)}
-                onChange={this.update("rating")}
+                type="submit"
+                value="Submit Rating"
+                onClick={(e) => this.handleSubmit(e)}
+                className="ratings-submit-btn"
               />
-            </label>
-            <label>
-              2
-              <input
-                type="radio"
-                value="2"
-                name="rating"
-                checked={(this.state.rating === 2)}
-                onChange={this.update("rating")}
-              />
-            </label>
-            <label>
-              3
-              <input
-                type="radio"
-                value="3"
-                name="rating"
-                onChange={this.update("rating")}
-                checked={(this.state.rating === 3)}
-              />
-            </label>
-            <label>
-              4
-              <input
-                type="radio"
-                value="4"
-                name="rating"
-                onChange={this.update("rating")}
-                checked={(this.state.rating === 4)}
-              />
-            </label>
-            <label>
-              5
-              <input
-                type="radio"
-                value="5"
-                name="rating"
-                checked={(this.state.rating === 5)}
-                onChange={this.update("rating")}
-              />
-            </label>
-            <br />
-            <input
-              type="submit"
-              value="Submit Rating"
-              onClick={(e) => this.handleSubmit(e)}
-            />
-          </div>
+            </div>
+
+            </div>
         );
 
     }
@@ -157,48 +162,57 @@ class UserJob extends React.Component {
 
     if (!ownJobs) {
       return (
-        <div className="user_job_form">
-          <JobFormContainer />
+        <div>
+          <h1 className="job-form-message">You have no active request! Create one below:</h1>
+          <div className="user_job_form">
+            <JobFormContainer />
+            <Contacts />
+          </div>
         </div>
+ 
       )
     } else { 
     
     return (
-      <div className="user-job-div">
-        <div className="user_request_wrapper">
+      <div>
+        <div className="user-job-div">
+          <div className="user_request_wrapper">
 
 
-          <div className="user-request-container">
-            <p className="request-details">Request details:</p>
-            <p className="job-item-details">{ownJobs.details}</p>
-            <p className="request-details">Pickup address:</p>
-            <p className="job-item-details">{ownJobs.startAddress}</p>
-            <p className="request-details">Drop off address:</p>
-            <p className="job-item-details">{ownJobs.endAddress}</p>
-            <p className="request-details">Status:</p>
-            <p className="job-item-details">{this.statusUpdate()}</p>
-            
-              <button
-                className="delete-btn"
-                onClick={() => {
-                  this.props.deleteJob(ownJobs._id);
-                  window.location.reload();
-                }}
-              >
-                Delete
-              </button>
-            
+            <div className="user-request-container">
+              <p className="request-details">Request details:</p>
+              <p className="job-item-details">{ownJobs.details}</p>
+              <p className="request-details">Pickup address:</p>
+              <p className="job-item-details">{ownJobs.startAddress}</p>
+              <p className="request-details">Drop off address:</p>
+              <p className="job-item-details">{ownJobs.endAddress}</p>
+              <p className="request-details">Status:</p>
+              <p className="job-item-details">{this.statusUpdate()}</p>
+              
+                <button
+                  className="delete-btn"
+                  onClick={() => {
+                    this.props.deleteJob(ownJobs._id);
+                    window.location.reload();
+                  }}
+                >
+                  Delete
+                </button>
+              
+              </div>
+            <div className="user-map-container">
+              <div className="map-div">
+                <UserJobMapContainer />
             </div>
-          <div className="user-map-container">
-            <div className="map-div">
-              <UserJobMapContainer />
-          </div>
+            </div>
           </div>
         </div>
+        <div><Contacts /></div>
       </div>
     );
     }
   }
+
 };
 
 

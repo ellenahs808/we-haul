@@ -5,6 +5,8 @@
     align-items: right;
     overflow-y: auto;
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .delete-btn {
@@ -26,6 +28,18 @@
     background-color: lightblue;
 }
 
+
+.job-form-message {
+    margin: 0;
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    // font-family: 'Fira Sans';
+    color: rgb(131, 131, 131);
+}
+
+
+
 .user_job_form {
     position: relative;
     top: 700px;
@@ -33,7 +47,7 @@
 
 .user-job-div {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-self: center;
     padding: 10%;
     height: 60%;
@@ -160,4 +174,38 @@
     line-height: 20px;
     font-weight: 400;
     color: grey;
+}
+
+.ratings-div {
+    width: 70%;
+    border: 1px solid darkslateblue;
+    padding: 10px;
+    
+}
+
+.ratings-div > h2 {
+    color: purple;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+
+.ratings-submit-btn {
+    background-color:#55c521;
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 150px;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.ratings-submit-btn:hover {
+    color: white;
+    background-color: rgb(116, 107, 177);
 }

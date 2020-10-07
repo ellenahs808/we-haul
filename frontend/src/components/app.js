@@ -16,7 +16,7 @@ import UserJobContainer from './jobs/user_job_container';
 
 
 const App = () => (
-    <div className="home_background">
+    <div>
         <Modal/>
         <NavBarContainer />
         {/* <MainPage /> */}
