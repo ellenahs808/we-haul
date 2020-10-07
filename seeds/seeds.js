@@ -188,7 +188,7 @@ const details = [
     "I've got a lot of old records. Mostly billy joel. All being driven to the dump.",
     "Fiesta-ware needs to be dropped off at my mom's.",
     "I have a bunch of empty boxes, but I'm not sure what size car I need",
-    "Ogan delivery. Must be quick!",
+    "Organ delivery. Must be quick!",
     "I'm taking the plumbing from my old apartment to my new one.",
     "Need help with all of my illusions. Taking them to a warehouse.",
     "I have a few garbage bags full of spare change that I need help with.",

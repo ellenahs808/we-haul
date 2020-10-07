@@ -17,10 +17,9 @@ const MainPage = (props) => {
                 (!props.session.user) ? null : (props.session.user.userType === 'user') ? <JobForm /> : null
             }
 
-            <footer className="footer">
-                <Contacts />
-                <div className="copyright">Copyright &copy; 2020 WeHaul</div>
-            </footer>
+        
+            <Contacts />
+   
         
         </div>
 

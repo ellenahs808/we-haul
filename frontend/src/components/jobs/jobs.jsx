@@ -7,6 +7,7 @@ import JobShow from './job_show';
 // import ReactDom from 'react-dom';
 import JobMapContainer from './job_map_container'
 import '../../styles/jobs.scss'
+import Contacts from '../main/contacts'
 
 
 class Job extends React.Component {
@@ -34,33 +35,38 @@ class Job extends React.Component {
         
       
         return (
-            <div id="job_index_container">
-                <div id="job_show_sub_left">
-                    <div className='alljobs-header'>All Jobs</div>
-                
-                {
-                
-                filtered.map(job => (
-                  
-                        <JobShow
-                        key={job.id} 
-                        job={job}
-                        currentUser={this.props.currentUser}
-                        updateAddress={this.props.updateAddress}
-                        removeAddress={this.props.removeAddress}
-                        fetchJobs={this.props.fetchJobs}
-                        updateJob={this.props.updateJob}
-                        fetchJob={this.props.fetchJob}
-                        />
-                        ))}
-                </div>
-                <div id="job_show_sub_right">
-                  
-                        <JobMapContainer 
-                        />
+            <div>
+                <div id="job_index_container">
+                    <div id="job_show_sub_left">
+                        <div className='alljobs-header'>All Jobs</div>
+                    
+                    {
+                    
+                    filtered.map(job => (
+                    
+                            <JobShow
+                            key={job.id} 
+                            job={job}
+                            currentUser={this.props.currentUser}
+                            updateAddress={this.props.updateAddress}
+                            removeAddress={this.props.removeAddress}
+                            fetchJobs={this.props.fetchJobs}
+                            updateJob={this.props.updateJob}
+                            fetchJob={this.props.fetchJob}
+                            />
+                            ))}
+                    </div>
+                    <div id="job_show_sub_right">
+                    
+                            <JobMapContainer 
+                            />
 
-                  
+                    
+                    </div>
                 </div>
+                
+                <div><Contacts /></div>
+              
             </div>
         )
     }
