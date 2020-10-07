@@ -63,10 +63,20 @@ class JobMap extends React.Component {
   
   render() {
     
-    return(
-      
-        <div ref={el => this.mapContainer = el} className="map_container" id="jobmap_jobshow" />
-    )
+    return (
+      <div>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
+
+        <div
+          ref={(el) => (this.mapContainer = el)}
+          className="map_container"
+          id="jobmap_jobshow"
+        />
+      </div>
+    );
   }
 }
 
