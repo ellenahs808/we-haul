@@ -1,6 +1,6 @@
 import React from 'react';
 import adrian from '../images/adrian.png';
-import albert from '../images/albert.png';
+import albert from '../images/albert1.png';
 import kodi from '../images/kodi.png';
 import shanelle from '../images/shanelle.png';
 

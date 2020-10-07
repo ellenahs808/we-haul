@@ -9,8 +9,6 @@ const modalReducer = (state = null, action) => {
             return action.modal;
         case CLOSE_MODAL:
             return null;
-        case RECEIVE_CURRENT_USER:
-            return null;
         default:
             return state;
     }

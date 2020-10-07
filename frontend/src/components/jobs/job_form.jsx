@@ -166,6 +166,7 @@ class JobForm extends React.Component{
                     />
                   </div>
                 </div>
+                  <div className="icon-type">Enter a location in San Franciso. Other service areas coming soon!</div>
 
                 <div className="job-submit">
                   <button type="submit" className="job-submit-button">

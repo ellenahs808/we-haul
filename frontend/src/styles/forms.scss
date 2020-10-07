@@ -366,12 +366,10 @@
 
 .job-submit{
     display: flex;
-    position: relative;
     justify-content: center;
     left: 20px;
-    position: absolute; 
+    margin-top:20px;
     bottom: 0;
-    // top: 100px;
 }
 
 .job-address{
@@ -450,7 +448,7 @@
     color: white;
     cursor: pointer;
     font-family: 'Arial';
-    position: relative;
+    // position: relative;
     top: -150px;
     left: 250px;
 
