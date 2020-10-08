@@ -30,7 +30,7 @@ class UserJob extends React.Component {
 
 
   componentDidUpdate() {
-    if (Object.keys(this.props.haulerRating).length !== 0 && this.props.jobs.length > 0) {
+    if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
       this.props.fetchUser(this.props.jobs[0].driver);
     }
 
@@ -64,6 +64,7 @@ class UserJob extends React.Component {
   statusUpdate() {
     let firstName = this.props.haulerRating.firstName
     let lastName = this.props.haulerRating.lastName
+    let phoneNumber = this.props.haulerRating.phoneNumber
     if (this.props.jobs[0].status === 0) {
       return <p className="job-item-details">Waiting for hauler...</p>;
     } else if (this.props.jobs[0].status === 1) {
@@ -71,8 +72,9 @@ class UserJob extends React.Component {
       return (
         <p className="job-item-details">
           {firstName} {lastName} has taken your request!
-        <br/>
-        <i class="fas fa-phone-alt"> {this.props.haulerRating.phoneNumber}</i>
+        <br/><br />
+        
+        <i class="fas fa-phone-alt">   {phoneNumber}</i>
         </p>
       );
     } else {
@@ -164,7 +166,7 @@ class UserJob extends React.Component {
     if (this.props.jobs.length === 0) {
       return (
         <div>
-          <h1 className="job-form-message">You have no active request! Create one below:</h1>
+          <h1 className="job-form-message">You have no current request! Create one below:</h1>
           <div className="user_job_form">
             <JobFormContainer />
             <Contacts />

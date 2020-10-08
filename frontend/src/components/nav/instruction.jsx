@@ -10,31 +10,9 @@ class Instructions extends React.Component {
   }
 
   render() {
-    console.log(this.props.session)
     const pathname = this.props.location.pathname;
     const userType = this.props.session.user.userType;
-  // {
-  //   pathname === '/' ? (
-  //     <div className="signup-form">
-  //         {/* <p className="typical">These are instructions</p> */}
-  //         <img className="instruct-gif" src={userjob} height='200' width=''></img>
-  //         {/* <img className="instruct-gif" src={userjob} height='200' width=''></img> */}
-  //       </div> 
-  //   ) : ( 
-  //     pathname === '/userjob' ? (
-  //       <div className="signup-form">
-  //         {/* <p className="typical">These are instructions</p> */}
-  //         <img className="instruct-gif" src={userjob} height='200' width=''></img>
-  //         {/* <img className="instruct-gif" src={userjob} height='200' width=''></img> */}
-  //       </div> 
-  //     ) : pathname === '/jobs' ? (
-  //       <div className="signup-form">
-  //         {/* <p className="typical">These are instructions</p> */}
-  //         <img className="instruct-gif" src={userjob} height='200' width=''></img>
-  //         {/* <img className="instruct-gif" src={userjob} height='200' width=''></img> */}
-  //       </div> 
-  //     ) : (""))
-  // }
+
     return (
       <div>
         {
