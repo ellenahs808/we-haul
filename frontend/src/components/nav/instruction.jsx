@@ -27,8 +27,8 @@ class Instructions extends React.Component {
             <li><p>Once all fields are complete click on "Request Hauler."</p></li>
           </ol>
           <img className="instruct-gif" src={userjob} height='200' width=''></img>
-          {/* <img className="instruct-gif" src={userjob} height='200' width=''></img> */}
-        </div> 
+          
+      </div> 
     ) : 
       pathname === '/' && userType === 'hauler' ? (
       <div className="signup-form">
@@ -54,7 +54,7 @@ class Instructions extends React.Component {
         </div> 
       ) : pathname === '/jobs' ? (
         <div className="signup-form">
-          <p className="instruct-title">Hauler Instructions</p>
+          <p className="instruct-title">Job Instructions</p>
     
           <ol className="instructions-ol">
             <li><p>To view a route click "View Route" on any job.</p></li>

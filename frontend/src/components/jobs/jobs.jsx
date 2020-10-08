@@ -35,7 +35,7 @@ class Job extends React.Component {
         
       
         return (
-            <div>
+            
                 <div>
                     <div id="job_index_container">
                         <div id="job_show_sub_left">
@@ -57,19 +57,16 @@ class Job extends React.Component {
                                 />
                                 ))}
                         </div>
-                        <div id="job_show_sub_right">
-                        
-                                <JobMapContainer 
-                                />
-
-                        
+                        <div id="job_show_sub_right">    
+                                    <JobMapContainer 
+                                    />
                         </div>
                     </div>
+                    <div className="job-page-contacts"><Contacts /></div>
                 </div>
                 
-                <div><Contacts /></div>
               
-            </div>
+           
         )
     }
 }
