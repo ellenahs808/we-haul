@@ -19,7 +19,7 @@ class Instructions extends React.Component {
     pathname === '/' && userType === 'user' ? (
       <div className="signup-form">
           <p className="instruct-title">User Instructions</p>
-          <ol>
+          <ol className="instructions-ol">
             <li><p>Click on which type of transportation you would like to request.</p></li>
             <li><p>Fill out moving details, such as what you are moving.</p></li>
             <li><p>Enter in a starting and ending address located in the San Francisco area.</p></li>
@@ -32,11 +32,11 @@ class Instructions extends React.Component {
       pathname === '/' && userType === 'hauler' ? (
       <div className="signup-form">
           <p className="instruct-title">Hauler Instructions</p>
-          <ol>
-            <li><p>Click the "Jobs" button in navbar to take you to job listings.</p></li>
-            <li><p>To view a route click "View Route" on any job.</p></li>
-            <li><p>To accept a job click "Accept Job."</p></li>
-            <li><p>Once job is finished click "Complete Job."</p></li>
+          <ol className="instructions-ol">
+            <li className="instructions-list"><p>Click the "Jobs" button in navbar to take you to job listings.</p></li>
+            <li className="instructions-list"><p>To view a route click "View Route" on any job.</p></li>
+            <li className="instructions-list"><p>To accept a job click "Accept Job."</p></li>
+            <li className="instructions-list"><p>Once job is finished click "Complete Job."</p></li>
           </ol>
           <img className="instruct-gif" src={jobshow} height='300' width=''></img>
         </div> 
@@ -44,7 +44,7 @@ class Instructions extends React.Component {
       pathname === '/userjob' ? (
         <div className="signup-form">
           <p className="instruct-title">These are user job instructions</p>
-          <ol>
+          <ol className="instructions-ol">
             <li><p>To delete a request you no longer need click "Delete."</p></li>
             <li><p>To accept a job click "Accept Job."</p></li>
             <li><p>Once job is finished click "Complete Job."</p></li>
@@ -54,11 +54,13 @@ class Instructions extends React.Component {
       ) : pathname === '/jobs' ? (
         <div className="signup-form">
           <p className="instruct-title">Hauler Instructions</p>
-          <ol>
+    
+          <ol className="instructions-ol">
             <li><p>To view a route click "View Route" on any job.</p></li>
             <li><p>To accept a job click "Accept Job."</p></li>
             <li><p>Once job is finished click "Complete Job."</p></li>
           </ol>
+      
           <img className="instruct-gif" src={jobshow} height='300' width=''></img>
         </div> 
       ) : null )

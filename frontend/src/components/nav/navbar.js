@@ -26,17 +26,15 @@ class NavBar extends React.Component {
 
 
 
- 
-    
-    componentDidUpdate() {
-      window.location.reload(false);
-    }
-    
-    // componentWillUpdate() {
-    //     window.location.reload(false);
-    // }
-    
-    // render() {
+  componentDidUpdate() {
+    window.location.reload(false);
+  }
+  
+  // componentWillUpdate() {
+  //     window.location.reload(false);
+  // }
+  
+  // render() {
 
   getLinks() {
     if (this.props.loggedIn) {

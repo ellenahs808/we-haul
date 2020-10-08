@@ -24,8 +24,26 @@
     height: 620px;
     position: absolute;
     top: -70px;
-
+    // padding: 0;
+    // margin: 0;
 }
+
+
+.instructions-div {
+    align-items: center;
+}
+
+
+.instructions-ol {
+    color: rgb(107, 107, 107);
+    // padding-bottom: 30px;
+}
+
+
+.instructions-list > p {
+    color: rgb(107, 107, 107);
+}
+
 
 .typical{
     display: flex;
