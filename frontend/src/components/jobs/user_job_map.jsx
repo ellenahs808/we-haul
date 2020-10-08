@@ -54,8 +54,8 @@ class UserJobMap extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.address.startAddress !== this.props.address.startAddress) {
 
-            this.state.directions.setOrigin(this.props.address.startAddress);
-            this.state.directions.setDestination(this.props.address.endAddress);
+            this.state.directions.setOrigin(this.props.address.endAddress);
+            this.state.directions.setDestination(this.props.address.startAddress);
 
         }
     }

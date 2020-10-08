@@ -31,7 +31,10 @@ class UserJob extends React.Component {
 
   componentDidUpdate() {
     if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
-      this.props.fetchUser(this.props.jobs[0].driver);
+      if (this.props.jobs[0].driver) {
+        this.props.fetchUser(this.props.jobs[0].driver)
+
+      }
     }
 
   }
@@ -53,7 +56,7 @@ class UserJob extends React.Component {
   let driverId = this.props.haulerRating.id;
 
   let updatedUser = {_id: driverId, rating: newRating, numberOfRatings: newRatingCount };
-  console.log(updatedUser)
+  // console.log(updatedUser)
   this.props.updateUser(updatedUser);
   this.props.deleteJob(this.props.jobs[0]._id);
   window.location.reload();
@@ -180,8 +183,6 @@ class UserJob extends React.Component {
       <div>
         <div className="user-job-div">
           <div className="user_request_wrapper">
-
-
             <div className="user-request-container">
               <p className="request-details">Request details:</p>
               <p className="job-item-details">{ownJobs.details}</p>
@@ -191,26 +192,41 @@ class UserJob extends React.Component {
               <p className="job-item-details">{ownJobs.endAddress}</p>
               <p className="request-details">Status:</p>
               <p className="job-item-details">{this.statusUpdate()}</p>
-              
-                <button
-                  className="delete-btn"
-                  onClick={() => {
-                    this.props.deleteJob(ownJobs._id);
-                    window.location.reload();
-                  }}
-                >
-                  Delete
-                </button>
-              
-              </div>
+
+            <span>
+
+              <button
+                className="route-btn route-btn-2"
+                onClick={() =>
+                  this.props.updateAddress({
+                    startAddress: ownJobs.startAddress,
+                    endAddress: ownJobs.endAddress,
+                  })
+                }
+              >
+                View Route
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => {
+                  this.props.deleteJob(ownJobs._id);
+                  window.location.reload();
+                }}
+              >
+                Delete
+              </button>
+            </span>
+            </div>
             <div className="user-map-container">
               <div className="map-div">
                 <UserJobMapContainer />
-            </div>
+              </div>
             </div>
           </div>
         </div>
-        <div><Contacts /></div>
+        <div>
+          <Contacts />
+        </div>
       </div>
     );
     }
