@@ -40,7 +40,7 @@
 }
 
 .nav-user-instruct {
-    background-color: #9523f2;
+    background-color: #fab039;
     border: none;
     color: white;
     padding: 5px 20px;
@@ -56,6 +56,11 @@
     right: 210px;
     top: 0px;
     position: absolute;
+    outline: none;
+}
+
+.nav-user-instruct:hover {
+    background-color: #9523f2;
 }
 
 .nav-user-instruct-button:focus{
@@ -68,7 +73,7 @@
 }
 
 .nav-hauler-instruct {
-    background-color: #9523f2;
+    background-color: #fab039;
     border: none;
     color: white;
     padding: 5px 20px;
@@ -84,20 +89,22 @@
     right: 210px;
     top: 0px;
     position: absolute;
-}
-
-.nav-hauler-instruct-button:focus{
-    border: none;
     outline: none;
 }
 
-.nav-hauler-instruct-button:hover{
-    background: #6b220a;
+
+
+.nav-hauler-instruct:hover{
+    background-color: #9523f2;
 }
+
 
 .instruct-title {
     display: flex;
     text-align: center;
     justify-content: center;
     font-size: 30px;
+    // padding-bottom: 30px;
+    margin: 0;
+    color: rgb(98, 98, 98);
 }
