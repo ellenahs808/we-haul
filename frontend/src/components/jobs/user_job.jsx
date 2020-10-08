@@ -31,7 +31,10 @@ class UserJob extends React.Component {
 
   componentDidUpdate() {
     if (Object.keys(this.props.haulerRating).length === 0 && this.props.jobs.length > 0) {
-      this.props.fetchUser(this.props.jobs[0].driver);
+      if (this.props.jobs[0].driver) {
+        this.props.fetchUser(this.props.jobs[0].driver)
+
+      }
     }
 
   }
