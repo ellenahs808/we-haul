@@ -1,6 +1,7 @@
 import React from "react";
 import userjob from '../images/userjob.gif'
 import jobshow from '../images/jobshow.gif'
+import request from "../images/requestfin.gif";
 import '../../styles/instructions.scss'
 import "../../styles/forms.scss";
 
@@ -43,13 +44,13 @@ class Instructions extends React.Component {
       ) : (
       pathname === '/userjob' ? (
         <div className="signup-form">
-          <p className="instruct-title">These are user job instructions</p>
+          <p className="instruct-title">Request Instructions</p>
           <ol className="instructions-ol">
             <li><p>To delete a request you no longer need click "Delete."</p></li>
-            <li><p>To accept a job click "Accept Job."</p></li>
-            <li><p>Once job is finished click "Complete Job."</p></li>
+            <li><p>Once request is accepted by a hauler you will see the haulers name and phone number under "Status."</p></li>
+            <li><p>When a request is completed by a hauler you will be able to submit a rating which will close the request.</p></li>
           </ol>
-          <img className="instruct-gif" src={userjob} height='200' width=''></img>
+          <img className="instruct-gif" src={request} height='200' width=''></img>
         </div> 
       ) : pathname === '/jobs' ? (
         <div className="signup-form">
