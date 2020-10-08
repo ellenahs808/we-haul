@@ -65,10 +65,10 @@ class JobMap extends React.Component {
     
     return (
       <div id="job_show_container">
-        <link
+        {/* <link
           href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
           rel="stylesheet"
-        />
+        /> */}
 
         <div
           ref={(el) => (this.mapContainer = el)}
