@@ -1,7 +1,8 @@
 import React from "react";
-import userjob from '../images/userjob.gif'
+import requestJob from '../images/request-instructions.gif'
 import jobshow from '../images/jobshow.gif'
 import request from "../images/requestfin.gif";
+import ratings from "../images/ratings.gif";
 import '../../styles/instructions.scss'
 import "../../styles/forms.scss";
 
@@ -26,7 +27,9 @@ class Instructions extends React.Component {
             <li><p>Enter in a starting and ending address located in the San Francisco area.</p></li>
             <li><p>Once all fields are complete click on "Request Hauler."</p></li>
           </ol>
-          <img className="instruct-gif" alt="user job instruction" src={userjob} height='200' width=''></img>
+
+          <img className="instruct-gif" alt="user job instruction"  src={requestJob} height='300' width=''></img>
+
           
       </div> 
     ) : 
@@ -50,7 +53,9 @@ class Instructions extends React.Component {
             <li><p>Once request is accepted by a hauler you will see the haulers name and phone number under "Status."</p></li>
             <li><p>When a request is completed by a hauler you will be able to submit a rating which will close the request.</p></li>
           </ol>
-          <img className="instruct-gif" alt="request instruction" src={request} height='200' width=''></img>
+
+          <img className="instruct-gif"   alt="request instruction" src={ratings} height='280' width=''></img>
+
         </div> 
       ) : pathname === '/jobs' ? (
         <div className="signup-form">
