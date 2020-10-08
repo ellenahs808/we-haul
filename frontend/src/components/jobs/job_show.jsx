@@ -10,18 +10,19 @@ class JobShow extends React.Component {
   }
   
   handleUpdate() {
-
-    this.setState(() => ({
-      status: 1, driver: this.props.currentUser.id
-    }), () => this.props.updateJob(this.state))
+    let updatedJob = this.props.job;
+    updatedJob.status = 1;
+    updatedJob.driver = this.props.currentUser.id;
+    this.props.updateJob(updatedJob);
+    
     // debugger
   }
 
   handleComplete() {
-
-    this.setState(() => ({
-      status: 2
-    }), () => this.props.updateJob(this.state))
+    let updatedJob = this.props.job;
+    updatedJob.status = 2;
+  
+   this.props.updateJob(updatedJob);
   }
 
   render() {
