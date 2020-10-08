@@ -23,7 +23,7 @@ class Job extends React.Component {
         this.props.fetchJobs();
     }
     render() {
-        let checkFilter = this.props.jobs.filter(job => job.driver === this.props.currentUser.id && job.status !== 2)
+        let checkFilter = this.props.jobs.filter(job => ((job.driver === this.props.currentUser.id) && (job.status !== 2)))
         console.log(checkFilter)
         let filtered = this.props.jobs.filter(job => (job.status !== 2))
         console.log(filtered)
