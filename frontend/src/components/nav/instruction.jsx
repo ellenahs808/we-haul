@@ -43,7 +43,7 @@ class Instructions extends React.Component {
       ) : (
       pathname === '/userjob' ? (
         <div className="signup-form">
-          <p className="instruct-title">These are user job instructions</p>
+          <p className="instruct-title">User Instructions</p>
           <ol className="instructions-ol">
             <li><p>To delete a request you no longer need click "Delete."</p></li>
             <li><p>To accept a job click "Accept Job."</p></li>

@@ -27,6 +27,7 @@ class JobShow extends React.Component {
   render() {
     // debugger
     return (
+    
       <div className="job-idx-pad">
         <div className="job-idx-left-container">
           <label className="job_label">
