@@ -71,7 +71,7 @@ class UserJob extends React.Component {
       console.log(this.props.haulerRating.firstName)
       return (
         <p className="job-item-details">
-          {firstName} {lastName} has taken your request!
+          <strong>{firstName} {lastName}</strong> has taken your request!
         <br/><br />
         
         <i class="fas fa-phone-alt">   {phoneNumber}</i>
@@ -82,7 +82,7 @@ class UserJob extends React.Component {
         // debugger
         return (
           <div>
-            <div>Your request has been completed!</div>
+            <div>Your request has been <strong>completed</strong>!</div>
             <br />
             <div className="ratings-div">
               <h2>Please submit a rating:</h2>

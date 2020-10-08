@@ -51,7 +51,7 @@ class Instructions extends React.Component {
             <li><p>Once request is accepted by a hauler you will see the haulers name and phone number under "Status."</p></li>
             <li><p>When a request is completed by a hauler you will be able to submit a rating which will close the request.</p></li>
           </ol>
-          <img className="instruct-gif" src={ratings} height='300' width=''></img>
+          <img className="instruct-gif" src={ratings} height='250' width=''></img>
         </div> 
       ) : pathname === '/jobs' ? (
         <div className="signup-form">
