@@ -10,7 +10,7 @@
 }
 
 .delete-btn {
-    padding: 10px;
+    padding: 6px;
     background-color: rgba(255, 0, 0, 0.63);
     border: none;
     color: white;
@@ -19,13 +19,18 @@
     transition: 0.3s;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 140px;
+    margin-left: 50px;
     border-radius: 40px;
     margin-top: 50px;
 }
 
 .delete-btn:hover {
     background-color: lightblue;
+}
+
+.route-btn-2 {
+    font-size: 16px;
+    color: white;
 }
 
 

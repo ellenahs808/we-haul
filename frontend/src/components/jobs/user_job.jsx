@@ -183,8 +183,6 @@ class UserJob extends React.Component {
       <div>
         <div className="user-job-div">
           <div className="user_request_wrapper">
-
-
             <div className="user-request-container">
               <p className="request-details">Request details:</p>
               <p className="job-item-details">{ownJobs.details}</p>
@@ -194,26 +192,41 @@ class UserJob extends React.Component {
               <p className="job-item-details">{ownJobs.endAddress}</p>
               <p className="request-details">Status:</p>
               <p className="job-item-details">{this.statusUpdate()}</p>
-              
-                <button
-                  className="delete-btn"
-                  onClick={() => {
-                    this.props.deleteJob(ownJobs._id);
-                    window.location.reload();
-                  }}
-                >
-                  Delete
-                </button>
-              
-              </div>
+
+            <span>
+
+              <button
+                className="route-btn route-btn-2"
+                onClick={() =>
+                  this.props.updateAddress({
+                    startAddress: ownJobs.startAddress,
+                    endAddress: ownJobs.endAddress,
+                  })
+                }
+              >
+                View Route
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => {
+                  this.props.deleteJob(ownJobs._id);
+                  window.location.reload();
+                }}
+              >
+                Delete
+              </button>
+            </span>
+            </div>
             <div className="user-map-container">
               <div className="map-div">
                 <UserJobMapContainer />
-            </div>
+              </div>
             </div>
           </div>
         </div>
-        <div><Contacts /></div>
+        <div>
+          <Contacts />
+        </div>
       </div>
     );
     }

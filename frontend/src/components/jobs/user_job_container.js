@@ -4,6 +4,8 @@ import { fetchJob, deleteJob, fetchJobs } from '../../actions/job_actions';
 import { updateUser, fetchUser } from '../../actions/session_actions';
 import UserJob from './user_job';
 import {withRouter} from 'react-router-dom'
+import { updateAddress } from "../../actions/address_actions";
+
 
 
 
@@ -23,7 +25,9 @@ const mapDTP = dispatch => ({
     deleteJob: jobId => dispatch(deleteJob(jobId)),
     fetchJobs: () => dispatch(fetchJobs()),
     updateUser: user => dispatch(updateUser(user)),
-    fetchUser: userId => dispatch(fetchUser(userId))
+    fetchUser: userId => dispatch(fetchUser(userId)),
+        updateAddress: (address) => dispatch(updateAddress(address))
+
 })
 
 
