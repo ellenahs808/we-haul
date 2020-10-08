@@ -142,25 +142,27 @@
     padding-top: 80px;   
 
 }
+#jobmap_jobshow {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 50vw;
+    padding: 10%;
+    padding-top: 80px;   
+
+}
 
 #jobmap_jobshow .mapbox-directions-steps {
     display: none;
-    width:70vw;
-    height: 20vh;
-    font-size: 20px;
-    font-style: arial;
-    line-height: 25px;
-    font-weight: 300;
-}
+    // width:70vw;
+    // height: 20vh;
+    // font-size: 20px;
+    // font-style: arial;
+    // line-height: 25px;
+    // font-weight: 300;
 
-#user_jobmap_jobshow .mapbox-directions-steps {
-    width: 400px;
-    font-size: 12px;
-    font-style: arial;
-    line-height: 25px;
-    font-weight: 300;
+    
 }
-
 .request-details {
   width: 400px;
     font-size: 20px;
