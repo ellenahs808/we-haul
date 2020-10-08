@@ -20,7 +20,7 @@
     background-color: white;
     border: 1px solid gray;
     border-radius: 10px;
-    width: 425px;
+    width: 430px;
     height: 620px;
     position: absolute;
     top: -70px;
@@ -36,18 +36,17 @@
 
 .instructions-ol {
     color: rgb(107, 107, 107);
-    // padding-bottom: 30px;
+    padding: 0 20px;
+    padding-left: 55px;
 }
 
 
 .instructions-list > p {
     color: rgb(107, 107, 107);
+    padding: 0 20px;
 }
 
 
-.instruct-gif {
-    padding-top: 40px;
-}
 
 
 .typical{
