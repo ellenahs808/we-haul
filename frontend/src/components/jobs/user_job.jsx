@@ -56,7 +56,7 @@ class UserJob extends React.Component {
   let driverId = this.props.haulerRating.id;
 
   let updatedUser = {_id: driverId, rating: newRating, numberOfRatings: newRatingCount };
-  console.log(updatedUser)
+  // console.log(updatedUser)
   this.props.updateUser(updatedUser);
   this.props.deleteJob(this.props.jobs[0]._id);
   window.location.reload();

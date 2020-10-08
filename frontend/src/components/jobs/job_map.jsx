@@ -38,11 +38,11 @@ class JobMap extends React.Component {
 
     map.addControl(directions, "top-left");
     if (this.props.type === 'hauler') {
-      directions.setOrigin(this.props.address.startAddress);
-      directions.setDestination(this.props.address.endAddress);
+      directions.setOrigin(this.props.address.endAddress);
+      directions.setDestination(this.props.address.startAddress);
     } else {
-      directions.setOrigin(this.props.requester[0].startAddress);
-      directions.setDestination(this.props.requester[0].endAddress);
+      directions.setOrigin(this.props.requester[0].endAddress);
+      directions.setDestination(this.props.requester[0].startAddress);
     }
 
     map.setMaxBounds(bounds);
@@ -54,8 +54,8 @@ class JobMap extends React.Component {
   componentDidUpdate(prevProps) {
     if ( prevProps.address.startAddress !== this.props.address.startAddress ) {
 
-      this.state.directions.setOrigin(this.props.address.startAddress);
-      this.state.directions.setDestination(this.props.address.endAddress);
+      this.state.directions.setOrigin(this.props.address.endAddress);
+      this.state.directions.setDestination(this.props.address.startAddress);
 
     }
   }

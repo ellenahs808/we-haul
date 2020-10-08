@@ -11,10 +11,10 @@ import Contacts from '../main/contacts'
 
 
 class Job extends React.Component {
-    constructor(props){
-        super(props);
-        console.log(this.props.jobs)
-    }
+    // constructor(props){
+    //     super(props);
+    //     // console.log(this.props.jobs)
+    // }
 
     componentDidMount(){
         this.props.fetchJobs();
@@ -25,9 +25,9 @@ class Job extends React.Component {
     }
     render() {
         let checkFilter = this.props.jobs.filter(job => ((job.driver === this.props.currentUser.id) && (job.status !== 2)))
-        console.log(checkFilter)
+        // console.log(checkFilter)
         let filtered = this.props.jobs.filter(job => (job.status !== 2))
-        console.log(filtered)
+        // console.log(filtered)
         
         if (checkFilter.length !== 0) {
             filtered = checkFilter
@@ -44,9 +44,8 @@ class Job extends React.Component {
                         {
                         
                         filtered.map(job => (
-                        
+                            
                                 <JobShow
-                                key={job.id} 
                                 job={job}
                                 currentUser={this.props.currentUser}
                                 updateAddress={this.props.updateAddress}
@@ -54,12 +53,14 @@ class Job extends React.Component {
                                 fetchJobs={this.props.fetchJobs}
                                 updateJob={this.props.updateJob}
                                 fetchJob={this.props.fetchJob}
+                                key={job._id} 
                                 />
                                 ))}
                         </div>
                         <div id="job_show_sub_right">    
                                     <JobMapContainer 
                                     />
+                                    
                         </div>
                     </div>
                     <div className="job-page-contacts"><Contacts /></div>

@@ -14,7 +14,7 @@ const seedUsers = (x) => {
     // debugger
     
     for (let i = 0; i < x; i += 1) {
-        console.log(users)
+        // console.log(users)
         const rand = Math.floor(Math.random() * 1000)
         const rand2 = Math.floor(Math.random() * 1000)
         const rand3 = Math.floor(Math.random() * 1000)
