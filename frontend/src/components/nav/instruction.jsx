@@ -10,7 +10,6 @@ class Instructions extends React.Component {
   }
 
   render() {
-    console.log(this.props.session)
     const pathname = this.props.location.pathname;
     const userType = this.props.session.user.userType;
   // {
