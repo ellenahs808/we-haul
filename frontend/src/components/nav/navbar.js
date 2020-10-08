@@ -26,71 +26,7 @@ class NavBar extends React.Component {
 
 
 
-    // getLinks() {
-    //   if (this.props.loggedIn) {
-    //     const starRate = (this.props.currentUser.rating / this.props.currentUser.numberOfRatings);
-    //     const userName = this.props.currentUser.firstName;
-    //         if (this.props.session.user.userType === 'hauler'){
-    //         return (
-    //           <div>
-    //             <div className="nav-rating">
-    //               <p className="nav-welcome">
-    //                 Welcome, {userName} your rating:
-    //               </p>
-    //               <div className="nav-stars">
-    //                 <StarRatings
-    //                   rating={starRate}
-    //                   ingnoreInlineStyles={false}
-    //                   starDimension="22px"
-    //                   starRatedColor="purple"
-    //                   // starEmptyColor='white'
-    //                   numberOfStars={5}
-    //                   name="rating"
-    //                   starSpacing="1px"
-    //                 />
-    //               </div>
-    //             </div>
-    //             <div>
-    //               <button
-    //                 className="nav-hauler-instruct"
-    //                 onClick={() => this.props.openModal("instructions")}
-    //               >
-    //                 Instructions
-    //               </button>
-    //             </div>
-    //             <div className="nav-jobs">
-    //               <Link to="/jobs" className="jobs-link">
-    //                 Jobs
-    //               </Link>
-    //             </div>
-    //             <div className="nav-logout">
-    //               <button
-    //                 onClick={this.logoutUser}
-    //                 className="nav-logout-button"
-    //               >
-    //                 Logout
-    //               </button>
-    //             </div>
-    //           </div>
-    //         );} else{
-    //           // if (this.props.jobs.user.ln)
-    //             return (
-    //                 <div>
-    //                     <div><button className='nav-user-instruct' onClick={() => this.props.openModal('instructions')}>Instructions</button></div>
-    //                     <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
-    //                     <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
-    //                 </div>     
-    //         )}
-    //     } else {
-    //         return (
-    //                 <div>
-    //                     {/* <div><button className='nav-instruct' type="submit" onClick={() => this.props.openModal('instructions')}>Instructions</button></div> */}
-    //                     <div><button className='nav-signup' type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
-    //                     <div><button className='nav-login' type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
-    //                 </div>
-    //         );
-    //     }
-    // }
+ 
     
     componentDidUpdate() {
       window.location.reload(false);
@@ -141,7 +77,7 @@ class NavBar extends React.Component {
               </Link>
             </div>
             <div className="nav-logout">
-              <button onClick={this.logoutUser} className="nav-logout-button">
+              <button onClick={(e) => {this.props.closeModal(); this.logoutUser(e);}} className="nav-logout-button">
                 Logout
               </button>
             </div>
@@ -163,7 +99,7 @@ class NavBar extends React.Component {
               </Link>
             </div>
             <div className="nav-logout">
-              <button onClick={this.logoutUser} className="nav-logout-button">
+              <button onClick={(e) => {this.props.closeModal(); this.logoutUser(e);}} className="nav-logout-button">
                 Logout
               </button>
             </div>
@@ -182,7 +118,7 @@ class NavBar extends React.Component {
               </Link>
             </div>
             <div className="nav-logout">
-              <button onClick={this.logoutUser} className="nav-logout-button">
+              <button onClick={(e) => {this.props.closeModal(); this.logoutUser(e);}} className="nav-logout-button">
                 Logout
               </button>
             </div>
