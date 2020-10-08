@@ -30,19 +30,29 @@ class NavBar extends React.Component {
             return (
               <div>
                 <div className="nav-rating">
-                  <p className="nav-welcome">Welcome, {userName} your rating:</p>
-                  <div className='nav-stars'>
+                  <p className="nav-welcome">
+                    Welcome, {userName} your rating:
+                  </p>
+                  <div className="nav-stars">
                     <StarRatings
-                        rating={starRate}
-                        ingnoreInlineStyles={false}
-                        starDimension='22px'
-                        starRatedColor="purple"
-                        // starEmptyColor='white'
-                        numberOfStars={5}
-                        name="rating"
-                        starSpacing='1px'
+                      rating={starRate}
+                      ingnoreInlineStyles={false}
+                      starDimension="22px"
+                      starRatedColor="purple"
+                      // starEmptyColor='white'
+                      numberOfStars={5}
+                      name="rating"
+                      starSpacing="1px"
                     />
                   </div>
+                </div>
+                <div>
+                  <button
+                    className="nav-hauler-instruct"
+                    onClick={() => this.props.openModal("instructions")}
+                  >
+                    Instructions
+                  </button>
                 </div>
                 <div className="nav-jobs">
                   <Link to="/jobs" className="jobs-link">
@@ -62,6 +72,7 @@ class NavBar extends React.Component {
               // if (this.props.jobs.user.ln)
                 return (
                     <div>
+                        <div><button className='nav-user-instruct' onClick={() => this.props.openModal('instructions')}>Instructions</button></div>
                         <div className='nav-jobs'><Link to='/userjob' className='jobs-link'>Requests</Link></div>
                         <div className='nav-logout'><button onClick={this.logoutUser} className='nav-logout-button'>Logout</button></div>
                     </div>     
@@ -69,6 +80,7 @@ class NavBar extends React.Component {
         } else {
             return (
                     <div>
+                        {/* <div><button className='nav-instruct' type="submit" onClick={() => this.props.openModal('instructions')}>Instructions</button></div> */}
                         <div><button className='nav-signup' type="submit" onClick={() => this.props.openModal('signup')} >Signup</button></div>
                         <div><button className='nav-login' type="submit" onClick={() => this.props.openModal('login')} >Login</button></div>
                     </div>

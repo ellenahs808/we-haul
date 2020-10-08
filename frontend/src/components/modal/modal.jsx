@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+// import Instructions from '../nav/instruction'
+import InstructionContainer from '../nav/instruction_container'
 // import { withRouter } from 'react-router-dom';
 import '../../styles/modal.scss';
 
@@ -18,6 +20,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'signup':
             component = <SignupFormContainer />;
+            break;
+        case 'instructions':
+            component = <InstructionContainer />;
             break;
         default:
             return null;
