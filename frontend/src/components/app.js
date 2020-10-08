@@ -16,16 +16,13 @@ import UserJobContainer from './jobs/user_job_container';
 
 
 const App = () => (
-    <div className="home_background">
+    <div>
         <Modal/>
         <NavBarContainer />
         {/* <MainPage /> */}
         <Switch>
             <Route exact path="/" component={MainPageContainer} />
-            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
             <ProtectedRoute exact path="/jobs" component={JobsContainer} />
-
             <ProtectedRoute exact path='/jobslist' component={NewJobsContainer}/>
             <ProtectedRoute  exact path='/userjob' component={UserJobContainer}/>
 

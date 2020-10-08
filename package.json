@@ -35,6 +35,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-star-ratings": "^2.3.0",
+    "react-star-rating      s": "^2.3.0",
     "validator": "^13.1.1"
   },
   "devDependencies": {

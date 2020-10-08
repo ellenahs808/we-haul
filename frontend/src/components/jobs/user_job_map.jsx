@@ -64,8 +64,10 @@ class UserJobMap extends React.Component {
     render() {
 
         return (
+            <div>
+                <div ref={el => this.mapContainer = el} className="user_map_container" id="user_jobmap_jobshow" />
 
-            <div ref={el => this.mapContainer = el} className="user_map_container" id="user_jobmap_jobshow" />
+            </div>
         )
     }
 }

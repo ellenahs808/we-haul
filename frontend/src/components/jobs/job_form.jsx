@@ -23,6 +23,9 @@ class JobForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.props.jobs.user.length === 1) {
+          this.props.deleteJob(this.props.jobs.user[0]._id);
+        }
       this.props.createJob(this.state)
         .then(() => {
           if (this.props.errors.length <= 0) {
@@ -143,7 +146,6 @@ class JobForm extends React.Component{
 
                   <div className="job-end-address">
                     <GooglePlacesAutocomplete
-                      // apiKey={keys.googleMapsKey}
                       autocompletionRequest={{
                         bounds: [
                           { lat: 37.6, lng: -122.54 },
@@ -167,6 +169,7 @@ class JobForm extends React.Component{
                     />
                   </div>
                 </div>
+                  <div className="icon-type">Enter a location in San Franciso. Other service areas coming soon!</div>
 
                 <div className="job-submit">
                   <button type="submit" className="job-submit-button">
