@@ -1,0 +1,103 @@
+.instruct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 425px;
+    height: 540px;
+  
+}
+
+.nav-instruct {
+    background-color: #9523f2;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 118px;
+    // margin: 4px 2px;
+    // opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    right: 180px;
+    top: 0px;
+    position: absolute;
+}
+
+.nav-instruct-button:focus{
+    border: none;
+    outline: none;
+}
+
+.nav-instruct-button:hover{
+    background: #6b220a;
+}
+
+.nav-user-instruct {
+    background-color: #9523f2;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 118px;
+    // margin: 4px 2px;
+    // opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    right: 210px;
+    top: 0px;
+    position: absolute;
+}
+
+.nav-user-instruct-button:focus{
+    border: none;
+    outline: none;
+}
+
+.nav-user-instruct-button:hover{
+    background: #6b220a;
+}
+
+.nav-hauler-instruct {
+    background-color: #9523f2;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 118px;
+    // margin: 4px 2px;
+    // opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    right: 210px;
+    top: 0px;
+    position: absolute;
+}
+
+.nav-hauler-instruct-button:focus{
+    border: none;
+    outline: none;
+}
+
+.nav-hauler-instruct-button:hover{
+    background: #6b220a;
+}
+
+.instruct-title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+}
