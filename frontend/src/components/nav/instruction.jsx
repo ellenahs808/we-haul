@@ -1,7 +1,7 @@
 import React from "react";
 import requestJob from '../images/request-instructions.gif'
 import jobshow from '../images/jobshow.gif'
-import request from "../images/requestfin.gif";
+import jobshow2 from "../images/jobshow2.gif";
 import ratings from "../images/ratings.gif";
 import '../../styles/instructions.scss'
 import "../../styles/forms.scss";
@@ -42,7 +42,7 @@ class Instructions extends React.Component {
             <li className="instructions-list"><p>To accept a job click "Accept Job."</p></li>
             <li className="instructions-list"><p>Once job is finished click "Complete Job."</p></li>
           </ol>
-          <img className="instruct-gif" alt="job show instruction" src={jobshow} height='300' width=''></img>
+          <img className="instruct-gif" alt="job show instruction" src={jobshow} height='280' width=''></img>
         </div> 
       ) : (
       pathname === '/userjob' ? (
@@ -67,7 +67,7 @@ class Instructions extends React.Component {
             <li><p>Once job is finished click "Complete Job."</p></li>
           </ol>
       
-          <img className="instruct-gif" alt="job show instruction" src={jobshow} height='300' width=''></img>
+          <img className="instruct-gif" alt="job show instruction" src={jobshow2} height='280' width=''></img>
         </div> 
       ) : null )
   }

@@ -7,6 +7,7 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+    padding-left: 30px;
 }
 
 .delete-btn {
@@ -76,7 +77,6 @@
 
 
 
-
 .user-map-container {
     height: 100%;
     width: 60%;
@@ -87,12 +87,11 @@
 }
 
 #user_jobmap_jobshow .mapboxgl-canvas { 
-    height: 65vh;
-    width: 60vw;
+    height: 500px;
+    width: 400px;
     border: 2px solid grey;
     border-radius: 5px;
     width: 100%;
-
 }
 
 .user_request_wrapper {
@@ -135,7 +134,7 @@
     height: 60vh;
     border: 2px solid grey;
     border-radius: 5px; 
-   box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
+    box-shadow: 10px 10px 34px -2px rgba(0,0,0,0.14);
 }
 
 #jobmap_jobshow {
